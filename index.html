@@ -61,6 +61,28 @@
         .footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #777; }
         ul { padding-right: 20px; }
         li { margin-bottom: 8px; }
+        .more-box {
+    margin-top: 8px;
+}
+
+.show-more-btn {
+    background: #4f6d7a;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.more-content {
+    display: none;
+    margin-top: 10px;
+    background: #eef3eb;
+    padding: 10px;
+    border-radius: 8px;
+}
+
     </style>
 </head>
 <body>
@@ -94,19 +116,61 @@
     <div class="card">
         <h2>יום 2 | 22/06 - גן העדן הסלובקי</h2>
         <ul>
-            <li>מסלול <strong>Suchá Belá</strong> (סולמות ומפלים).</li>
-            <li>מסלול חד-כיווני, הרפתקני מאוד.</li>
+            <li>מסלול <strong>Suchá Belá</strong> (סולמות ומפלים). מסלול חד-כיווני</li>
+          <!--  <li>מסלול חד-כיווני, הרפתקני מאוד.</li>-->
         </ul>
         <span class="cost-tag">💰 עלות: ~6€ חניה | ~3€ כניסה (מזומן!)</span>
         <a href="https://maps.google.com/?q=Podlesok+Parking" class="btn" target="_blank">📍 ניווט לחניון</a>
+                    <li>פיקניק <strong>Dedinky אגם</strong></li>
+        <a href="https://www.google.com/maps?q=48.8718,20.3374" class="btn" target="_blank">📍 ניווט לחניון Dedinky</a>
     </div>
 
     <div class="card">
         <h2>יום 3 | 23/06 - פסגות ואקשן</h2>
         <ul>
             <li>עלייה ברכבל ל-<strong>Lomnický Štít</strong> (להזמין ב-Gopass).</li>
+            <li>עלייה ברכבל ל-<strong>Lomnický Štít</strong> 
+    (להזמין ב-
+    <a href="https://www.gopass.travel/EN/attractions/detail/tatry-mountain-resorts-a-s/lomnicky-stit" target="_blank">
+        Gopass – Lomnický Štít
+    </a>).
+</li>
+
             <li>ירידה ב-<strong>Mountain Carts</strong> (גו-קארט הררי).</li>
+            <li>
+    ירידה ב-<strong>Mountain Carts</strong> (גו-קארט הררי) –
+    <a href="https://www.vt.sk/en/activities/mountain-carts" target="_blank">דף מידע</a>,
+    <span>מחיר: ~20–25€</span>,
+    <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking" target="_blank">📍 ניווט</a>
+</li>
+
             <li>אחר הצהריים: הליכה רגועה באגם <strong>Štrbské Pleso</strong>.</li>
+            <li>
+    אחר הצהריים: הליכה רגועה באגם <strong>Štrbské Pleso</strong> –
+    <a href="https://maps.google.com/?q=Strbske+Pleso" target="_blank">📍 ניווט</a>
+</li>
+<li>
+    אחר הצהריים: הליכה רגועה באגם <strong>Štrbské Pleso</strong> –
+    <a href="https://maps.google.com/?q=Strbske+Pleso" target="_blank">📍 ניווט</a>
+
+    <div class="more-box">
+        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+        <div class="more-content">
+            <ul>
+                <li>שייט בסירות / פדלים</li>
+                <li>עלייה ברכבל ל‑Solisko</li>
+                <li>מסלול Popradské Pleso</li>
+                <li>מסלול מפל Skok</li>
+                <li>אגמי האהבה – Jazierka Lásky</li>
+                <li>השכרת אופניים / אופניים חשמליים</li>
+                <li>זיפליין באזור Solisko</li>
+                <li>בתי קפה וגלידות על הטיילת</li>
+                <li>נקודות צילום מהממות</li>
+            </ul>
+        </div>
+    </div>
+</li>
+
         </ul>
         <span class="cost-tag">💰 עלות: רכבל ~65€ | קארט ~20€</span>
         <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking" class="btn" target="_blank">📍 ניווט לרכבל</a>
@@ -114,22 +178,83 @@
 
     <div class="card">
         <h2>יום 4 | 24/06 - מערות וצמרות</h2>
-        <ul>
-            <li>מערת הנטיפים <strong>Belianska</strong> (מזומן לצילום!).</li>
-            <li>מסלול <strong>Bachledka</strong> (צמרות העצים).</li>
-        </ul>
-        <a href="https://maps.google.com/?q=Bachledka+Parking" class="btn" target="_blank">📍 ניווט לבכלדקה</a>
+        <ul>          
+            <li>
+    מערת הנטיפים <strong>Belianska</strong> –
+    <a href="https://maps.google.com/?q=Belianska+Cave" target="_blank">📍 ניווט</a> |
+    <a href="https://www.ssj.sk/en/jaskyna/2-belianska-cave" target="_blank">🌐 אתר רשמי</a>
+
+    <div class="more-box">
+        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+        <div class="more-content">
+            <ul>
+                <li><strong>⏱ משך הסיור:</strong> ~70 דקות</li>
+                <li><strong>📏 אורך המסלול:</strong> 1,370 מטר</li>
+                <li><strong>🥶 טמפרטורה:</strong> 5–6.3°C</li>
+                <li><strong>🪜 מדרגות:</strong> 860 מדרגות</li>
+                <li><strong>⚠️ קר מאוד בפנים</strong> — חובה להביא מעיל גם בקיץ</li>
+                <li>⛔ אין הזמנות מראש — מגיעים פשוט בשעות הכניסה</li>
+                <li>⛰️ העלייה מהחניה תלולה — 25–40 דקות טיפוס</li>
+                <li>📸 צילום עולה 50€ — לרוב לא משתלם</li>
+                <li>👣 הסיור רק עם מדריך — אין כניסה עצמאית</li>
+                <li>💶 החניה בתשלום קטן (מזומן)</li>
+            </ul>
+        </div>
+    </div>
+</li>
+
+           <li>
+    מסלול <strong>Bachledka</strong> (צמרות העצים) –
+    <a href="https://maps.google.com/?q=Bachledka+Treetop+Walk" target="_blank">📍 ניווט</a>
+
+    <div class="more-box">
+        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+        <div class="more-content">
+            <ul>
+                <li><strong>⏰ שעות פעילות:</strong> 09:00–18:00 (כניסה אחרונה 17:00)</li>
+                <li><strong>💰 מחירים:</strong> מבוגר 17€ | ילד 14€ | סטודנט/60+ 15€</li>
+                <li><strong>🚡 רכבל:</strong> מבוגר 18€ | ילד 15€ | משפחה 45–55€</li>
+                <li>🛝 מגלשה ענקית למעלה (~3€)</li>
+                <li>👶 מתאים לעגלות</li>
+                <li>🥾 אפשרות עלייה ברגל (45–60 דקות)</li>
+                <li>🌄 תצפית מדהימה בקצה המסלול</li>
+            </ul>
+        </div>
+    </div>
+</li>
+
     </div>
 
     <div class="card">
-        <h2>יום 5 | 25/06 - זקופנה וסיום</h2>
-        <ul>
-            <li>שוק זקופנה, מדרחוב קרופובקי וגבינות מעושנות.</li>
-            <li>מסלול נחל קליל ב-Dolina Kościeliska.</li>
-            <li><strong>בערב:</strong> נסיעה ללינה ליד שדה התעופה בקרקוב.</li>
-        </ul>
-        <a href="https://maps.google.com/?q=Zakopane+Market+Parking" class="btn" target="_blank">📍 ניווט לזקופנה</a>
+    <h2>יום 5 | 25/06 – Kluszkowce, אגם וטירה</h2>
+    <ul>
+        <li><strong>Kluszkowce – Czorsztyn Ski</strong> 🎢 יום מגלשות מטורף</li>
+        <li>שייט/מנוחה ליד <strong>Lake Czorsztyn</strong></li>
+        <li>ביקור ב-<strong>Niedzica Castle</strong> (טירה מהמאה ה‑14)</li>
+        <li>אחר הצהריים: נסיעה חזרה לכיוון קרקוב</li>
+    </ul>
+
+    <a href="https://www.google.com/maps/dir/?api=1&origin=Tatransk%C3%A1+Lomnica&destination=Krak%C3%B3w+Airport&waypoints=Czorsztyn+Ski+Kluszkowce%7CNiedzica+Castle%7CLake+Czorsztyn" 
+       class="btn" target="_blank">
+       📍 מסלול נסיעה מלא (מגלשות → טירה → אגם → קרקוב)
+    </a>
+
+    <div class="more-box">
+        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+        <div class="more-content">
+            <ul>
+                <li><strong>🎢 Kluszkowce – מגלשות הרים:</strong> מסלול ארוך, מהיר ומטורף. מתאים גם לילדים.</li>
+                <li><strong>💰 מחיר:</strong> 1 ירידה ~10–15 zł | כרטיסייה זולה יותר.</li>
+                <li><strong>🌊 Lake Czorsztyn:</strong> אגם יפהפה, אפשרות לשייט רגוע.</li>
+                <li><strong>🏰 Niedzica Castle:</strong> טירה מהמאה ה‑14 עם נוף לאגם.</li>
+                <li><strong>📸 נקודות צילום:</strong> תצפיות מדהימות על האגם והטירה.</li>
+                <li><strong>⏰ זמן משוער:</strong> 4–6 שעות כולל הכול.</li>
+                <li><strong>🚗 חזרה לקרקוב:</strong> ~1.5 שעות נסיעה.</li>
+            </ul>
+        </div>
     </div>
+</div>
+
 
     <div class="card" style="border-right-color: #333;">
         <h2>יום 6 | 26/06 - טיסה חזור</h2>
@@ -145,6 +270,14 @@
 <div class="footer">
     נבנה עבור טיול משפחתי 2026 🏔️
 </div>
+<script>
+function toggleMore(btn) {
+    const content = btn.nextElementSibling;
+    const isOpen = content.style.display === "block";
+    content.style.display = isOpen ? "none" : "block";
+    btn.textContent = isOpen ? "הצג עוד" : "הסתר";
+}
+</script>
 
 </body>
 </html>
