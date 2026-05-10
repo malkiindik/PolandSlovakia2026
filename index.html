@@ -149,6 +149,36 @@
     display: flex;
     align-items: center;
 }
+        .row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.7fr 0.7fr 0.8fr;
+    align-items: start;
+    gap: 10px;
+    position: relative;
+}
+
+.more-box {
+    width: 100%;
+}
+
+.more-content {
+    grid-column: 1 / -1; /* מתפרס על כל הטורים */
+    margin-top: 10px;
+    padding: 12px 10px;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+.title-main {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.title-sub {
+    font-size: 0.85rem;
+    color: #666;
+}
+
 
     </style>
 </head>
@@ -261,7 +291,10 @@
 
         <!-- Lomnický Štít -->
         <div class="row">
-            <div class="col"><strong>Lomnický Štít</strong></div>
+            <div class="col">
+                <div class="title-main">Lomnický Štít</div>
+                <div class="title-sub">פסגת תצפית גבוהה בטטרה</div>
+            </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
@@ -281,7 +314,7 @@
                             <li><strong>⛰ גובה:</strong> 2,634 מטר.</li>
                             <li><strong>🚡 חובה להזמין מראש:</strong> המקומות נגמרים מהר.</li>
                             <li><strong>🌡 טמפרטורה:</strong> 0–10° גם בקיץ.</li>
-                            <li><strong>📸 תצפיות:</strong> מרפסת זכוכית, נוף מטורף.</li>
+                            <li><strong>📸 תצפיות:</strong> מרפסת זכוכית, נוף פנורמי.</li>
                             <li><strong>☕ בית קפה:</strong> בפסגה.</li>
                             <li><strong>⏱ זמן ביקור:</strong> 1–1.5 שעות.</li>
                             <li><strong>💶 עלות:</strong> ~65€.</li>
@@ -293,7 +326,10 @@
 
         <!-- Mountain Carts -->
         <div class="row">
-            <div class="col"><strong>Mountain Carts</strong></div>
+            <div class="col">
+                <div class="title-main">Mountain Carts</div>
+                <div class="title-sub">קארט הררי במורד ההר</div>
+            </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
@@ -324,7 +360,10 @@
 
         <!-- Štrbské Pleso -->
         <div class="row">
-            <div class="col"><strong>Štrbské Pleso</strong></div>
+            <div class="col">
+                <div class="title-main">Štrbské Pleso</div>
+                <div class="title-sub">אגם הררי יפהפה</div>
+            </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Strbske+Pleso"
@@ -354,9 +393,8 @@
         </div>
 
     </div>
-
-    <span class="cost-tag">💰 עלות משוערת: רכבל ~65€ | קארט ~20€</span>
 </div>
+
 
 
 
