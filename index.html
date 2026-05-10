@@ -132,6 +132,24 @@
             padding: 8px;
             border-radius: 6px;
         }
+        .table-like {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.7fr 0.7fr 0.8fr;
+    align-items: start;
+    gap: 10px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+}
+
     </style>
 </head>
 
@@ -239,84 +257,107 @@
  <div class="card">
     <h2>יום 3 | 23/06 – פסגות ואקשן</h2>
 
-    <ul>
+    <div class="table-like">
 
         <!-- Lomnický Štít -->
-        <li>
-            עלייה ברכבל ל‑<strong>Lomnický Štít</strong>
-            <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-               class="btn-inline" target="_blank">📍 ניווט</a>
-            <a href="https://www.gopass.travel/EN/attractions/detail/tatry-mountain-resorts-a-s/lomnicky-stit"
-               class="btn-small" target="_blank">רכישה</a>
+        <div class="row">
+            <div class="col"><strong>Lomnický Štít</strong></div>
 
-            <div class="more-box">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                <div class="more-content">
-                    <ul>
-                        <li><strong>⛰ גובה:</strong> 2,634 מטר – אחת הפסגות הגבוהות בטטרה.</li>
-                        <li><strong>🚡 חובה להזמין מראש:</strong> המקומות נגמרים מהר.</li>
-                        <li><strong>🌡 טמפרטורה:</strong> 0–10° גם בקיץ.</li>
-                        <li><strong>📸 תצפיות:</strong> מרפסת זכוכית, נוף מטורף לכל רכס הטטרה.</li>
-                        <li><strong>⏱ זמן ביקור:</strong> 1–1.5 שעות.</li>
-                        <li><strong>💶 עלות:</strong> ~65€ לאדם.</li>
-                    </ul>
+            <div class="col">
+                <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
+                   class="btn-inline" target="_blank">📍 ניווט</a>
+            </div>
+
+            <div class="col">
+                <a href="https://www.gopass.travel/EN/attractions/detail/tatry-mountain-resorts-a-s/lomnicky-stit"
+                   class="btn-small" target="_blank">רכישה</a>
+            </div>
+
+            <div class="col">
+                <div class="more-box">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                    <div class="more-content">
+                        <ul>
+                            <li><strong>⛰ גובה:</strong> 2,634 מטר.</li>
+                            <li><strong>🚡 חובה להזמין מראש:</strong> המקומות נגמרים מהר.</li>
+                            <li><strong>🌡 טמפרטורה:</strong> 0–10° גם בקיץ.</li>
+                            <li><strong>📸 תצפיות:</strong> מרפסת זכוכית, נוף מטורף.</li>
+                            <li><strong>☕ בית קפה:</strong> בפסגה.</li>
+                            <li><strong>⏱ זמן ביקור:</strong> 1–1.5 שעות.</li>
+                            <li><strong>💶 עלות:</strong> ~65€.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </li>
+        </div>
 
         <!-- Mountain Carts -->
-        <li>
-            ירידה ב‑<strong>Mountain Carts</strong> (גו‑קארט הררי)
-            <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-               class="btn-inline" target="_blank">📍 ניווט</a>
+        <div class="row">
+            <div class="col"><strong>Mountain Carts</strong></div>
 
-            <div class="more-box">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                <div class="more-content">
-                    <ul>
-                        <li><strong>🎢 חוויה:</strong> ירידה במסלול הררי על קארט ללא מנוע.</li>
-                        <li><strong>⏱ משך:</strong> 10–15 דקות ירידה.</li>
-                        <li><strong>💶 מחיר:</strong> ~20–25€.</li>
-                        <li><strong>👶 גיל:</strong> מתאים מגיל 12 ומעלה.</li>
-                        <li><strong>🛞 בטיחות:</strong> קסדה חובה (מושאלת במקום).</li>
-                        
-                        <li><strong>🌐 אתר רשמי:</strong>
-                            <a href="https://www.vt.sk/en/activities/mountain-carts"
-                               class="btn-small" target="_blank">מידע</a>
-                        </li>
-                        <li><strong>💶 עלות משוערת:</strong> ~20€ לאדם.</li>
-                    </ul>
+            <div class="col">
+                <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
+                   class="btn-inline" target="_blank">📍 ניווט</a>
+            </div>
+
+            <div class="col">—</div>
+
+            <div class="col">
+                <div class="more-box">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                    <div class="more-content">
+                        <ul>
+                            <li><strong>🎢 חוויה:</strong> ירידה במסלול הררי.</li>
+                            <li><strong>⏱ משך:</strong> 10–15 דקות.</li>
+                            <li><strong>💶 מחיר:</strong> ~20–25€.</li>
+                            <li><strong>👶 גיל:</strong> מגיל 12.</li>
+                            <li><strong>🛞 בטיחות:</strong> קסדה חובה.</li>
+                            <li><strong>🌐 מידע:</strong>
+                                <a href="https://www.vt.sk/en/activities/mountain-carts"
+                                   class="btn-small" target="_blank">מידע</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </li>
+        </div>
 
         <!-- Štrbské Pleso -->
-        <li>
-            אחר הצהריים: הליכה רגועה באגם <strong>Štrbské Pleso</strong>
-            <a href="https://maps.google.com/?q=Strbske+Pleso"
-               class="btn-inline" target="_blank">📍 ניווט</a>
+        <div class="row">
+            <div class="col"><strong>Štrbské Pleso</strong></div>
 
-            <div class="more-box">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                <div class="more-content">
-                    <ul>
-                        <li><strong>🏞 סוג המקום:</strong> אגם הררי מהמפורסמים בסלובקיה.</li>
-                        <li><strong>🚶‍♀️ מסלול:</strong> הליכה קלה מסביב לאגם (40–60 דק׳).</li>
-                        <li><strong>🚣‍♂️ פעילויות:</strong> השכרת סירות/פדלים בקיץ.</li>
-                        <li><strong>📸 נקודות צילום:</strong> גשרים, הרים, מים צלולים.</li>
-                        <li><strong>🌐 מידע:</strong>
-                            <a href="https://www.vysoketatry.sk/strbske-pleso.html"
-                              target="_blank">מידע</a>
-                        </li>
-                    </ul>
+            <div class="col">
+                <a href="https://maps.google.com/?q=Strbske+Pleso"
+                   class="btn-inline" target="_blank">📍 ניווט</a>
+            </div>
+
+            <div class="col">—</div>
+
+            <div class="col">
+                <div class="more-box">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                    <div class="more-content">
+                        <ul>
+                            <li><strong>🏞 סוג המקום:</strong> אגם הררי מפורסם.</li>
+                            <li><strong>🚶‍♀️ מסלול:</strong> 40–60 דק׳ מסביב לאגם.</li>
+                            <li><strong>🚣‍♂️ פעילויות:</strong> סירות/פדלים בקיץ.</li>
+                            <li><strong>🛍 טיילת:</strong> קפה, גלידות, חנויות.</li>
+                            <li><strong>📸 נקודות צילום:</strong> גשרים, הרים, מים צלולים.</li>
+                            <li><strong>🌐 מידע:</strong>
+                                <a href="https://www.vysoketatry.sk/strbske-pleso.html"
+                                   class="btn-small" target="_blank">מידע</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </li>
+        </div>
 
-    </ul>
+    </div>
 
-   
+    <span class="cost-tag">💰 עלות משוערת: רכבל ~65€ | קארט ~20€</span>
 </div>
+
 
 
     <!-- יום 4 -->
