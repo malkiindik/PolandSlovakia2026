@@ -137,6 +137,19 @@
     flex-direction: column;
     gap: 12px;
 }
+        .more-content {
+    display: none;
+    width: 100%;
+    margin: 10px 0 20px 0;
+    padding: 14px;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.more-content.open {
+    display: block;
+}
+
 
 .row {
     display: grid;
@@ -284,116 +297,40 @@
 </div>
     <!-- יום 3 -->
 
- <div class="card">
-    <h2>יום 3 | 23/06 – פסגות ואקשן</h2>
+<div class="row">
+    <div class="col">
+        <div class="title-main">Lomnický Štít</div>
+        <div class="title-sub">פסגת תצפית גבוהה בטטרה</div>
+    </div>
 
-    <div class="table-like">
+    <div class="col">
+        <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
+           class="btn-inline" target="_blank">📍 ניווט</a>
+    </div>
 
-        <!-- Lomnický Štít -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">Lomnický Štít</div>
-                <div class="title-sub">פסגת תצפית גבוהה בטטרה</div>
-            </div>
+    <div class="col">
+        <a href="https://www.gopass.travel/EN/attractions/detail/tatry-mountain-resorts-a-s/lomnicky-stit"
+           class="btn-small" target="_blank">רכישה</a>
+    </div>
 
-            <div class="col">
-                <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-                   class="btn-inline" target="_blank">📍 ניווט</a>
-            </div>
-
-            <div class="col">
-                <a href="https://www.gopass.travel/EN/attractions/detail/tatry-mountain-resorts-a-s/lomnicky-stit"
-                   class="btn-small" target="_blank">רכישה</a>
-            </div>
-
-            <div class="col">
-                <div class="more-box">
-                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                    <div class="more-content">
-                        <ul>
-                            <li><strong>⛰ גובה:</strong> 2,634 מטר.</li>
-                            <li><strong>🚡 חובה להזמין מראש:</strong> המקומות נגמרים מהר.</li>
-                            <li><strong>🌡 טמפרטורה:</strong> 0–10° גם בקיץ.</li>
-                            <li><strong>📸 תצפיות:</strong> מרפסת זכוכית, נוף פנורמי.</li>
-                            <li><strong>☕ בית קפה:</strong> בפסגה.</li>
-                            <li><strong>⏱ זמן ביקור:</strong> 1–1.5 שעות.</li>
-                            <li><strong>💶 עלות:</strong> ~65€.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mountain Carts -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">Mountain Carts</div>
-                <div class="title-sub">קארט הררי במורד ההר</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-                   class="btn-inline" target="_blank">📍 ניווט</a>
-            </div>
-
-            <div class="col">—</div>
-
-            <div class="col">
-                <div class="more-box">
-                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                    <div class="more-content">
-                        <ul>
-                            <li><strong>🎢 חוויה:</strong> ירידה במסלול הררי.</li>
-                            <li><strong>⏱ משך:</strong> 10–15 דקות.</li>
-                            <li><strong>💶 מחיר:</strong> ~20–25€.</li>
-                            <li><strong>👶 גיל:</strong> מגיל 12.</li>
-                            <li><strong>🛞 בטיחות:</strong> קסדה חובה.</li>
-                            <li><strong>🌐 מידע:</strong>
-                                <a href="https://www.vt.sk/en/activities/mountain-carts"
-                                   class="btn-small" target="_blank">מידע</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Štrbské Pleso -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">Štrbské Pleso</div>
-                <div class="title-sub">אגם הררי יפהפה</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=Strbske+Pleso"
-                   class="btn-inline" target="_blank">📍 ניווט</a>
-            </div>
-
-            <div class="col">—</div>
-
-            <div class="col">
-                <div class="more-box">
-                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                    <div class="more-content">
-                        <ul>
-                            <li><strong>🏞 סוג המקום:</strong> אגם הררי מפורסם.</li>
-                            <li><strong>🚶‍♀️ מסלול:</strong> 40–60 דק׳ מסביב לאגם.</li>
-                            <li><strong>🚣‍♂️ פעילויות:</strong> סירות/פדלים בקיץ.</li>
-                            <li><strong>🛍 טיילת:</strong> קפה, גלידות, חנויות.</li>
-                            <li><strong>📸 נקודות צילום:</strong> גשרים, הרים, מים צלולים.</li>
-                            <li><strong>🌐 מידע:</strong>
-                                <a href="https://www.vysoketatry.sk/strbske-pleso.html"
-                                   class="btn-small" target="_blank">מידע</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <div class="col">
+        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
     </div>
 </div>
+
+<!-- התוכן שנפתח — מחוץ לשורה -->
+<div class="more-content">
+    <ul>
+        <li><strong>⛰ גובה:</strong> 2,634 מטר.</li>
+        <li><strong>🚡 חובה להזמין מראש:</strong> המקומות נגמרים מהר.</li>
+        <li><strong>🌡 טמפרטורה:</strong> 0–10° גם בקיץ.</li>
+        <li><strong>📸 תצפיות:</strong> מרפסת זכוכית, נוף פנורמי.</li>
+        <li><strong>☕ בית קפה:</strong> בפסגה.</li>
+        <li><strong>⏱ זמן ביקור:</strong> 1–1.5 שעות.</li>
+        <li><strong>💶 עלות:</strong> ~65€.</li>
+    </ul>
+</div>
+
 
 
 
@@ -533,6 +470,11 @@ function toggleMore(btn) {
     content.style.display = open ? "none" : "block";
     btn.textContent = open ? "הצג עוד" : "הסתר";
 }
+    function toggleMore(btn) {
+    const content = btn.closest('.row').nextElementSibling;
+    content.classList.toggle('open');
+}
+
 </script>
 
 </body>
