@@ -74,6 +74,29 @@
         }
 
         .btn-vignette { background: #d9534f; }
+/* כפתור ניווט קטן בתוך השורה */
+.btn-inline {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 2px 8px;
+    margin-right: 6px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    text-decoration: none;
+}
+
+/* כפתור פעולה קטן (כמו רכישת מדבקה) */
+.btn-small {
+    display: inline-block;
+    background: #d9534f;
+    color: white;
+    padding: 2px 8px;
+    margin-right: 6px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    text-decoration: none;
+}
 
         .cost-tag {
             font-weight: bold;
@@ -126,23 +149,28 @@
         <p style="font-size:0.8rem; margin:0;">* מזומן (אירו) חובה לחניונים ושמורות בסלובקיה.</p>
     </div>
 
-    <!-- יום 1 -->
     <div class="card">
-        <h2>יום 1 | 21/06 – נחיתה</h2>
+    <h2>יום 1 | 21/06 – נחיתה</h2>
 
-        <div class="flight-info">
-            ✈️ <strong>טיסה W6 2098:</strong> המראה 11:05 | נחיתה 13:50
-        </div>
-
-        <ul>
-            <li>איסוף רכב והצטיידות בסופר.</li>
-            <li><strong>רכישת מדבקת כבישים סלובקיה (Vignette) – חובה לפני חציית הגבול!</strong></li>
-        </ul>
-
-        <a href="https://eznamka.sk/en" class="btn btn-vignette" target="_blank">רכישת מדבקה (10.8€)</a>
-        <br>
-        <a href="https://www.google.com/maps/search/Kaufland+Krakow" class="btn" target="_blank">📍 ניווט לסופר</a>
+    <div class="flight-info">
+        ✈️ <strong>טיסה W6 2098:</strong> המראה 11:05 | נחיתה 13:50
     </div>
+
+    <ul>
+        <li>
+            איסוף רכב והצטיידות בסופר
+            <a href="https://www.google.com/maps/search/Kaufland+Krakow"
+               class="btn-inline" target="_blank">📍 ניווט</a>
+        </li>
+
+        <li>
+            <strong>רכישת מדבקת כבישים סלובקיה (Vignette)</strong>
+            <a href="https://eznamka.sk/en"
+               class="btn-small" target="_blank">רכישה</a>
+        </li>
+    </ul>
+</div>
+
 
     <!-- יום 2 -->
     <div class="card">
