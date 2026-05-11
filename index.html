@@ -285,6 +285,15 @@ h2 {
 }
 
        /* --- רספונסיבי לפלאפון --- */
+ @media (max-width: 600px) {
+    ul li .btn-inline {
+        width: auto;
+        display: inline-block;
+        padding: 8px 14px;
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 600px) {
 
     /* כל שורה הופכת לגמישה */
@@ -342,6 +351,19 @@ h2 {
     .show-more-btn::after {
         color: white;
     }
+  
+    @media (max-width: 600px) {
+    .show-more-btn {
+        text-align: center;
+    }
+
+    .show-more-btn::after {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 }
 
 
