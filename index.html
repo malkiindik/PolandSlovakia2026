@@ -284,6 +284,67 @@ h2 {
     }
 }
 
+       /* --- רספונסיבי לפלאפון --- */
+@media (max-width: 600px) {
+
+    /* כל שורה הופכת לגמישה */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    /* העמודה הראשונה (שם + תיאור) מקבלת שורה משלה */
+    .row .col:nth-child(1) {
+        flex: 1 0 100%;
+        margin-bottom: 6px;
+        text-align: right;
+    }
+
+    /* שלושת הכפתורים מסתדרים בשורה שנייה */
+    .row .col:nth-child(2),
+    .row .col:nth-child(3),
+    .row .col:nth-child(4) {
+        flex: 1;
+        text-align: center;
+    }
+
+    /* כפתורים מקבלים רוחב מלא */
+    .btn-inline,
+    .btn-weather,
+    .show-more-btn {
+        width: 100%;
+        margin: 3px 0;
+        padding: 10px 0;
+        font-size: 15px;
+    }
+
+    /* כפתור ניווט לא יהיה גבוה מדי */
+    .btn-inline {
+        white-space: nowrap;
+    }
+
+    /* שינוי טקסט של "הצג עוד" ל־"פירוט" */
+    .show-more-btn {
+        position: relative;
+        font-size: 14px;
+    }
+
+    .show-more-btn::after {
+        content: "פירוט";
+    }
+
+    /* מסתירים את הטקסט המקורי */
+    .show-more-btn {
+        color: transparent;
+    }
+    .show-more-btn::after {
+        color: white;
+    }
+}
+
+
 </style>
 
 </head>
