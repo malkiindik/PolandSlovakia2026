@@ -352,15 +352,30 @@ h2 {
         color: white;
     }
   
-    @media (max-width: 600px) {
+   @media (max-width: 600px) {
+
+    /* כפתור פירוט – גובה אחיד */
     .show-more-btn {
+        height: 42px; /* אותו גובה כמו כפתורי ניווט/מזג אוויר */
+        line-height: 42px;
+        padding: 0;
         text-align: center;
+        position: relative;
+        color: transparent; /* מסתיר את הטקסט המקורי בלי להשפיע על הגובה */
     }
 
+    /* טקסט "פירוט" */
     .show-more-btn::after {
-        display: block;
+        content: "פירוט";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        line-height: 42px;
         text-align: center;
+        color: white;
+        font-size: 15px;
     }
 }
 
