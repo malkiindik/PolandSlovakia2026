@@ -6,19 +6,28 @@
     <title>סלובקיה ופולין 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <style>
-       :root {
-    --primary: #c97b84;
-    --secondary: #f4f7f1;
-    --accent: #d4e4bc;
+   <style>
+
+/* ----------------------------------------------------
+   1) משתני צבעים
+---------------------------------------------------- */
+:root {
+    --primary: #b03a63;      /* ורוד כהה – כותרות */
+    --primary-dark: #7a2442; /* ורוד עמוק – גרדיאנט */
+    --secondary: #f4f7f1;    /* רקע כללי */
+    --accent: #d4e4bc;       /* קו תחתון לכותרות */
     --text: #333;
     --white: #ffffff;
 
-    --nav-btn: #4a6b3f;   /* ניווט */
-    --info-btn: #b94a5a;  /* מידע/רכישה */
-    --more-btn: #4f6d7a;  /* הצג עוד */
+    --nav-btn: #4a6b3f;      /* ניווט */
+    --info-btn: #b03a63;     /* רכישה */
+    --weather-btn: #4f6d7a;  /* מזג אוויר */
+    --more-btn: #c7c7c7;     /* הצג עוד – אפור יפה */
 }
 
+/* ----------------------------------------------------
+   2) בסיס האתר
+---------------------------------------------------- */
 body {
     font-family: 'Assistant', sans-serif;
     background-color: var(--secondary);
@@ -28,20 +37,54 @@ body {
     line-height: 1.45;
 }
 
-header {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 1.4rem 1rem;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
 .container {
     max-width: 600px;
     margin: auto;
     padding: 0.8rem;
 }
 
+/* ----------------------------------------------------
+   3) Header – ורוד אלגנטי
+---------------------------------------------------- */
+.main-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main-header h2 {
+    margin: 12px 0 10px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #f8e9f1;
+}
+
+.main-header p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+.header-overlay {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ----------------------------------------------------
+   4) כרטיסים
+---------------------------------------------------- */
 .card {
     background: var(--white);
     border-radius: 10px;
@@ -51,52 +94,60 @@ header {
     border-right: 5px solid var(--primary);
 }
 
-h1 { margin: 0; font-size: 1.5rem; }
-h2 { 
-    color: var(--primary); 
-    border-bottom: 1px solid var(--accent); 
-    padding-bottom: 0.3rem; 
-    margin-top: 0; 
-    font-size: 1.1rem; 
+h2 {
+    color: var(--primary);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.3rem;
+    margin-top: 0;
+    font-size: 1.1rem;
 }
 
-ul { padding-right: 18px; margin: 0; }
-li { margin-bottom: 6px; font-size: 0.92rem; }
+/* ----------------------------------------------------
+   5) כפתורים — אחידות מלאה
+---------------------------------------------------- */
+.btn-base {
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
 
-/* כפתורים */
+/* ניווט */
 .btn-inline {
-    display: inline-block;
     background: var(--nav-btn);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    text-decoration: none;
 }
 
+/* רכישה */
 .btn-small {
-    display: inline-block;
     background: var(--info-btn);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    text-decoration: none;
 }
+
+/* מזג אוויר */
+.btn-weather {
+    background: var(--weather-btn);
+}
+
+/* הצג עוד */
 .show-more-btn {
-    background: #f0f0f0;
-    color: #444;
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    background: var(--more-btn);
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 16px;
+    font-size: 0.75rem;
     border: none;
     cursor: pointer;
 }
 .show-more-btn:hover {
-    background: #e2e2e2;
+    background: #b1b1b1;
 }
 
-/* טבלה */
+/* ----------------------------------------------------
+   6) טבלה
+---------------------------------------------------- */
 .table-like {
     display: flex;
     flex-direction: column;
@@ -115,8 +166,13 @@ li { margin-bottom: 6px; font-size: 0.92rem; }
     flex-direction: column;
 }
 
-/* כותרות דו־לשוניות */
+/* ----------------------------------------------------
+   7) כותרות אטרקציות
+---------------------------------------------------- */
 .title-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-weight: 700;
     font-size: 1rem;
 }
@@ -127,7 +183,9 @@ li { margin-bottom: 6px; font-size: 0.92rem; }
     margin-top: 2px;
 }
 
-/* תוכן הצג עוד — מחוץ לשורה */
+/* ----------------------------------------------------
+   8) תוכן הצג עוד
+---------------------------------------------------- */
 .more-content {
     display: none;
     width: 100%;
@@ -141,7 +199,9 @@ li { margin-bottom: 6px; font-size: 0.92rem; }
     display: block;
 }
 
-/* עלות */
+/* ----------------------------------------------------
+   9) תגית עלות
+---------------------------------------------------- */
 .cost-tag {
     font-weight: bold;
     color: #2d5a27;
@@ -150,50 +210,19 @@ li { margin-bottom: 6px; font-size: 0.92rem; }
     font-size: 0.85rem;
 }
 
-/* פוטר */
+/* ----------------------------------------------------
+   10) פוטר
+---------------------------------------------------- */
 .footer {
     text-align: center;
     padding: 1.5rem;
     font-size: 0.75rem;
     color: #777;
 }
-.main-header {
-    background: linear-gradient(135deg, #b03a63, #7a2442);
-    color: white;
-    text-align: center;
-    padding: 45px 20px;
-    border-radius: 22px;
-    margin-bottom: 25px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-}
 
-
-
-.main-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.main-header h2 {
-    margin: 12px 0 10px;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #dbeafe;
-}
-
-.main-header p {
-    margin: 0;
-    font-size: 1rem;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
-}
-
-.header-overlay {
-    max-width: 700px;
-    margin: auto;
-}
+/* ----------------------------------------------------
+   11) Weather Tag
+---------------------------------------------------- */
 .weather-tag {
     margin: 0.3rem 0 0.2rem;
     padding: 0.25rem 0.6rem;
@@ -234,7 +263,9 @@ li { margin-bottom: 6px; font-size: 0.92rem; }
     color: #8a1f1f;
 }
 
-/* מובייל – טיפה יותר מרווח וגדול */
+/* ----------------------------------------------------
+   12) מובייל
+---------------------------------------------------- */
 @media (max-width: 600px) {
     .weather-tag {
         font-size: 0.9rem;
@@ -244,26 +275,9 @@ li { margin-bottom: 6px; font-size: 0.92rem; }
         font-size: 0.85rem;
     }
 }
-.title-main {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.btn-weather {
-    background: var(--more-btn);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 16px;
-    font-size: 0.75rem;
-    text-decoration: none;
-    display: inline-block;
-}
-.btn-weather:hover {
-    opacity: 0.9;
-}
 
-    </style>
+</style>
+
 </head>
 
 <body>
