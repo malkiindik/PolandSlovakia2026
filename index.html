@@ -1233,9 +1233,17 @@ h2 {
 אפשר בכיף להעתיק ולשכפל</div>
 
 <script>
-    function toggleMore(btn) {
-    const content = btn.closest('.row').nextElementSibling;
-    content.classList.toggle('open');
+  function toggleMore(btn) {
+    const row = btn.closest('.row');
+    const content = row.nextElementSibling;
+
+    if (!content || !content.classList.contains('more-content')) return;
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
 }
 
 </script>
