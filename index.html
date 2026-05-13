@@ -1141,16 +1141,25 @@ h2 {
 אפשר בכיף להעתיק ולשכפל</div>
 
 <script>
-  function toggleMore(btn) {
-    const row = btn.closest('.row');
-    const content = row.nextElementSibling;
+ function toggleMore(btn) {
+    const card = btn.closest('.card');
 
-    if (!content || !content.classList.contains('more-content')) return;
+    // מוצא את כל ה-more-content בתוך אותו כרטיס
+    const all = card.querySelectorAll('.more-content');
 
-    if (content.style.display === "block") {
-        content.style.display = "none";
-    } else {
-        content.style.display = "block";
+    // לוקח את ה-more-content הקרוב ביותר מעל הכפתור
+    const currentRow = btn.closest('.row');
+    const next = currentRow.nextElementSibling;
+
+    if (next && next.classList.contains('more-content')) {
+        next.classList.toggle('open');
+        return;
+    }
+
+    // fallback אם המבנה משתבש
+    const fallback = btn.parentElement.querySelector('.more-content');
+    if (fallback) {
+        fallback.classList.toggle('open');
     }
 }
 
