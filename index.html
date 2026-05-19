@@ -416,14 +416,34 @@ h2 {
         padding: 0.7rem 1rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         display: none;
-        width: 220px;
+        width: 320px;
         z-index: 9999;
     }
 
     .clean-style .mini-popup.open {
         display: block;
     }
+/* ----------------------------------------------------
+   14) ניווט
+---------------------------------------------------- */
 
+       .nav-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-icon {
+    font-size: 1.4rem;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.nav-icon:hover {
+    opacity: 0.7;
+}
 </style>
 
 </head>
@@ -556,14 +576,22 @@ h2 {
             </div>
 
         <div class="col">
-    <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757"
+<!--    <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757"
        class="btn-base btn-inline" target="_blank">📍 ניווט בגוגל</a>
 </div>
 
 <div class="col">
     <a href="https://waze.com/ul?ll=48.965825,20.385757&navigate=yes"
        class="btn-base btn-inline" target="_blank">🚗 ניווט ב־Waze</a>
+</div>-->
+            <div class="col nav-icons">
+    <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757"
+       class="nav-icon" target="_blank">📍</a>
+
+    <a href="https://waze.com/ul?ll=48.965825,20.385757&navigate=yes"
+       class="nav-icon" target="_blank">🚗</a>
 </div>
+
 
 
             <div class="col">
