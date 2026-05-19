@@ -384,40 +384,16 @@ h2 {
 /* ----------------------------------------------------
    13) לוז וזמני נסיעות
 ---------------------------------------------------- */
-       .schedule-boxes {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        align-items: flex-start;
-    }
-
-    .schedule-card {
-        width: 220px;
-    }
-
-    .schedule-card .more-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-
-    .schedule-card .more-content.open {
-        max-height: 500px;
-    }
-
-    .schedule-card .show-more-btn {
-        background: none;
-        border: none;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        padding: 0;
-        color: #4b7b4b;
-    }
     .mini-info-bar.clean-style {
         display: flex;
         gap: 1.2rem;
         margin: 0.5rem 0;
+        position: relative;
+        z-index: 10;
+    }
+
+    .clean-style .mini-wrapper {
+        position: relative;
     }
 
     .clean-style .mini-btn {
@@ -428,7 +404,6 @@ h2 {
         cursor: pointer;
         color: #4b7b4b;
         padding: 0;
-        position: relative;
     }
 
     .clean-style .mini-popup {
@@ -441,52 +416,11 @@ h2 {
         padding: 0.7rem 1rem;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         display: none;
-        z-index: 20;
         width: 220px;
+        z-index: 9999;
     }
 
     .clean-style .mini-popup.open {
-        display: block;
-    }
-
-    .mini-info-bar.bubble-style {
-        display: flex;
-        gap: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    .bubble-style .mini-btn {
-        background: #f3f7f3;
-        border: 1px solid #d6e4d6;
-        border-radius: 20px;
-        padding: 0.3rem 0.8rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        color: #4b7b4b;
-        position: relative;
-        transition: 0.2s;
-    }
-
-    .bubble-style .mini-btn:hover {
-        background: #e8f1e8;
-    }
-
-    .bubble-style .mini-popup {
-        position: absolute;
-        top: 2.2rem;
-        right: 0;
-        background: white;
-        border: 1px solid #dcdcdc;
-        border-radius: 12px;
-        padding: 0.8rem 1rem;
-        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-        display: none;
-        z-index: 20;
-        width: 230px;
-    }
-
-    .bubble-style .mini-popup.open {
         display: block;
     }
 
@@ -578,7 +512,6 @@ h2 {
     <div class="weather-note">
         אם גשום ← מומלץ להחליף עם יום 4 (מערה).
     </div>
-<!-- לוז וזמני נסיעות -->
 <div class="mini-info-bar clean-style">
 
     <div class="mini-wrapper">
@@ -611,6 +544,7 @@ h2 {
     </div>
 
 </div>
+
 
     <div class="table-like">
 
@@ -1261,36 +1195,22 @@ h2 {
 אפשר בכיף להעתיק ולשכפל</div>
 
 <script>
- function toggleMore(btn) {
-    const card = btn.closest('.card');
+function toggleMini(btn) {
+    const popup = btn.nextElementSibling;
 
-    const all = card.querySelectorAll('.more-content');
+    // סגירת כל הפופאפים האחרים
+    document.querySelectorAll('.mini-popup.open').forEach(p => {
+        if (p !== popup) p.classList.remove('open');
+    });
 
-    const currentRow = btn.closest('.row');
-    const next = currentRow.nextElementSibling;
+    // פתיחה/סגירה של הנוכחי
+    popup.classList.toggle("open");
 
-    if (next && next.classList.contains('more-content')) {
-        next.classList.toggle('open');
-
-        // החלפת החץ ▼ ↔ ▲
-        if (next.classList.contains('open')) {
-            btn.innerHTML = btn.innerHTML.replace("▼", "▲");
-        } else {
-            btn.innerHTML = btn.innerHTML.replace("▲", "▼");
-        }
-
-        return;
-    }
-
-    const fallback = btn.parentElement.querySelector('.more-content');
-    if (fallback) {
-        fallback.classList.toggle('open');
-
-        if (fallback.classList.contains('open')) {
-            btn.innerHTML = btn.innerHTML.replace("▼", "▲");
-        } else {
-            btn.innerHTML = btn.innerHTML.replace("▲", "▼");
-        }
+    // החלפת חץ
+    if (popup.classList.contains("open")) {
+        btn.innerHTML = btn.innerHTML.replace("▼", "▲");
+    } else {
+        btn.innerHTML = btn.innerHTML.replace("▲", "▼");
     }
 }
 </script>
