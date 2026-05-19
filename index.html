@@ -289,7 +289,7 @@ h2 {
        
 
 /* ----------------------------------------------------
-   12) מובייל - גרסה מתוקנת ויציבה
+   12) מובייל - גרסה פשוטה, בטוחה ועובדת!
 ---------------------------------------------------- */
 @media (max-width: 600px) {
     
@@ -316,7 +316,7 @@ h2 {
         margin-bottom: 10px;
     }
 
-    /* העמודה הראשונה (שם + תיאור) מקבלת שורה משלה */
+    /* העמודה הראשונה (שם + תיאור) */
     .row .col:nth-child(1) {
         flex: 1 0 100%;
         margin-bottom: 6px;
@@ -339,12 +339,21 @@ h2 {
         height: 42px !important;
         margin: 3px 0;
         padding: 0 !important;
-        font-size: 15px;
+        font-size: 15px !important;
         display: inline-flex !important;
-        align-items: center;     /* מירכוז אנכי */
-        justify-content: center; /* מירכוז אופקי */
+        align-items: center;     /* מירכוז אנכי מושלם */
+        justify-content: center; /* מירכוז אופקי מושלם */
         box-sizing: border-box;
         border-radius: 16px !important;
+        text-indent: 0 !important;
+        color: white !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* 📑 כפתור הצג עוד במובייל - ניקוי כל השכבות שחסמו את הקליק */
+    .show-more-btn::after {
+        display: none !important; /* מעלים לחלוטין את שכבת ה-CSS שחסמה את הלחיצות */
     }
 
     /* 📍 כפתור ניווט במובייל - מציג רק אייקון ומעלים מלל */
@@ -366,23 +375,6 @@ h2 {
         margin: 0 !important;
     }
 
-    /* 📑 כפתור הצג עוד (פירוט) במובייל - תיקון הלחיצה הלינארית */
-    .show-more-btn {
-        color: white !important;
-        text-indent: 0 !important;
-    }
-    
-    /* שינוי המלל ישירות דרך ה-CSS בלי לחסום את הלחיצה */
-    .show-more-btn {
-        font-size: 0 !important; /* מעלים את הטקסט המקורי "הצג עוד" */
-    }
-    .show-more-btn::after {
-        content: "פירוט"; /* שותל את המילה פירוט במקום */
-        font-size: 15px;
-        color: white;
-        pointer-events: none; /* 🔥 התיקון הקריטי: מאפשר לקליק לעבור דרך הטקסט אל הכפתור! */
-    }
-
     /* פופאפ לו"ז וזמנים מותאם למובייל */
     .clean-style .mini-popup {
         width: auto;
@@ -392,7 +384,7 @@ h2 {
         margin: 0 auto;
     }
 
-    /* עיגולי כפתורים בתוך רשימות הלו"ז הרגילות */
+    /* עיגולי כפתורים בתוך רשימות הלו"ז הרגילות (כמו יום 1) */
     .card > ul > li .btn-nav-google,
     .card > ul > li .btn-purchase-vignette {
         display: inline-flex !important;
