@@ -445,13 +445,43 @@ h2 {
 /* ----------------------------------------------------
    14) ניווט
 ---------------------------------------------------- */
-.split-nav-btn .nav-icon-img {
-    width: 16px;
-    height: 16px;
+/* --- עיצוב האייקון החדש של גוגל מפות (דסקטופ ומובייל) --- */
+.btn-nav-google .nav-google-img {
+    width: 15px;          /* גודל קטן, עדין ומדויק כמו שהיה מקודם */
+    height: 15px;
     object-fit: contain;
     vertical-align: middle;
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 5px;     /* רווח קטן לשמאל הטקסט בעברית */
+}
+
+/* מוודא שהכפתור שומר על יישור אנכי נקי בשורה */
+.btn-nav-google {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+/* --- התאמה למובייל (מסכים קטנים מ-480 פיקסלים) --- */
+@media (max-width: 480px) {
+    /* העלמת המלל "ניווט" במובייל */
+    .btn-nav-google .nav-google-text {
+        display: none;
+    }
+    
+    /* ביטול המרווח של האייקון כי הוא נשאר לבד */
+    .btn-nav-google .nav-google-img {
+        margin-left: 0;
+    }
+    
+    /* הפיכת הכפתור הירוק לעיגול קטן רק סביב האייקון */
+    .btn-nav-google {
+        padding: 0;          /* ביטול פדינג מיותר */
+        width: 28px;         /* רווח אחיד */
+        height: 28px;        /* גובה אחיד */
+        border-radius: 50%;  /* עיגול מושלם */
+    }
 }
 </style>
 
@@ -584,10 +614,10 @@ h2 {
                 <div class="title-sub">מסלול קניון עם סולמות, מפלים ונחלים</div>
             </div>
 
- <div class="col">
-    <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757" class="btn-base btn-nav-google" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-icon-img">
-        <span class="btn-text">ניווט</span>
+<div class="col">
+    <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757" class="btn-base btn-inline btn-nav-google" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
+        <span class="nav-google-text">ניווט</span>
     </a>
 </div>
 
