@@ -335,15 +335,16 @@ h2 {
     .btn-inline,
     .btn-weather,
     .show-more-btn {
-        width: 100%;
-        height: 42px; /* גובה אחיד לכולם */
+        width: 100% !important; /* דריסת הגדרות העיגול עבור שורות גדולות */
+        height: 42px !important;
         margin: 3px 0;
         padding: 0;   /* מבוטל כדי שהגובה וה-line-height ישלטו במרכוז */
         font-size: 15px;
-        display: inline-flex;
+        display: inline-flex !important;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
+        border-radius: 16px !important; /* החזרת הפינות המעוגלות המקוריות */
     }
 
     .btn-inline {
@@ -351,20 +352,16 @@ h2 {
     }
 
     /* ----------------------------------------------------
-       📍 התאמה מיוחדת לכפתור הניווט החדש במובייל
+        📍 התאמה מיוחדת לכפתור הניווט החדש במובייל (בשורות הגדולות)
     ---------------------------------------------------- */
-    .btn-nav-google .nav-google-text {
-        display: none; /* העלמת המלל "ניווט" */
+    .table-like .btn-nav-google .nav-google-text {
+        display: none; /* העלמת המלל "ניווט" בשורה הגדולה */
     }
 
-    .btn-nav-google .nav-google-img {
-        margin-left: 0; /* ביטול המרווח כי האייקון לבד */
-        width: 20px;    /* הגדלתי טיפה ל-20px כדי שייראה טוב ומלא בתוך הכפתור הגדול */
+    .table-like .btn-nav-google .nav-google-img {
+        margin-left: 0; 
+        width: 20px;    /* גודל מלא ומורחב בתוך המלבן הגדול */
         height: 20px;
-    }
-
-    .btn-nav-google {
-        border-radius: 16px; /* שומר על פינות מעוגלות רגילות כמו כולם, לא עיגול! */
     }
 
     /* כפתור פירוט – גובה אחיד וטקסט חלופי */
@@ -397,29 +394,59 @@ h2 {
         right: 0;             /* stretch nicely */
         margin: 0 auto;       /* center it */
     }
-    /* --- הפיכת כפתור הניווט לעיגול קטן - רק בתוך רשימות במובייל --- */
-    ul li .btn-nav-google {
-        display: inline-flex;
+
+    /* ====================================================
+       🟢 הפיכת הכפתורים לעיגולים - רק בתוך רשימות הלו"ז הראשיות 🟢
+       ==================================================== */
+    
+    /* עיגול ניווט ברשימה */
+    .card > ul > li .btn-nav-google {
+        display: inline-flex !important;
         align-items: center;
         justify-content: center;
-        width: 26px;         /* קומפקטי ומתאים לשורת טקסט */
-        height: 26px;        /* גובה זהה לרוחב ליצירת עיגול */
-        border-radius: 50%;  /* עיגול מושלם */
-        padding: 0;          /* ביטול מרווחים פנימיים */
+        width: 26px !important;       /* הגדרת רוחב קבוע קטן */
+        height: 26px !important;      /* גובה זהה לרוחב */
+        border-radius: 50% !important; /* עיגול מושלם */
+        padding: 0 !important;
         vertical-align: middle;
-        margin-right: 5px;   /* רווח קטן מהטקסט שלפניו */
+        margin-right: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
-    /* העלמת הטקסט בתוך הרשימה במובייל */
-    ul li .btn-nav-google .nav-google-text {
-        display: none;
+    .card > ul > li .btn-nav-google .nav-google-text {
+        display: none !important;
     }
 
-    /* מירכוז מושלם של האייקון בתוך העיגול */
-    ul li .btn-nav-google .nav-google-img {
-        margin-left: 0;
-        width: 14px;
-        height: 14px;
+    .card > ul > li .btn-nav-google .nav-google-img {
+        margin-left: 0 !important;
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    /* עיגול רכישה ברשימה */
+    .card > ul > li .btn-purchase-vignette {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 26px !important;
+        height: 26px !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .card > ul > li .btn-purchase-vignette .purchase-text {
+        display: none !important;
+    }
+
+    .card > ul > li .btn-purchase-vignette .purchase-icon-img {
+        margin-left: 0 !important;
+        width: 13px !important;
+        height: 13px !important;
     }
 }
 /* ----------------------------------------------------
