@@ -444,6 +444,63 @@ h2 {
 .nav-icon:hover {
     opacity: 0.7;
 }
+       /* כפתור ניווט משולב וחצוי עם אייקונים */
+.split-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 16px; /* תואם לרדיוס של שאר הכפתורים */
+    overflow: hidden;    /* שומר על הפינות של החצאים לא גולשות */
+    border: none;
+    font-size: 0.75rem;
+    vertical-align: middle;
+}
+
+/* הגדרות כלליות לכל חצי בכפתור */
+.split-nav-btn .nav-half {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.2s ease;
+}
+
+/* קלאס מיוחד לאייקוני הלוגו (החליף את האימוג'ים) */
+.split-nav-btn .nav-icon {
+    width: 16px;       /* הגדלתי טיפה ל-16 פיקסלים שיהיה ברור */
+    height: 16px;
+    object-fit: contain; /* שומר על פרופורציות הלוגו שלא יתעוות */
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* חצי של Waze - צבע תכלת */
+.split-nav-btn .waze-half {
+    background-color: #33ccff;
+}
+
+.split-nav-btn .waze-half .nav-icon {
+    margin-right: 5px; /* רווח לימין הטקסט (בשביל Waze) */
+}
+
+.split-nav-btn .waze-half:hover {
+    background-color: #29b6f6;
+}
+
+/* חצי של Google Maps - ירוק המקורי */
+.split-nav-btn .maps-half {
+    background-color: var(--nav-btn);
+    border-right: 1px solid rgba(255, 255, 255, 0.3); /* קו הפרדה עדין באמצע */
+}
+
+.split-nav-btn .maps-half .nav-icon {
+    margin-left: 5px; /* רווח לשמאל הטקסט (בשביל מפות, ב-Hebrew) */
+}
+
+.split-nav-btn .maps-half:hover {
+    background-color: #3d5e3a; /* או כל גוון כהה יותר של משתנה הניווט שלך */
+}
 </style>
 
 </head>
@@ -575,23 +632,18 @@ h2 {
                 <div class="title-sub">מסלול קניון עם סולמות, מפלים ונחלים</div>
             </div>
 
-    <!--    <div class="col">
-    <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757"
-       class="btn-base btn-inline" target="_blank">📍 ניווט בגוגל</a>
+  <div class="col">
+    <div class="split-nav-btn">
+        <a href="https://waze.com/ul?ll=48.965825,20.385757&navigate=yes" class="nav-half waze-half" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Waze_logo_2020.svg" alt="Waze logo" class="nav-icon">
+            <span>Waze</span>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757" class="nav-half maps-half" target="_blank">
+            <span>מפות</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps pin" class="nav-icon">
+        </a>
+    </div>
 </div>
-
-<div class="col">
-    <a href="https://waze.com/ul?ll=48.965825,20.385757&navigate=yes"
-       class="btn-base btn-inline" target="_blank">🚗 ניווט ב־Waze</a>
-</div>-->
-            <div class="col nav-icons">
-    <a href="https://www.google.com/maps/search/?api=1&query=48.965825,20.385757"
-       class="nav-icon" target="_blank">📍</a>
-
-    <a href="https://waze.com/ul?ll=48.965825,20.385757&navigate=yes"
-       class="nav-icon" target="_blank">🚗</a>
-</div>
-
 
 
             <div class="col">
