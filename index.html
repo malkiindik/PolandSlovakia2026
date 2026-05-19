@@ -273,7 +273,7 @@ h2 {
        
 
 /* ----------------------------------------------------
-   12) מובייל
+   12) מובייל 
 ---------------------------------------------------- */
 @media (max-width: 600px) {
     .weather-tag {
@@ -283,19 +283,13 @@ h2 {
     .weather-note {
         font-size: 0.85rem;
     }
-}
 
-       /* --- רספונסיבי לפלאפון --- */
- @media (max-width: 600px) {
     ul li .btn-inline {
         width: auto;
         display: inline-block;
         padding: 8px 14px;
         white-space: nowrap;
     }
-}
-
-@media (max-width: 600px) {
 
     /* כל שורה הופכת לגמישה */
     .row {
@@ -320,49 +314,48 @@ h2 {
         text-align: center;
     }
 
-    /* כפתורים מקבלים רוחב מלא */
+    /* כפתורים מקבלים רוחב מלא ואחידות */
     .btn-inline,
     .btn-weather,
     .show-more-btn {
         width: 100%;
+        height: 42px; /* גובה אחיד לכולם */
         margin: 3px 0;
-        padding: 10px 0;
+        padding: 0;   /* מבוטל כדי שהגובה וה-line-height ישלטו במרכוז */
         font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
     }
 
-    /* כפתור ניווט לא יהיה גבוה מדי */
     .btn-inline {
         white-space: nowrap;
     }
 
-    /* שינוי טקסט של "הצג עוד" ל־"פירוט" */
-    .show-more-btn {
-        position: relative;
-        font-size: 14px;
+    /* ----------------------------------------------------
+       📍 התאמה מיוחדת לכפתור הניווט החדש במובייל
+    ---------------------------------------------------- */
+    .btn-nav-google .nav-google-text {
+        display: none; /* העלמת המלל "ניווט" */
     }
 
-    .show-more-btn::after {
-        content: "פירוט";
+    .btn-nav-google .nav-google-img {
+        margin-left: 0; /* ביטול המרווח כי האייקון לבד */
+        width: 20px;    /* הגדלתי טיפה ל-20px כדי שייראה טוב ומלא בתוך הכפתור הגדול */
+        height: 20px;
     }
 
-    /* מסתירים את הטקסט המקורי */
-    .show-more-btn {
-        color: transparent;
+    .btn-nav-google {
+        border-radius: 16px; /* שומר על פינות מעוגלות רגילות כמו כולם, לא עיגול! */
     }
-    .show-more-btn::after {
-        color: white;
-    }
-  
-   @media (max-width: 600px) {
 
-    /* כפתור פירוט – גובה אחיד */
+    /* כפתור פירוט – גובה אחיד וטקסט חלופי */
     .show-more-btn {
-        height: 42px; /* אותו גובה כמו כפתורי ניווט/מזג אוויר */
         line-height: 42px;
-        padding: 0;
         text-align: center;
         position: relative;
-        color: transparent; /* מסתיר את הטקסט המקורי בלי להשפיע על הגובה */
+        color: transparent; /* מסתיר את הטקסט המקורי */
     }
 
     /* טקסט "פירוט" */
@@ -378,26 +371,14 @@ h2 {
         color: white;
         font-size: 15px;
     }
-}
 
-}
-       @media (max-width: 600px) {
-    /* הסתרת הטקסט לחלוטין */
-    .btn-nav-google .btn-text {
-        display: none;
-    }
-    
-    /* ביטול המרווח של האייקון כי הוא עכשיו לבד בכפתור */
-    .btn-nav-google .nav-icon-img {
-        margin-left: 0;
-    }
-    
-    /* הפיכת הכפתור לעיגול מושלם או ריבוע קטן בשביל האייקון */
-    .btn-nav-google {
-        padding: 6px;       /* פדינג שווה מכל הכיוונים */
-        border-radius: 50%; /* הופך את הכפתור לעגול (אם הגובה והרוחב זהים) */
-        width: 28px;        /* הגדרת רוחב קבוע למובייל */
-        height: 28px;       /* הגדרת גובה קבוע למובייל */
+    /* פופאפ נקי */
+    .clean-style .mini-popup {
+        width: auto;          /* no fixed width */
+        max-width: 100%;      /* never overflow */
+        left: 0;              /* align to screen */
+        right: 0;             /* stretch nicely */
+        margin: 0 auto;       /* center it */
     }
 }
 /* ----------------------------------------------------
