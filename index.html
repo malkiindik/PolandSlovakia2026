@@ -276,6 +276,7 @@ h2 {
    12) מובייל 
 ---------------------------------------------------- */
 @media (max-width: 600px) {
+    
     .weather-tag {
         font-size: 0.9rem;
         padding: 0.35rem 0.8rem;
@@ -379,6 +380,30 @@ h2 {
         left: 0;              /* align to screen */
         right: 0;             /* stretch nicely */
         margin: 0 auto;       /* center it */
+    }
+    /* --- הפיכת כפתור הניווט לעיגול קטן - רק בתוך רשימות במובייל --- */
+    ul li .btn-nav-google {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;         /* קומפקטי ומתאים לשורת טקסט */
+        height: 26px;        /* גובה זהה לרוחב ליצירת עיגול */
+        border-radius: 50%;  /* עיגול מושלם */
+        padding: 0;          /* ביטול מרווחים פנימיים */
+        vertical-align: middle;
+        margin-right: 5px;   /* רווח קטן מהטקסט שלפניו */
+    }
+
+    /* העלמת הטקסט בתוך הרשימה במובייל */
+    ul li .btn-nav-google .nav-google-text {
+        display: none;
+    }
+
+    /* מירכוז מושלם של האייקון בתוך העיגול */
+    ul li .btn-nav-google .nav-google-img {
+        margin-left: 0;
+        width: 14px;
+        height: 14px;
     }
 }
 /* ----------------------------------------------------
@@ -515,22 +540,24 @@ h2 {
     <ul>
         <li>
             איסוף רכב והצטיידות בסופר
-            <a href="https://www.google.com/maps/search/Kaufland+Krakow"
-               class="btn-base btn-inline" target="_blank">📍 ניווט</a>
+            <a href="https://maps.google.com" class="btn-base btn-inline btn-nav-google" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
+                <span class="nav-google-text">ניווט</span>
+            </a>
         </li>
 
         <li>
             <strong>רכישת מדבקת כבישים סלובקיה (Vignette)</strong>
-            <a href="https://eznamka.sk/en"
-               class="btn-base btn-small" target="_blank">רכישה</a>
+            <a href="https://eznamka.sk/en" class="btn-base btn-small" target="_blank">רכישה</a>
         </li>
 
         <li>
-    <strong>עצירה ב‑Štrbské Pleso</strong> – אגם יפהפה, מסלול קל ונעים (1.5–1 שעות)
-   <a href="https://www.google.com/maps/place/49.1161596,20.0675973"
-       class="btn-base btn-inline" target="_blank">📍 ניווט</a>
-</li>
-
+            <strong>עצירה ב‑Štrbské Pleso</strong> – אגם יפהפה, מסלול קל ונעים (1.5–1 שעות)
+            <a href="https://maps.google.com" class="btn-base btn-inline btn-nav-google" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
+                <span class="nav-google-text">ניווט</span>
+            </a>
+        </li>
 
         <li>
             הגעה למקום הלינה 
