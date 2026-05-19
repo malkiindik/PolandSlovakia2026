@@ -152,7 +152,23 @@ h2 {
 .show-more-btn:hover {
     background: #b1b1b1;
 }
+/* עיצוב אייקון הרכישה בדסקטופ */
+.btn-purchase-vignette {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
 
+.btn-purchase-vignette .purchase-icon-img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 5px; /* רווח קטן לשמאל הטקסט */
+    filter: invert(1); /* הופך את האייקון ללבן כדי שיתאים לרקע של הכפתור שלך */
+}
 /* ----------------------------------------------------
    6) טבלה
 ---------------------------------------------------- */
@@ -488,6 +504,30 @@ h2 {
         height: 28px;        /* גובה אחיד */
         border-radius: 50%;  /* עיגול מושלם */
     }
+    /* --- הפיכת כפתור הרכישה לעיגול קטן - רק בתוך רשימות במובייל --- */
+    ul li .btn-purchase-vignette {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;         /* גודל זהה בדיוק לעיגול הניווט */
+        height: 26px;
+        border-radius: 50%;  /* עיגול מושלם */
+        padding: 0;          /* ביטול מרווחים פנימיים */
+        vertical-align: middle;
+        margin-right: 5px;   /* רווח קטן מהטקסט */
+    }
+
+    /* העלמת הטקסט "רכישה" במובייל */
+    ul li .btn-purchase-vignette .purchase-text {
+        display: none;
+    }
+
+    /* מירכוז האייקון של העגלה בתוך העיגול במובייל */
+    ul li .btn-purchase-vignette .purchase-icon-img {
+        margin-left: 0;
+        width: 13px; /* גודל מותאם לעיגול הקטן */
+        height: 13px;
+    }
 }
 </style>
 
@@ -546,10 +586,13 @@ h2 {
             </a>
         </li>
 
-        <li>
-            <strong>רכישת מדבקת כבישים סלובקיה (Vignette)</strong>
-            <a href="https://eznamka.sk/en" class="btn-base btn-small" target="_blank">רכישה</a>
-        </li>
+       <li>
+    <strong>רכישת מדבקת כבישים סלובקיה (Vignette)</strong>
+    <a href="https://eznamka.sk/en" class="btn-base btn-small btn-purchase-vignette" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Font_Awesome_5_solid_shopping-cart.svg" alt="רכישה" class="purchase-icon-img">
+        <span class="purchase-text">רכישה</span>
+    </a>
+</li>
 
         <li>
             <strong>עצירה ב‑Štrbské Pleso</strong> – אגם יפהפה, מסלול קל ונעים (1.5–1 שעות)
