@@ -270,6 +270,7 @@ h2 {
     background: #ffe5e5;
     color: #8a1f1f;
 }
+       
 
 /* ----------------------------------------------------
    12) מובייל
@@ -380,7 +381,39 @@ h2 {
 }
 
 }
+/* ----------------------------------------------------
+   12) לוז וזמני נסיעות
+---------------------------------------------------- */
+       .schedule-boxes {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
 
+    .schedule-card {
+        width: 220px;
+    }
+
+    .schedule-card .more-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .schedule-card .more-content.open {
+        max-height: 500px;
+    }
+
+    .schedule-card .show-more-btn {
+        background: none;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0;
+        color: #4b7b4b;
+    }
 
 </style>
 
@@ -444,7 +477,7 @@ h2 {
         </li>
 
         <li>
-    <strong>עצירה ב‑Štrbské Pleso</strong> – אגם יפהפה, מסלול קל ונעים (1–1.5 שעות)
+    <strong>עצירה ב‑Štrbské Pleso</strong> – אגם יפהפה, מסלול קל ונעים (1.5–1 שעות)
    <a href="https://www.google.com/maps/place/49.1161596,20.0675973"
        class="btn-base btn-inline" target="_blank">📍 ניווט</a>
 </li>
@@ -470,42 +503,47 @@ h2 {
     <div class="weather-note">
         אם גשום ← מומלץ להחליף עם יום 4 (מערה).
     </div>
+<!-- לוז וזמני נסיעות -->
+ <div class="schedule-boxes">
 
-  <div class="card">
+    <div class="card schedule-card">
+        <div class="row weather-note">
+            <button class="show-more-btn" onclick="toggleMore(this)">
+                ⏱ לוז מומלץ ▼
+            </button>
+        </div>
 
-    <div class="row weather-note">
-        <button class="show-more-btn" onclick="toggleMore(this)">
-            ⏱ לוז מומלץ ▼
-        </button>
+        <div class="more-content">
+            <ul>
+                <li>07:30 יציאה מהלינה</li>
+                <li>08:15 הגעה ל־Podlesok</li>
+                <li>08:30–12:30 Suchá Belá</li>
+                <li>13:00 מנוחה / אוכל</li>
+                <li>13:30 Tomasovsky (אופציונלי)</li>
+                <li>15:30 Dobšinská Ice Cave (אופציונלי)</li>
+                <li>חזרה ללינה בערב</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="more-content">
-        <ul>
-            <li>07:30 יציאה מהלינה</li>
-            <li>08:15 הגעה ל־Podlesok</li>
-            <li>08:30–12:30 Suchá Belá</li>
-            <li>13:00 מנוחה / אוכל</li>
-            <li>13:30 Tomasovsky (אופציונלי)</li>
-            <li>15:30 Dobšinská Ice Cave (אופציונלי)</li>
-            <li>חזרה ללינה בערב</li>
-        </ul>
-    </div>
+    <div class="card schedule-card">
+        <div class="row weather-note">
+            <button class="show-more-btn" onclick="toggleMore(this)">
+                🚗 זמני נסיעה ▼
+            </button>
+        </div>
 
-    <div class="row weather-note">
-        <button class="show-more-btn" onclick="toggleMore(this)">
-            🚗 זמני נסיעה ▼
-        </button>
-    </div>
-
-    <div class="more-content">
-        <ul>
-            <li>לינה → Podlesok: 45–70 דק׳</li>
-            <li>Podlesok → Tomasovsky: 20–25 דק׳</li>
-            <li>Podlesok → Dobšinská Ice Cave: 50–65 דק׳</li>
-        </ul>
+        <div class="more-content">
+            <ul>
+                <li>לינה → Podlesok: 45–70 דק׳</li>
+                <li>Podlesok → Tomasovsky: 20–25 דק׳</li>
+                <li>Podlesok → Dobšinská Ice Cave: 50–65 דק׳</li>
+            </ul>
+        </div>
     </div>
 
 </div>
+
 
 
     <div class="table-like">
@@ -1152,26 +1190,37 @@ h2 {
  function toggleMore(btn) {
     const card = btn.closest('.card');
 
-    // מוצא את כל ה-more-content בתוך אותו כרטיס
     const all = card.querySelectorAll('.more-content');
 
-    // לוקח את ה-more-content הקרוב ביותר מעל הכפתור
     const currentRow = btn.closest('.row');
     const next = currentRow.nextElementSibling;
 
     if (next && next.classList.contains('more-content')) {
         next.classList.toggle('open');
+
+        // החלפת החץ ▼ ↔ ▲
+        if (next.classList.contains('open')) {
+            btn.innerHTML = btn.innerHTML.replace("▼", "▲");
+        } else {
+            btn.innerHTML = btn.innerHTML.replace("▲", "▼");
+        }
+
         return;
     }
 
-    // fallback אם המבנה משתבש
     const fallback = btn.parentElement.querySelector('.more-content');
     if (fallback) {
         fallback.classList.toggle('open');
+
+        if (fallback.classList.contains('open')) {
+            btn.innerHTML = btn.innerHTML.replace("▼", "▲");
+        } else {
+            btn.innerHTML = btn.innerHTML.replace("▲", "▼");
+        }
     }
 }
-
 </script>
+
 
 </body>
 </html>
