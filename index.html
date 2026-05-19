@@ -289,7 +289,7 @@ h2 {
        
 
 /* ----------------------------------------------------
-   12) מובייל 
+   12) מובייל - גרסה מתוקנת ויציבה
 ---------------------------------------------------- */
 @media (max-width: 600px) {
     
@@ -320,7 +320,7 @@ h2 {
     .row .col:nth-child(1) {
         flex: 1 0 100%;
         margin-bottom: 6px;
-        text-align: right;
+        text-align: center; /* מירכוז שם האטרקציה במובייל */
     }
 
     /* שלושת הכפתורים מסתדרים בשורה שנייה בשוויון מלא */
@@ -338,81 +338,63 @@ h2 {
         width: 100% !important;
         height: 42px !important;
         margin: 3px 0;
-        padding: 0 !important;   /* מבוטל כדי שה-flex ינהל את המירכוז האנכי */
+        padding: 0 !important;
         font-size: 15px;
         display: inline-flex !important;
-        align-items: center;     /* מירכוז אנכי מושלם */
-        justify-content: center; /* מירכוז אופקי מושלם */
+        align-items: center;     /* מירכוז אנכי */
+        justify-content: center; /* מירכוז אופקי */
         box-sizing: border-box;
         border-radius: 16px !important;
-        text-align: center;
     }
 
-    .btn-inline {
-        white-space: nowrap;
-    }
-
-    /* ----------------------------------------------------
-        📍 התאמה מיוחדת לכפתור הניווט החדש במובייל (בשורות הגדולות)
-    ---------------------------------------------------- */
+    /* 📍 כפתור ניווט במובייל - מציג רק אייקון ומעלים מלל */
     .table-like .btn-nav-google .nav-google-text {
-        display: none; /* העלמת המלל "ניווט" בשורה הגדולה במובייל */
+        display: none !important;
     }
-
     .table-like .btn-nav-google .nav-google-img {
-        margin-left: 0; 
-        width: 20px;    /* גודל מלא ומורחב בתוך המלבן הגדול */
+        margin: 0 !important; 
+        width: 20px;
         height: 20px;
     }
 
-    /* ----------------------------------------------------
-        🌦️ התאמה מיוחדת לכפתור התחזית החדש במובייל
-    ---------------------------------------------------- */
+    /* 🌦️ כפתור תחזית במובייל - מציג רק אייקון ומעלים מלל */
     .btn-weather .weather-text {
-        display: none; /* העלמת המילה "תחזית" במובייל */
+        display: none !important;
     }
-
     .btn-weather .weather-icon {
-        font-size: 20px; /* הגדלת האייקון של הענן שייראה טוב כשהוא לבד בכפתור */
-        margin-left: 0;
+        font-size: 20px;
+        margin: 0 !important;
     }
 
-    /* כפתור פירוט – גובה אחיד ומירכוז טקסט חלופי */
+    /* 📑 כפתור הצג עוד (פירוט) במובייל - תיקון הלחיצה הלינארית */
     .show-more-btn {
-        line-height: 42px;
-        position: relative;
-        color: transparent; /* מסתיר את הטקסט המקורי */
+        color: white !important;
+        text-indent: 0 !important;
     }
-
-    /* טקסט "פירוט" ממורכז */
-    .show-more-btn::after {
-        content: "פירוט";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        line-height: 42px;
-        text-align: center;
-        color: white;
-        font-size: 15px;
-    }
-
-    /* פופאפ נקי */
-    .clean-style .mini-popup {
-        width: auto;          /* no fixed width */
-        max-width: 100%;      /* never overflow */
-        left: 0;              /* align to screen */
-        right: 0;             /* stretch nicely */
-        margin: 0 auto;       /* center it */
-    }
-
-    /* ====================================================
-       🟢 הפיכת הכפתורים לעיגולים - רק בתוך רשימות הלו"ז הראשיות 🟢
-       ==================================================== */
     
-    /* עיגול ניווט ברשימה */
-    .card > ul > li .btn-nav-google {
+    /* שינוי המלל ישירות דרך ה-CSS בלי לחסום את הלחיצה */
+    .show-more-btn {
+        font-size: 0 !important; /* מעלים את הטקסט המקורי "הצג עוד" */
+    }
+    .show-more-btn::after {
+        content: "פירוט"; /* שותל את המילה פירוט במקום */
+        font-size: 15px;
+        color: white;
+        pointer-events: none; /* 🔥 התיקון הקריטי: מאפשר לקליק לעבור דרך הטקסט אל הכפתור! */
+    }
+
+    /* פופאפ לו"ז וזמנים מותאם למובייל */
+    .clean-style .mini-popup {
+        width: auto;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    /* עיגולי כפתורים בתוך רשימות הלו"ז הרגילות */
+    .card > ul > li .btn-nav-google,
+    .card > ul > li .btn-purchase-vignette {
         display: inline-flex !important;
         align-items: center;
         justify-content: center;
@@ -422,41 +404,21 @@ h2 {
         padding: 0 !important;
         vertical-align: middle;
         margin-right: 5px;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
-    .card > ul > li .btn-nav-google .nav-google-text {
-        display: none !important;
-    }
-
-    .card > ul > li .btn-nav-google .nav-google-img {
-        margin-left: 0 !important;
-        width: 14px !important;
-        height: 14px !important;
-    }
-
-    /* עיגול רכישה ברשימה */
-    .card > ul > li .btn-purchase-vignette {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 26px !important;
-        height: 26px !important;
-        border-radius: 50% !important;
-        padding: 0 !important;
-        vertical-align: middle;
-        margin-right: 5px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
+    .card > ul > li .btn-nav-google .nav-google-text,
     .card > ul > li .btn-purchase-vignette .purchase-text {
         display: none !important;
     }
 
+    .card > ul > li .btn-nav-google .nav-google-img {
+        margin: 0 !important;
+        width: 14px !important;
+        height: 14px !important;
+    }
+
     .card > ul > li .btn-purchase-vignette .purchase-icon-img {
-        margin-left: 0 !important;
+        margin: 0 !important;
         width: 13px !important;
         height: 13px !important;
     }
