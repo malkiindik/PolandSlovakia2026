@@ -6,31 +6,32 @@
     <title>סלובקיה ופולין 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
 
-   <style>
+  <style>
 
 /* ----------------------------------------------------
    1) משתני צבעים
 ---------------------------------------------------- */
 :root {
-    --primary: #b03a63;      /* ורוד כהה – כותרות */
-    --primary-dark: #7a2442; /* ורוד עמוק – גרדיאנט */
-    --secondary: #f4f7f1;    /* רקע כללי */
-    --accent: #d4e4bc;       /* קו תחתון לכותרות */
+    --primary: #b03a63;
+    --primary-dark: #7a2442;
+    --secondary: #f4f7f1;
+    --accent: #d4e4bc;
     --text: #333;
     --white: #ffffff;
 
-    --nav-btn: #4a6b3f;      /* ניווט */
-    --info-btn: #b03a63;     /* רכישה */
-    --weather-btn: #4f6d7a;  /* מזג אוויר */
-    --more-btn: #c7c7c7;     /* הצג עוד – אפור יפה */
+    --nav-btn: #4a6b3f;
+    --purchase-btn: #b03a63;
+    --weather-btn: #4f6d7a;
+    --more-btn: #c7c7c7;
 }
 
 /* ----------------------------------------------------
-   2) בסיס האתר
+   2) בסיס
 ---------------------------------------------------- */
-       html, body {
+html, body {
     overflow-x: hidden;
 }
+
 body {
     font-family: 'Assistant', sans-serif;
     background-color: var(--secondary);
@@ -45,20 +46,19 @@ body {
     margin: auto;
     padding: 0.8rem;
 }
-       .mini-wrapper {
+
+/* ----------------------------------------------------
+   3) Mini layout helpers
+---------------------------------------------------- */
+.mini-wrapper {
     position: relative;
 }
 
 /* ----------------------------------------------------
-   3) Header – ורוד אלגנטי
+   4) Header
 ---------------------------------------------------- */
 .main-header {
-    background: linear-gradient(
-        135deg,
-        #f3e6ec,   /* ורוד ניודי בהיר מאוד */
-        #d4a1b8,   /* ורוד מעושן מודרני */
-        #8e2a4d    /* ורוד עמוק יוקרתי */
-    );
+    background: linear-gradient(135deg,#f3e6ec,#d4a1b8,#8e2a4d);
     color: white;
     text-align: center;
     padding: 45px 20px;
@@ -67,35 +67,8 @@ body {
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
-
-.main-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.main-header h2 {
-    margin: 12px 0 10px;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #f8e9f1;
-}
-
-.main-header p {
-    margin: 0;
-    font-size: 1rem;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
-}
-
-.header-overlay {
-    max-width: 700px;
-    margin: auto;
-}
-
 /* ----------------------------------------------------
-   4) כרטיסים
+   5) Cards
 ---------------------------------------------------- */
 .card {
     background: var(--white);
@@ -115,12 +88,12 @@ h2 {
 }
 
 /* ----------------------------------------------------
-   5) כפתורים — אחידות מלאה
+   6) Buttons base system (מאוחד)
 ---------------------------------------------------- */
-
-/* בסיס אחיד לכל הכפתורים */
 .btn-base {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px 10px;
     border-radius: 16px;
     font-size: 0.75rem;
@@ -131,25 +104,42 @@ h2 {
 }
 
 /* ניווט */
-.btn-inline {
+.btn-nav-google {
     background: var(--nav-btn);
 }
 
 /* רכישה */
-.btn-small {
-    background: var(--info-btn);
-}
-       .title-main .btn-purchase {
-    margin-right: 6px;
-    vertical-align: middle;
+.btn-purchase {
+    background: var(--purchase-btn);
 }
 
-/* מזג אוויר */
+/* תחזית */
 .btn-weather {
     background: var(--weather-btn);
 }
 
-/* הצג עוד */
+/* ----------------------------------------------------
+   7) אייקונים
+---------------------------------------------------- */
+.btn-nav-google .nav-google-img {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
+
+.btn-purchase .purchase-icon-img {
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+}
+
+.btn-purchase .purchase-text {
+    display: inline;
+}
+
+/* ----------------------------------------------------
+   8) כפתור הצג עוד
+---------------------------------------------------- */
 .show-more-btn {
     background: var(--more-btn);
     color: #333;
@@ -159,48 +149,9 @@ h2 {
     border: none;
     cursor: pointer;
 }
-.show-more-btn:hover {
-    background: #b1b1b1;
-}
-/* עיצוב אייקון הרכישה בדסקטופ */
-.btn-purchase {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-}
-.card li .btn-purchase,
-ul li .btn-purchase {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    padding: 0;
-    vertical-align: middle;
-    margin-right: 5px;
-}
-.btn-purchase .purchase-icon-img {
-    width: 14px;
-    height: 14px;
-    object-fit: contain;
-    vertical-align: middle;
-    display: inline-block;
-    margin-left: 5px; /* רווח קטן לשמאל הטקסט */
-    filter: invert(1); /* הופך את האייקון ללבן כדי שיתאים לרקע של הכפתור שלך */
-}
-       .btn-purchase .purchase-text {
-    display: none;
-}
 
-.btn-purchase .purchase-icon-img {
-    margin: 0;
-    width: 13px;
-    height: 13px;
-}
 /* ----------------------------------------------------
-   6) טבלה
+   9) טבלה
 ---------------------------------------------------- */
 .table-like {
     display: flex;
@@ -215,18 +166,13 @@ ul li .btn-purchase {
     align-items: start;
 }
 
-.col {
-    display: flex;
-    flex-direction: column;
-}
-
 /* ----------------------------------------------------
-   7) כותרות אטרקציות
+   10) כותרות
 ---------------------------------------------------- */
 .title-main {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 6px;
     font-weight: 700;
     font-size: 1rem;
 }
@@ -234,16 +180,14 @@ ul li .btn-purchase {
 .title-sub {
     font-size: 0.85rem;
     color: #666;
-    margin-top: 2px;
 }
 
 /* ----------------------------------------------------
-   8) תוכן הצג עוד
+   11) more content
 ---------------------------------------------------- */
 .more-content {
     display: none;
-    width: 100%;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 20px;
     padding: 14px;
     background: #f8f8f8;
     border-radius: 8px;
@@ -254,321 +198,118 @@ ul li .btn-purchase {
 }
 
 /* ----------------------------------------------------
-   9) תגית עלות
----------------------------------------------------- */
-.cost-tag {
-    font-weight: bold;
-    color: #2d5a27;
-    display: block;
-    margin-top: 5px;
-    font-size: 0.85rem;
-}
-
-/* ----------------------------------------------------
-   10) פוטר
----------------------------------------------------- */
-.footer {
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.75rem;
-    color: #777;
-}
-
-/* ----------------------------------------------------
-   11) Weather Tag
+   12) weather tag
 ---------------------------------------------------- */
 .weather-tag {
-    margin: 0.3rem 0 0.2rem;
+    margin: 0.3rem 0;
     padding: 0.25rem 0.6rem;
     border-radius: 999px;
     font-size: 0.85rem;
     display: inline-flex;
-    align-items: center;
     gap: 0.35rem;
     background: #f5f5f5;
-    color: #333;
 }
-
-.weather-tag a {
-    color: inherit;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-}
-
-.weather-note {
-    margin: 0 0 0.6rem;
-    font-size: 0.8rem;
-    color: #555;
-}
-
-/* צבעים לפי RS */
-.weather-tag.green {
-    background: #e5f7ea;
-    color: #176b3f;
-}
-
-.weather-tag.yellow {
-    background: #fff7e0;
-    color: #8a5b00;
-}
-
-.weather-tag.red {
-    background: #ffe5e5;
-    color: #8a1f1f;
-}
-       
 
 /* ----------------------------------------------------
-   12) מובייל - גרסה פשוטה, בטוחה ועובדת!
+   13) LOZ popup
+---------------------------------------------------- */
+.mini-info-bar.clean-style {
+    display: flex;
+    gap: 1.2rem;
+    margin: 0.5rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.clean-style .mini-btn {
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #4f6d7a;
+}
+
+.clean-style .mini-popup {
+    position: absolute;
+    top: 1.8rem;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+    width: 320px;
+    z-index: 9999;
+}
+
+.clean-style .mini-popup.open {
+    display: block;
+}
+
+/* ----------------------------------------------------
+   14) MOBILE (מאוחד ונקי)
 ---------------------------------------------------- */
 @media (max-width: 600px) {
-    
-    .weather-tag {
-        font-size: 0.9rem;
-        padding: 0.35rem 0.8rem;
-    }
-    .weather-note {
-        font-size: 0.85rem;
-    }
 
-    ul li .btn-inline {
-        width: auto;
-        display: inline-block;
-        padding: 8px 14px;
-        white-space: nowrap;
-    }
-
-    /* כל שורה הופכת לגמישה וממורכזת */
     .row {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        margin-bottom: 10px;
     }
 
-    /* העמודה הראשונה (שם + תיאור) */
     .row .col:nth-child(1) {
         flex: 1 0 100%;
+        text-align: center;
         margin-bottom: 6px;
-        text-align: center; /* מירכוז שם האטרקציה במובייל */
     }
 
-    /* שלושת הכפתורים מסתדרים בשורה שנייה בשוויון מלא */
-    .row .col:nth-child(2),
-    .row .col:nth-child(3),
-    .row .col:nth-child(4) {
+    .row .col:nth-child(n+2) {
         flex: 1;
         text-align: center;
     }
 
-    /* כפתורים מקבלים רוחב מלא, גובה אחיד ומירכוז תוכן מוחלט */
-    .btn-inline,
-    .btn-weather,
-    .show-more-btn {
+    .btn-base {
         width: 100% !important;
         height: 42px !important;
-        margin: 3px 0;
-        padding: 0 !important;
-        font-size: 15px !important;
-        display: inline-flex !important;
-        align-items: center;     /* מירכוז אנכי מושלם */
-        justify-content: center; /* מירכוז אופקי מושלם */
-        box-sizing: border-box;
-        border-radius: 16px !important;
-        text-indent: 0 !important;
-        color: white !important;
-        visibility: visible !important;
-        opacity: 1 !important;
     }
 
-    /* 📑 כפתור הצג עוד במובייל - ניקוי כל השכבות שחסמו את הקליק */
-    .show-more-btn::after {
-        display: none !important; /* מעלים לחלוטין את שכבת ה-CSS שחסמה את הלחיצות */
-    }
-
-    /* 📍 כפתור ניווט במובייל - מציג רק אייקון ומעלים מלל */
-    .table-like .btn-nav-google .nav-google-text {
-        display: none !important;
-    }
-    .table-like .btn-nav-google .nav-google-img {
-        margin: 0 !important; 
-        width: 20px;
-        height: 20px;
-    }
-
-    /* 🌦️ כפתור תחזית במובייל - מציג רק אייקון ומעלים מלל */
-    .btn-weather .weather-text {
-        display: none !important;
-    }
-    .btn-weather .weather-icon {
-        font-size: 20px;
-        margin: 0 !important;
-    }
-    .btn-weather .weather-text {
-        display: none;
-    }
-
-    /* פופאפ לו"ז וזמנים מותאם למובייל */
-   .clean-style .mini-popup {
-    position: absolute;
-    left: 10px;
-    right: 10px;
-    width: auto;
-    max-width: calc(100% - 20px);
-    margin: 0;
-    padding: 14px 16px;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-}
-    .clean-style .mini-popup ul {
-    margin: 0;
-    padding-right: 18px;
-}
-
-.clean-style .mini-popup li {
-    margin-bottom: 6px;
-    line-height: 1.5;
-}
-
-    /* עיגולי כפתורים בתוך רשימות הלו"ז הרגילות (כמו יום 1) */
-    .card > ul > li .btn-nav-google,
-    .card > ul > li .btn-purchase {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 26px !important;       
-        height: 26px !important;      
-        border-radius: 50% !important; 
-        padding: 0 !important;
-        vertical-align: middle;
-        margin-right: 5px;
-    }
-
-    .card > ul > li .btn-nav-google .nav-google-text,
-   /* .card > ul > li .btn-purchase .purchase-text*/ {
-        display: none !important;
-    }
-
-    .card > ul > li .btn-nav-google .nav-google-img {
-        margin: 0 !important;
-        width: 14px !important;
-        height: 14px !important;
-    }
-
- /*   .card > ul > li .btn-purchase .purchase-icon-img {
-        margin: 0 !important;
-        width: 13px !important;
-        height: 13px !important;
-    }*/
-}
-       
-/* ----------------------------------------------------
-   13) לוז וזמני נסיעות
----------------------------------------------------- */
-    .mini-info-bar.clean-style {
-        display: flex;
-        gap: 1.2rem;
-        margin: 0.5rem 0;
-        position: relative;
-        z-index: 10;
-    }
-
-    .clean-style .mini-wrapper {
-        position: relative;
-    }
-
-    .clean-style .mini-btn {
-        background: none;
-        border: none;
-        font-size: 0.95rem;
-        font-weight: 600;
-        cursor: pointer;
-        color: #4f6d7a;
-        padding: 0;
-    }
-
-    .clean-style .mini-popup {
-        position: absolute;
-        top: 1.8rem;
-        right: 0;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 0.7rem 1rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        display: none;
-        width: 320px;
-        z-index: 9999;
-    }
-
-    .clean-style .mini-popup.open {
-        display: block;
-    }
-/* ----------------------------------------------------
-   14) ניווט
----------------------------------------------------- */
-/* --- עיצוב האייקון החדש של גוגל מפות (דסקטופ ומובייל) --- */
-.btn-nav-google .nav-google-img {
-    width: 15px;          /* גודל קטן, עדין ומדויק כמו שהיה מקודם */
-    height: 15px;
-    object-fit: contain;
-    vertical-align: middle;
-    display: inline-block;
-    margin-left: 5px;     /* רווח קטן לשמאל הטקסט בעברית */
-}
-
-/* מוודא שהכפתור שומר על יישור אנכי נקי בשורה */
-.btn-nav-google {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-}
-
-/* --- התאמה למובייל (מסכים קטנים מ-480 פיקסלים) --- */
-@media (max-width: 480px) {
-    /* העלמת המלל "ניווט" במובייל */
     .btn-nav-google .nav-google-text {
         display: none;
     }
-    
-    /* ביטול המרווח של האייקון כי הוא נשאר לבד */
-    .btn-nav-google .nav-google-img {
-        margin-left: 0;
-    }
-    
-    /* הפיכת הכפתור הירוק לעיגול קטן רק סביב האייקון */
-    .btn-nav-google {
-        padding: 0;          /* ביטול פדינג מיותר */
-        width: 28px;         /* רווח אחיד */
-        height: 28px;        /* גובה אחיד */
-        border-radius: 50%;  /* עיגול מושלם */
-    }
-    /* --- הפיכת כפתור הרכישה לעיגול קטן - רק בתוך רשימות במובייל --- */
-    ul li .btn-purchase {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 26px;         /* גודל זהה בדיוק לעיגול הניווט */
-        height: 26px;
-        border-radius: 50%;  /* עיגול מושלם */
-        padding: 0;          /* ביטול מרווחים פנימיים */
-        vertical-align: middle;
-        margin-right: 5px;   /* רווח קטן מהטקסט */
-    }
 
-    /* העלמת הטקסט "רכישה" במובייל */
-    ul li .btn-purchase .purchase-text {
+    .btn-weather .weather-text {
         display: none;
     }
 
-    /* מירכוז האייקון של העגלה בתוך העיגול במובייל */
-    ul li .btn-purchase .purchase-icon-img {
-        margin-left: 0;
-        width: 13px; /* גודל מותאם לעיגול הקטן */
-        height: 13px;
+    .btn-purchase .purchase-text {
+        display: none;
+    }
+
+    .btn-nav-google,
+    .btn-purchase {
+        width: 28px !important;
+        height: 28px !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+    }
+
+    .btn-nav-google .nav-google-img,
+    .btn-purchase .purchase-icon-img {
+        margin: 0;
+    }
+
+    .btn-weather .weather-icon {
+        font-size: 18px;
+    }
+
+    .mini-popup {
+        width: calc(100% - 20px);
+        left: 10px;
+        right: 10px;
     }
 }
+
 </style>
 
 </head>
@@ -906,7 +647,7 @@ ul li .btn-purchase {
                 </a>
             </div>
 
-            <div class="col">
+      <!--    <div class="col">
                 <a href="https://www.gopass.travel/EN/homepage"
                    class="btn-base btn-small btn-purchase"
                    target="_blank">
@@ -915,7 +656,7 @@ ul li .btn-purchase {
                          class="purchase-icon-img">
                     <span class="purchase-text">רכישה</span>
                 </a>
-            </div>
+            </div>-->
 
             <div class="col">
                 <a href="https://www.yr.no/en/forecast/daily-table/2-703347/Slovakia/Prešov/Tatranská%20Lomnica"
