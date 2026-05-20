@@ -1313,6 +1313,19 @@ function toggleMini(btn) {
         btn.innerHTML = btn.innerHTML.replace("▲", "▼");
     }
 }
+    function toggleMore(btn) {
+    const content = btn.closest('.row').nextElementSibling;
+
+    // פתיחה / סגירה
+    content.classList.toggle('open');
+
+    // שינוי טקסט הכפתור
+    if (content.classList.contains('open')) {
+        btn.textContent = 'הסתר';
+    } else {
+        btn.textContent = 'הצג עוד';
+    }
+}
 </script>
 
 
