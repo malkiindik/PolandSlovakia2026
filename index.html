@@ -376,13 +376,25 @@ h2 {
     }
 
     /* פופאפ לו"ז וזמנים מותאם למובייל */
-    .clean-style .mini-popup {
-        width: auto;
-        max-width: 100%;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
+   .clean-style .mini-popup {
+    width: calc(100vw - 24px);
+    max-width: 420px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 14px 16px;
+    box-sizing: border-box;
+}
+    .clean-style .mini-popup ul {
+    margin: 0;
+    padding-right: 18px;
+}
+
+.clean-style .mini-popup li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
 
     /* עיגולי כפתורים בתוך רשימות הלו"ז הרגילות (כמו יום 1) */
     .card > ul > li .btn-nav-google,
@@ -608,7 +620,7 @@ h2 {
 <!-- יום 2 -->
 
 <div class="card">
-    <h2>יום 2 | 22/06 – גן העדן הסלובקי + מערת קרח</h2>
+    <h2>יום 2 | 22/06 – גן העדן הסלובקי + מערת קרח + תצפית שקיעה</h2>
 
     <div class="weather-tag red">
         ⛔ RS: 5 | מזג אוויר:
@@ -616,9 +628,10 @@ h2 {
     </div>
 
     <div class="weather-note">
-        אם גשום ← מומלץ להחליף עם יום 4 (מערה).
+        אם גשום ← מומלץ לשקול מעבר ליום חלופי (מסלולי קניון פחות נעימים בגשם).
     </div>
 
+    <!-- לוז -->
     <div class="mini-info-bar clean-style">
         <div class="mini-wrapper">
             <button class="mini-btn" onclick="toggleMini(this)">
@@ -627,12 +640,15 @@ h2 {
             <div class="mini-popup">
                 <ul>
                     <li>07:30 יציאה מהלינה</li>
-                    <li>08:15 הגעה לחניון Podlesok (תחילת מסלול Suchá Belá)</li>
-                    <li>08:30–12:30 מסלול Suchá Belá (מומלץ להקדים כדי למנוע פקקים בסולמות)</li>
-                    <li>12:30–13:30 ארוחת צהריים במסעדה ב-Podlesok</li>
-                    <li>13:30–14:00 נסיעה רגועה לכיוון מערת הקרח (כ-25 דקות נסיעה)</li>
-                    <li>14:30–15:00 עלייה ברגל מהחניון אל פתח המערה (עלייה תלולה של כ-20 דקות)</li>
-                    <li>15:15–16:00 סיור מודרך במערת הקרח (הסיור האחרון יוצא בד"כ ב-16:00)</li>
+                    <li>08:15 הגעה לחניון Podlesok</li>
+                    <li>08:30–12:30 מסלול Suchá Belá</li>
+                    <li>12:30–13:30 ארוחת צהריים ב-Podlesok</li>
+                    <li>13:30–14:10 נסיעה למערת הקרח (כ-35–40 דק׳)</li>
+                    <li>14:10–14:35 עלייה רגלית לכניסה</li>
+                    <li>14:45–15:15 סיור במערת הקרח</li>
+                    <li>15:15–16:05 ירידה + חזרה לרכב</li>
+                    <li>16:05–16:50 נסיעה לכיוון Čingov</li>
+                    <li>17:30–19:30 Tomášovský Výhľad (שעת זהב / שקיעה)</li>
                 </ul>
             </div>
         </div>
@@ -643,9 +659,10 @@ h2 {
             </button>
             <div class="mini-popup">
                 <ul>
-                    <li>לינה ← חניון Podlesok: כ-45–60 דק׳ (תלוי במיקום המדויק שלכם)</li>
-                    <li>חניון Podlesok ← חניון מערת הקרח Dobšinská: כ-25–30 דק׳ בלבד (בכביש ההררי היפה 67)</li>
-                    <li>חניון מערת הקרח ← לינה: כ-45–55 דק׳</li>
+                    <li>לינה → Podlesok: כ-45–60 דק׳</li>
+                    <li>Podlesok → מערת הקרח: כ-35–40 דק׳</li>
+                    <li>מערת הקרח → Čingov: כ-45–55 דק׳</li>
+                    <li>Čingov → לינה: כ-40–60 דק׳</li>
                 </ul>
             </div>
         </div>
@@ -653,6 +670,7 @@ h2 {
 
     <div class="table-like">
 
+        <!-- SUCHÁ BELÁ -->
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Suchá Belá</div>
@@ -660,16 +678,20 @@ h2 {
             </div>
 
             <div class="col">
-                <a href="https://maps.google.com/?q=48.9622,20.3855" class="btn-base btn-inline btn-nav-google" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
+                <a href="https://maps.google.com/?q=48.9622,20.3855"
+                   class="btn-base btn-inline btn-nav-google"
+                   target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img">
                     <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
-                <a href="https://www.google.com/search?q=weather+Podlesok+Slovakia" class="btn-base btn-weather" target="_blank">
-                    <span class="weather-icon">🌦️</span>
-                    <span class="weather-text">תחזית</span>
+                <a href="https://www.google.com/search?q=weather+Podlesok+Slovakia"
+                   class="btn-base btn-weather"
+                   target="_blank">
+                    🌦️ תחזית
                 </a>
             </div>
 
@@ -680,65 +702,31 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li><strong>מה עושים בפועל:</strong> הולכים בתוך ערוץ נחל זורם, מטפסים על סולמות מתכת אנכיים גבוהים לצד מפלים, וצועדים על גבי קורות עץ ודרגיות ברזל.</li>
-                <li><strong>⚠️ המסלול חד-סטרי:</strong> העלייה בקניון בלבד! החזרה נעשית ברגל דרך שביל יער עוקף ונוח (מסומן בירוק/צהוב) או באמצעות שכירת אופניים בפסגה וירידה איתם חזרה לחניון.</li>
-                <li><strong>צוואר בקבוק:</strong> המפלים הראשונים (Misové vodopády) הם המקום שבו נוצרים פקקי מטפסים. ההגעה שלכם ב-08:30 מושלמת כדי לעקוף את העומס.</li>
-                <li><strong>ציוד חובה:</strong> נעלי הרים טובות ועמידות למים (הולכים ממש בתוך המים הרדודים). לא מתאים למי שסובל מפחד גבהים קיצוני.</li>
-                <li><strong>עלויות:</strong> הכניסה לשמורה כרוכה בתשלום סמלי של אירו אחדים בקופות בכניסה (כרטיס יומי לשמורה).</li>
+                <li><strong>מה עושים בפועל:</strong> הולכים בתוך ערוץ נחל זורם, מטפסים על סולמות מתכת לצד מפלים, וצועדים על קורות עץ ודרגיות ברזל בתוך הקניון.</li>
+                <li><strong>⚠️ המסלול חד-סטרי:</strong> העלייה בקניון בלבד, החזרה בשביל יער מסומן (נוח וירוק).</li>
+                <li><strong>צוואר בקבוק:</strong> באזור המפלים הראשונים נוצר עומס – הגעה מוקדמת עוזרת מאוד.</li>
+                <li><strong>ציוד חובה:</strong> נעלי הרים טובות (לעיתים ממש בתוך מים רדודים). לא מתאים לפחד גבהים חזק.</li>
+                <li><strong>עלויות:</strong> כניסה לשמורה בתשלום סמלי בקופות בכניסה.</li>
             </ul>
         </div>
 
-        <div class="row">
-            <div class="col">
-                <div class="title-main">⭐ Tomášovský Výhľad</div>
-                <div class="title-sub">תצפית צוק מרהיבה מעל העמק</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=48.9443,20.4633" class="btn-base btn-inline btn-nav-google" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
-                    <span class="nav-google-text">ניווט</span>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="https://www.google.com/search?q=weather+Spisska+Nova+Ves" class="btn-base btn-weather" target="_blank">
-                    <span class="weather-icon">🌦️</span>
-                    <span class="weather-text">תחזית</span>
-                </a>
-            </div>
-
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
-        </div>
-
-        <div class="more-content">
-            <ul>
-                <li><strong>מה עושים בפועל:</strong> מסלול הליכה קל ונוח בתוך יער (כ-30-40 דקות לכל כיוון מחניון Čingov) שמובל אל מרפסת סלע ענקית ושטוחה התלויה בגובה עצום מעל קניון נחל הורנאד.</li>
-                <li><strong>דגש בטיחות:</strong> הצוק פתוח לחלוטין וללא מעקות בטיחות! הנוף משם משגע ופוטוגני בטירוף, אך יש לשים לב היטב בעיקר אם מטיילים עם ילדים.</li>
-                <li><strong>מתי להגיע:</strong> השעות הכי יפות הן שעות אחה"צ כשהאור רך, או בימים עם ראות טובה. אם הגעתם מוקדם והלו"ז מאפשר, אפשר לשלב אותו בדרך חזרה מהמערה או כפיקניק קל.</li>
-            </ul>
-        </div>
-
+        <!-- מערת קרח -->
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Dobšinská Ice Cave</div>
-                <div class="title-sub">מערת קרח טבעית מדהימה (אתר מורשת אונסק"ו)</div>
+                <div class="title-sub">מערת קרח טבעית (אתר מורשת UNESCO)</div>
             </div>
 
             <div class="col">
-                <a href="https://maps.google.com/?q=48.8837,20.3014" class="btn-base btn-inline btn-nav-google" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
-                    <span class="nav-google-text">ניווט</span>
-                </a>
+                <a href="https://maps.google.com/?q=48.8837,20.3014"
+                   class="btn-base btn-inline btn-nav-google"
+                   target="_blank">ניווט</a>
             </div>
 
             <div class="col">
-                <a href="https://www.google.com/search?q=weather+Dobsinska+Ice+Cave" class="btn-base btn-weather" target="_blank">
-                    <span class="weather-icon">🌦️</span>
-                    <span class="weather-text">תחזית</span>
-                </a>
+                <a href="https://www.google.com/search?q=weather+Dobsinska+Ice+Cave"
+                   class="btn-base btn-weather"
+                   target="_blank">🌦️ תחזית</a>
             </div>
 
             <div class="col">
@@ -748,10 +736,43 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li><strong>מה עושים בפועל:</strong> סיור מודרך מרתק (כ-30 דקות) בתוך מעמקי האדמה, בין נטיפי קרח ענקיים, קירות קפואים מסיביים ומנהרות קרח טבעיות.</li>
-                <li><strong>🚨 טעות נפוצה (העלייה ברגל):</strong> החניון נמצא למטה. מהחניון יש עלייה תלולה ברגל של כ-1 ק"מ בתוך היער עד לפתח המערה. קחו בחשבון לפחות 20-25 דקות הליכה רק בשביל להגיע לקופות למעלה!</li>
-                <li><strong>לבוש חובה:</strong> הטמפרטורה בתוך המערה נעה בין מינוס 3 למעלה אחת מעל האפס (גם באמצע הקיץ!). חובה להביא איתכם בתיק ז'קט חם או מעיל, מכנסיים ארוכים ונעליים סגורות – המעבר מהחום בחוץ לקור בפנים הוא קיצוני.</li>
-                <li><strong>כרטיס צילום:</strong> הכניסה בתשלום, ואם תרצו לצלם בפנים (סטילס או וידאו) יש לשלם תוספת תשלום מיוחדת בקופה ולקבל מדבקה למצלמה/לטלפון. הם מאוד מקפידים על זה בפנים.</li>
+                <li><strong>מה עושים בפועל:</strong> סיור מודרך בתוך מערת קרח טבעית עם נטיפי קרח וקירות קפואים עצומים.</li>
+                <li><strong>טיפ חשוב:</strong> החניון למטה והכניסה למעלה – יש עלייה רגלית של כ־15–25 דקות בתוך יער.</li>
+                <li><strong>לבוש חובה:</strong> בפנים קר מאוד (מינוס מעלות גם בקיץ) – חובה מעיל ונעליים סגורות.</li>
+                <li><strong>צילום:</strong> לעיתים נדרש אישור ותשלום נוסף לצילום בתוך המערה.</li>
+            </ul>
+        </div>
+
+        <!-- תצפית -->
+        <div class="row">
+            <div class="col">
+                <div class="title-main">⭐ Tomášovský Výhľad</div>
+                <div class="title-sub">תצפית שקיעה מעל קניון הורנאד</div>
+            </div>
+
+            <div class="col">
+                <a href="https://maps.google.com/?q=48.9443,20.4633"
+                   class="btn-base btn-inline btn-nav-google"
+                   target="_blank">ניווט</a>
+            </div>
+
+            <div class="col">
+                <a href="https://www.google.com/search?q=weather+Spisska+Nova+Ves"
+                   class="btn-base btn-weather"
+                   target="_blank">🌦️ תחזית</a>
+            </div>
+
+            <div class="col">
+                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+            </div>
+        </div>
+
+        <div class="more-content">
+            <ul>
+                <li><strong>מה עושים בפועל:</strong> מסלול הליכה קל ביער (כ-30–40 דק׳ לכל כיוון) עד מרפסת סלע ענקית מעל הנהר.</li>
+                <li><strong>דגש בטיחות:</strong> הצוק פתוח לחלוטין ללא מעקות – יש להיזהר במיוחד בקצה.</li>
+                <li><strong>מתי להגיע:</strong> הכי יפה בשעות אחה״צ ושקיעה (שעת זהב).</li>
+                <li><strong>אופציה טובה:</strong> אפשר גם לעצור כאן בסוף היום לפיקניק קצר מול הנוף.</li>
             </ul>
         </div>
 
