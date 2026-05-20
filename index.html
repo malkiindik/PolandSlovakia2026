@@ -75,10 +75,24 @@ body {
 }
 
 .main-header h2 {
+    position: relative;
+    display: inline-block;
     margin: 12px 0 10px;
     font-size: 1.3rem;
     font-weight: 400;
     color: #f8e9f1;
+    padding-bottom: 6px;
+}
+
+.main-header h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: rgba(255,255,255,0.4);
 }
 
 .main-header p {
