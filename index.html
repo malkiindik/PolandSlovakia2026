@@ -380,6 +380,9 @@ h2 {
         font-size: 20px;
         margin: 0 !important;
     }
+    .btn-weather .weather-text {
+        display: none;
+    }
 
     /* פופאפ לו"ז וזמנים מותאם למובייל */
    .clean-style .mini-popup {
@@ -434,6 +437,7 @@ h2 {
         height: 13px !important;
     }
 }
+       
 /* ----------------------------------------------------
    13) לוז וזמני נסיעות
 ---------------------------------------------------- */
@@ -698,7 +702,8 @@ h2 {
                 <a href="https://www.google.com/search?q=weather+Podlesok+Slovakia"
                    class="btn-base btn-weather"
                    target="_blank">
-                    🌦️ תחזית
+                <span class="weather-icon">🌦️</span>
+                <span class="weather-text">תחזית</span>
                 </a>
             </div>
 
@@ -740,7 +745,9 @@ h2 {
             <div class="col">
                 <a href="https://www.google.com/search?q=weather+Dobsinska+Ice+Cave"
                    class="btn-base btn-weather"
-                   target="_blank">🌦️ תחזית</a>
+                   target="_blank">
+                <span class="weather-icon">🌦️</span>
+                <span class="weather-text">תחזית</span></a>
             </div>
 
             <div class="col">
@@ -780,7 +787,10 @@ h2 {
             <div class="col">
                 <a href="https://www.google.com/search?q=weather+Spisska+Nova+Ves"
                    class="btn-base btn-weather"
-                   target="_blank">🌦️ תחזית</a>
+                   target="_blank">
+                <span class="weather-icon">🌦️</span>
+                <span class="weather-text">תחזית</span>
+                </a>
             </div>
 
             <div class="col">
@@ -811,65 +821,121 @@ h2 {
     </div>
 
     <div class="weather-note">
-        אם גשום ← לוותר על הקארט ולעשות רק תצפית + מפלים.
+        אם גשום ← לוותר על הקארט ולעשות Hrebienok + מפלים בלבד.
+    </div>
+
+    <!-- לוז -->
+    <div class="mini-info-bar clean-style">
+        <div class="mini-wrapper">
+            <button class="mini-btn" onclick="toggleMini(this)">⏱ לוז מומלץ ▼</button>
+            <div class="mini-popup">
+                <ul>
+                    <li>08:00 יציאה מהלינה</li>
+                    <li>09:00 הגעה ל-Tatranská Lomnica</li>
+                    <li>09:30–11:00 Lomnické Sedlo</li>
+                    <li>11:15–12:15 Mountain Carts (אם פתוח)</li>
+                    <li>12:30–13:30 אוכל בלומניצה</li>
+                    <li>14:00 הגעה ל-Stary Smokovec</li>
+                    <li>14:30–16:30 Hrebienok + מפלים</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mini-wrapper">
+            <button class="mini-btn" onclick="toggleMini(this)">🚗 זמני נסיעה ▼</button>
+            <div class="mini-popup">
+                <ul>
+                    <li>לינה → Tatranská Lomnica: 30–50 דק׳</li>
+                    <li>Lomnica → Stary Smokovec: 15–20 דק׳</li>
+                    <li>Smokovec → לינה: 30–50 דק׳</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="table-like">
 
-       <!-- Lomnické Sedlo -->
-<div class="row">
-    <div class="col">
-        <div class="title-main">
-            🔥 Lomnické Sedlo
-            <a href="https://www.gopass.travel/EN/homepage" 
-               class="btn-base btn-small" target="_blank">רכישה</a>
+        <!-- Lomnické Sedlo -->
+        <div class="row">
+            <div class="col">
+                <div class="title-main">🔥 Lomnické Sedlo</div>
+                <div class="title-sub">תצפית הרים גבוהה על רכס הטטרה</div>
+            </div>
+
+            <div class="col">
+                <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
+                   class="btn-base btn-inline btn-nav-google"
+                   target="_blank">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="https://www.gopass.travel/EN/homepage"
+                   class="btn-base btn-small btn-purchase-vignette"
+                   target="_blank">
+
+                    <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png"
+                         class="purchase-icon-img">
+                    <span class="purchase-text">רכישה</span>
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="https://www.yr.no/en/forecast/daily-table/2-703347/Slovakia/Prešov/Tatranská%20Lomnica"
+                   class="btn-base btn-weather"
+                   target="_blank">
+
+                    <span class="weather-icon">🌦️</span>
+                    <span class="weather-text">תחזית</span>
+                </a>
+            </div>
+
+            <div class="col">
+                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+            </div>
         </div>
-        <div class="title-sub">התצפית הכי מרשימה בטטרה (בלי הסיכון של הפסגה)</div>
-    </div>
 
-    <div class="col">
-        <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-           class="btn-base btn-inline" target="_blank">📍 ניווט</a>
-    </div>
-
-    <div class="col">
-        <a href="https://www.yr.no/en/forecast/daily-table/2-703347/Slovakia/Prešov/Tatranská%20Lomnica"
-           class="btn-base btn-weather" target="_blank">🌦</a>
-    </div>
-
-    <div class="col">
-        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-    </div>
-</div>
-
-<div class="more-content">
-    <ul>
-        <li>⏰ שעות פתיחה ביוני: 08:30–16:00</li>
-        <li><strong>⏱ זמן ביקור:</strong> 1–1.5 שעות.</li>
-        <li><strong>מה זה:</strong> מעבר הרים גבוה עם נוף דרמטי של כל רכס הטטרה.</li>
-        <li><strong>למה לא הפסגה (Lomnický Štít):</strong> עננות כבדה, יקר, תורים, 80% מתאכזבים.</li>
-        <li><strong>מסלול:</strong> הליכה קצרה על הרכס + תצפיות.</li>
-        <li><strong>טמפ׳:</strong> 3–10° בקיץ </li>
-        <li><strong>🪙 עלות:</strong> ~39–45€ ( זול מהפסגה).</li>
-    </ul>
-</div>
-
+        <div class="more-content">
+            <ul>
+                <li>⏰ פתיחה: 08:30–16:00</li>
+                <li><strong>זמן ביקור:</strong> 1–1.5 שעות</li>
+                <li><strong>מה זה:</strong> מעבר הרים עם נוף דרמטי על כל רכס הטטרה</li>
+                <li><strong>למה לא פסגה:</strong> עומסים, תורים ועננות גבוהה</li>
+                <li><strong>גובה:</strong> אזור קריר גם בקיץ (3–10°)</li>
+                <li><strong>עלות:</strong> ~39–45€</li>
+            </ul>
+        </div>
 
         <!-- Mountain Carts -->
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Mountain Carts</div>
-                <div class="title-sub">קארט הררי במורד ההר</div>
+                <div class="title-sub">ירידה מהנה במסלול הררי</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-                   class="btn-base btn-inline" target="_blank">📍 ניווט</a>
+                   class="btn-base btn-inline btn-nav-google"
+                   target="_blank">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
+                </a>
             </div>
 
             <div class="col">
-                <a href="https://www.google.com/search?q=weather+Tatranska+Lomnica"
-                   class="btn-base btn-weather" target="_blank">🌦</a>
+                <a href="https://www.yr.no/en/forecast/daily-table/2-703347/Slovakia/Prešov/Tatranská%20Lomnica"
+                   class="btn-base btn-weather"
+                   target="_blank">
+
+                    <span class="weather-icon">🌦️</span>
+                    <span class="weather-text">תחזית</span>
+                </a>
             </div>
 
             <div class="col">
@@ -879,30 +945,41 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li>⏰ שעות פתיחה ביוני: 09:00–17:00 (תלוי מזג אוויר)</li>               
-                <li><strong>⏱ משך:</strong> 10–15 דקות.</li>
-                <li><strong>💰 מחיר:</strong> ~20–25€.</li>
-                <li><strong>חוויה:</strong> ירידה מהירה במסלול הררי.</li>
-                <li><strong>בטיחות:</strong> קסדה חובה.</li>
-                <li><strong>הערה:</strong> חובה בטיול שלכם — אחד הדברים הכי כיפיים.</li>
+                <li>⏰ פתיחה: 09:00–17:00 (תלוי מזג אוויר)</li>
+                <li><strong>משך:</strong> 10–15 דקות</li>
+                <li><strong>מחיר:</strong> 20–25€</li>
+                <li><strong>חוויה:</strong> ירידה מהירה ומהנה במסלול הררי</li>
+                <li><strong>בטיחות:</strong> קסדה חובה</li>
+                <li><strong>אם סגור:</strong> להמשיך ישירות ל-Hrebienok (אופציה מצוינת)</li>
             </ul>
         </div>
 
-        <!-- Hrebienok Waterfalls -->
+        <!-- Hrebienok -->
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Hrebienok + מפלים</div>
-                <div class="title-sub">פוניקולר + מסלול מפלים מהמם</div>
+                <div class="title-sub">פוניקולר + מסלול מפלים</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Stary+Smokovec+Hrebienok"
-                   class="btn-base btn-inline" target="_blank">📍 ניווט</a>
+                   class="btn-base btn-inline btn-nav-google"
+                   target="_blank">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
+                </a>
             </div>
 
             <div class="col">
-                <a href="https://www.google.com/search?q=weather+Stary+Smokovec"
-                   class="btn-base btn-weather" target="_blank">🌦</a>
+                <a href="https://www.yr.no/en/forecast/daily-table/2-703347/Slovakia/Prešov/Stary%20Smokovec"
+                   class="btn-base btn-weather"
+                   target="_blank">
+
+                    <span class="weather-icon">🌦️</span>
+                    <span class="weather-text">תחזית</span>
+                </a>
             </div>
 
             <div class="col">
@@ -912,19 +989,16 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן:</strong> 1–1.5 שעות סה״כ.</li>
-                <li><strong>פוניקולר:</strong> כלול בכרטיס GoPass (לא צריך לשלם שוב).</li>
-                <li><strong>מסלול:</strong> אדום → ירוק → בקתה → מפלים → עלייה חזרה.</li>          
-                <li><strong>אופי:</strong> שביל מסודר, ירידה לנחל, מפלים יפים.</li>
-                <li><strong>עצירה:</strong> בקתה עם ספסלים — מומלץ.</li>
-                <li><strong>המלצה:</strong> אחד המסלולים הכי מוצלחים באזור.</li>
-                <li><strong>אופציונלי:</strong> Tubing (אבובים) — 4€ ל‑5 סיבובים.</li>
+                <li><strong>זמן:</strong> 1–1.5 שעות</li>
+                <li><strong>פוניקולר:</strong> כלול בכרטיס GoPass</li>
+                <li><strong>מסלול:</strong> שביל מסודר עם מפלים ובקתות</li>
+                <li><strong>אופי:</strong> קליל, מתאים לכל הרמות</li>
+                <li><strong>אחד היפים באזור</strong></li>
             </ul>
         </div>
 
     </div>
 </div>
-
 
 
  <!-- יום 4 -->
