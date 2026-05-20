@@ -8,9 +8,9 @@
 
   <style>
 
-/* ----------------------------------------------------
+/* ====================================================
    1) משתני צבעים
----------------------------------------------------- */
+==================================================== */
 :root {
     --primary: #b03a63;
     --primary-dark: #7a2442;
@@ -23,18 +23,20 @@
     --purchase-btn: #b03a63;
     --weather-btn: #4f6d7a;
     --more-btn: #c7c7c7;
+
+    --radius: 16px;
 }
 
-/* ----------------------------------------------------
+/* ====================================================
    2) בסיס
----------------------------------------------------- */
+==================================================== */
 html, body {
     overflow-x: hidden;
 }
 
 body {
     font-family: 'Assistant', sans-serif;
-    background-color: var(--secondary);
+    background: var(--secondary);
     color: var(--text);
     margin: 0;
     padding: 0;
@@ -47,29 +49,9 @@ body {
     padding: 0.8rem;
 }
 
-/* ----------------------------------------------------
-   3) Mini layout helpers
----------------------------------------------------- */
-.mini-wrapper {
-    position: relative;
-}
-
-/* ----------------------------------------------------
-   4) Header
----------------------------------------------------- */
-.main-header {
-    background: linear-gradient(135deg,#f3e6ec,#d4a1b8,#8e2a4d);
-    color: white;
-    text-align: center;
-    padding: 45px 20px;
-    border-radius: 22px;
-    margin-bottom: 25px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-}
-
-/* ----------------------------------------------------
-   5) Cards
----------------------------------------------------- */
+/* ====================================================
+   3) כרטיס
+==================================================== */
 .card {
     background: var(--white);
     border-radius: 10px;
@@ -79,80 +61,9 @@ body {
     border-right: 5px solid var(--primary);
 }
 
-h2 {
-    color: var(--primary);
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 0.3rem;
-    margin-top: 0;
-    font-size: 1.1rem;
-}
-
-/* ----------------------------------------------------
-   6) Buttons base system (מאוחד)
----------------------------------------------------- */
-.btn-base {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
-    border-radius: 16px;
-    font-size: 0.75rem;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    color: white;
-}
-
-/* ניווט */
-.btn-nav-google {
-    background: var(--nav-btn);
-}
-
-/* רכישה */
-.btn-purchase {
-    background: var(--purchase-btn);
-}
-
-/* תחזית */
-.btn-weather {
-    background: var(--weather-btn);
-}
-
-/* ----------------------------------------------------
-   7) אייקונים
----------------------------------------------------- */
-.btn-nav-google .nav-google-img {
-    width: 15px;
-    height: 15px;
-    margin-left: 5px;
-}
-
-.btn-purchase .purchase-icon-img {
-    width: 14px;
-    height: 14px;
-    margin-left: 5px;
-}
-
-.btn-purchase .purchase-text {
-    display: inline;
-}
-
-/* ----------------------------------------------------
-   8) כפתור הצג עוד
----------------------------------------------------- */
-.show-more-btn {
-    background: var(--more-btn);
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 16px;
-    font-size: 0.75rem;
-    border: none;
-    cursor: pointer;
-}
-
-/* ----------------------------------------------------
-   9) טבלה
----------------------------------------------------- */
+/* ====================================================
+   4) טבלה
+==================================================== */
 .table-like {
     display: flex;
     flex-direction: column;
@@ -166,13 +77,18 @@ h2 {
     align-items: start;
 }
 
-/* ----------------------------------------------------
-   10) כותרות
----------------------------------------------------- */
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ====================================================
+   5) כותרות
+==================================================== */
 .title-main {
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: space-between;
     font-weight: 700;
     font-size: 1rem;
 }
@@ -180,77 +96,138 @@ h2 {
 .title-sub {
     font-size: 0.85rem;
     color: #666;
+    margin-top: 2px;
 }
 
-/* ----------------------------------------------------
-   11) more content
----------------------------------------------------- */
+/* ====================================================
+   6) מערכת כפתורים אחידה
+==================================================== */
+.btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    white-space: nowrap;
+}
+
+/* וריאציות */
+.btn-nav {
+    background: var(--nav-btn);
+}
+
+.btn-purchase {
+    background: var(--purchase-btn);
+}
+
+.btn-weather {
+    background: var(--weather-btn);
+}
+
+.show-more-btn {
+    background: var(--more-btn);
+    color: #333;
+    padding: 6px 10px;
+    border-radius: var(--radius);
+    font-size: 0.75rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* ====================================================
+   7) אייקונים
+==================================================== */
+.nav-google-img,
+.purchase-icon-img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+.purchase-text,
+.nav-google-text,
+.weather-text {
+    display: inline;
+}
+
+/* ====================================================
+   8) לוז
+==================================================== */
+.mini-info-bar.clean-style {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.mini-wrapper {
+    position: relative;
+}
+
+.mini-btn {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #4f6d7a;
+    cursor: pointer;
+}
+
+.mini-popup {
+    position: absolute;
+    top: 1.8rem;
+    right: 0;
+    width: 320px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    display: none;
+    z-index: 9999;
+}
+
+.mini-popup.open {
+    display: block;
+}
+
+/* ====================================================
+   9) תוכן "הצג עוד"
+==================================================== */
 .more-content {
     display: none;
-    margin: 10px 0 20px;
-    padding: 14px;
     background: #f8f8f8;
+    padding: 14px;
     border-radius: 8px;
+    margin-top: 10px;
 }
 
 .more-content.open {
     display: block;
 }
 
-/* ----------------------------------------------------
-   12) weather tag
----------------------------------------------------- */
+/* ====================================================
+   10) RS / weather tag (צבעים חוזרים לעבוד)
+==================================================== */
 .weather-tag {
-    margin: 0.3rem 0;
-    padding: 0.25rem 0.6rem;
+    display: inline-flex;
+    gap: 6px;
+    padding: 4px 10px;
     border-radius: 999px;
     font-size: 0.85rem;
-    display: inline-flex;
-    gap: 0.35rem;
-    background: #f5f5f5;
 }
 
-/* ----------------------------------------------------
-   13) LOZ popup
----------------------------------------------------- */
-.mini-info-bar.clean-style {
-    display: flex;
-    gap: 1.2rem;
-    margin: 0.5rem 0;
-    position: relative;
-    z-index: 10;
-}
+.weather-tag.green { background:#e5f7ea; color:#176b3f; }
+.weather-tag.yellow { background:#fff7e0; color:#8a5b00; }
+.weather-tag.red { background:#ffe5e5; color:#8a1f1f; }
 
-.clean-style .mini-btn {
-    background: none;
-    border: none;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    color: #4f6d7a;
-}
-
-.clean-style .mini-popup {
-    position: absolute;
-    top: 1.8rem;
-    right: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0.7rem 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    display: none;
-    width: 320px;
-    z-index: 9999;
-}
-
-.clean-style .mini-popup.open {
-    display: block;
-}
-
-/* ----------------------------------------------------
-   14) MOBILE (מאוחד ונקי)
----------------------------------------------------- */
+/* ====================================================
+   11) מובייל – מערכת אחת בלבד
+==================================================== */
 @media (max-width: 600px) {
 
     .row {
@@ -269,47 +246,46 @@ h2 {
         text-align: center;
     }
 
-    .btn-base {
-        width: 100% !important;
-        height: 42px !important;
+    .btn-base,
+    .show-more-btn {
+        width: 100%;
+        height: 42px;
+        font-size: 14px;
     }
 
-    .btn-nav-google .nav-google-text {
+    /* ניווט – רק אייקון */
+    .btn-nav .nav-google-text {
         display: none;
     }
 
+    /* תחזית – רק אייקון */
     .btn-weather .weather-text {
         display: none;
     }
 
+    /* רכישה – רק אייקון */
     .btn-purchase .purchase-text {
         display: none;
     }
 
-    .btn-nav-google,
-    .btn-purchase {
-        width: 28px !important;
-        height: 28px !important;
-        border-radius: 50% !important;
-        padding: 0 !important;
-    }
-
-    .btn-nav-google .nav-google-img,
-    .btn-purchase .purchase-icon-img {
+    /* אייקונים ממורכזים */
+    .nav-google-img,
+    .purchase-icon-img {
         margin: 0;
     }
 
-    .btn-weather .weather-icon {
-        font-size: 18px;
-    }
-
+    /* לוז */
     .mini-popup {
         width: calc(100% - 20px);
-        left: 10px;
         right: 10px;
+        left: 10px;
     }
 }
 
+/* ====================================================
+   12) ניקוי גלובלי קטן
+==================================================== */
+a { text-decoration: none; }
 </style>
 
 </head>
@@ -349,8 +325,6 @@ h2 {
 </div>
 
 
-   <!-- יום 1 -->
-
 <div class="card">
     <h2>יום 1 | 21/06 – נחיתה + Štrbské Pleso</h2>
 
@@ -359,39 +333,49 @@ h2 {
     </div>
 
     <ul>
+
         <li>
             איסוף רכב והצטיידות בסופר
-            <a href="https://maps.google.com" class="btn-base btn-inline btn-nav-google" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
-                <span class="nav-google-text">ניווט</span>
-            </a>
-        </li>
+            <a href="https://maps.google.com"
+               class="btn-base btn-nav"
+               target="_blank">
 
-       <li>
-   <li>
-    <strong>רכישת מדבקת כבישים סלובקיה (Vignette)</strong>
-    <a href="https://eznamka.sk/en" class="btn-base btn-small btn-purchase" target="_blank">
-       <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png"
-     alt="רכישה"
-     class="purchase-icon-img">
-        <span class="purchase-text">רכישה</span>
-    </a>
-</li>
-
-        <li>
-            <strong>עצירה ב‑Štrbské Pleso</strong> – אגם יפהפה, מסלול קל ונעים (1.5–1 שעות)
-            <a href="https://maps.google.com" class="btn-base btn-inline btn-nav-google" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" alt="Google Maps" class="nav-google-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                     class="nav-google-img">
                 <span class="nav-google-text">ניווט</span>
             </a>
         </li>
 
         <li>
-            הגעה למקום הלינה 
+            <strong>רכישת מדבקת כבישים סלובקיה</strong>
+            <a href="https://eznamka.sk/en"
+               class="btn-base btn-purchase"
+               target="_blank">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png"
+                     class="purchase-icon-img">
+                <span class="purchase-text">רכישה</span>
+            </a>
         </li>
+
+        <li>
+            <strong>עצירה ב-Štrbské Pleso</strong> – אגם יפהפה ומסלול קל
+            <a href="https://maps.google.com"
+               class="btn-base btn-nav"
+               target="_blank">
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                     class="nav-google-img">
+                <span class="nav-google-text">ניווט</span>
+            </a>
+        </li>
+
+        <li>
+            הגעה למקום הלינה
+        </li>
+
     </ul>
 </div>
-
 
 <!-- יום 2 -->
 
@@ -400,7 +384,8 @@ h2 {
 
     <div class="weather-tag red">
         ⛔ RS: 5 | מזג אוויר:
-        <a href="https://www.google.com/search?q=weather+Podlesok+Slovakia" target="_blank">בדיקה</a>
+        <a href="https://www.google.com/search?q=weather+Podlesok+Slovakia"
+           target="_blank">בדיקה</a>
     </div>
 
     <div class="weather-note">
@@ -409,39 +394,37 @@ h2 {
 
     <!-- לוז -->
     <div class="mini-info-bar clean-style">
+
         <div class="mini-wrapper">
-            <button class="mini-btn" onclick="toggleMini(this)">
-                ⏱ לוז מומלץ ▼
-            </button>
+            <button class="mini-btn" onclick="toggleMini(this)">⏱ לוז מומלץ ▼</button>
             <div class="mini-popup">
                 <ul>
                     <li>07:30 יציאה מהלינה</li>
                     <li>08:15 הגעה לחניון Podlesok</li>
                     <li>08:30–12:30 מסלול Suchá Belá</li>
                     <li>12:30–13:30 ארוחת צהריים ב-Podlesok</li>
-                    <li>13:30–14:10 נסיעה למערת הקרח (כ-35–40 דק׳)</li>
+                    <li>13:30–14:10 נסיעה למערת הקרח</li>
                     <li>14:10–14:35 עלייה רגלית לכניסה</li>
                     <li>14:45–15:15 סיור במערת הקרח</li>
-                    <li>15:15–16:05 ירידה + חזרה לרכב</li>
-                    <li>16:05–16:50 נסיעה לכיוון Čingov</li>
-                    <li>17:30–19:30 Tomášovský Výhľad (שעת זהב / שקיעה)</li>
+                    <li>15:15–16:05 ירידה וחזרה לרכב</li>
+                    <li>16:05–16:50 נסיעה ל-Čingov</li>
+                    <li>17:30–19:30 Tomášovský Výhľad (שקיעה)</li>
                 </ul>
             </div>
         </div>
 
         <div class="mini-wrapper">
-            <button class="mini-btn" onclick="toggleMini(this)">
-                🚗 זמני נסיעה ▼
-            </button>
+            <button class="mini-btn" onclick="toggleMini(this)">🚗 זמני נסיעה ▼</button>
             <div class="mini-popup">
                 <ul>
-                    <li>לינה → Podlesok: כ-45–60 דק׳</li>
-                    <li>Podlesok → מערת הקרח: כ-35–40 דק׳</li>
-                    <li>מערת הקרח → Čingov: כ-45–55 דק׳</li>
-                    <li>Čingov → לינה: כ-40–60 דק׳</li>
+                    <li>לינה → Podlesok: 45–60 דק׳</li>
+                    <li>Podlesok → מערת הקרח: 35–40 דק׳</li>
+                    <li>מערת הקרח → Čingov: 45–55 דק׳</li>
+                    <li>Čingov → לינה: 40–60 דק׳</li>
                 </ul>
             </div>
         </div>
+
     </div>
 
     <div class="table-like">
@@ -450,13 +433,14 @@ h2 {
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Suchá Belá</div>
-                <div class="title-sub">מסלול קניון עם סולמות, מפלים ונחלים</div>
+                <div class="title-sub">מסלול קניון עם סולמות ומפלים</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=48.9622,20.3855"
-                   class="btn-base btn-inline btn-nav-google"
+                   class="btn-base btn-nav"
                    target="_blank">
+
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
                          class="nav-google-img">
                     <span class="nav-google-text">ניווט</span>
@@ -467,8 +451,9 @@ h2 {
                 <a href="https://www.google.com/search?q=weather+Podlesok+Slovakia"
                    class="btn-base btn-weather"
                    target="_blank">
-                <span class="weather-icon">🌦️</span>
-                <span class="weather-text">תחזית</span>
+
+                    <span class="weather-icon">🌦️</span>
+                    <span class="weather-text">תחזית</span>
                 </a>
             </div>
 
@@ -479,11 +464,11 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li><strong>מה עושים בפועל:</strong> הולכים בתוך ערוץ נחל זורם, מטפסים על סולמות מתכת לצד מפלים, וצועדים על קורות עץ ודרגיות ברזל בתוך הקניון.</li>
-                <li><strong>⚠️ המסלול חד-סטרי:</strong> העלייה בקניון בלבד, החזרה בשביל יער מסומן (נוח וירוק).</li>
-                <li><strong>צוואר בקבוק:</strong> באזור המפלים הראשונים נוצר עומס – הגעה מוקדמת עוזרת מאוד.</li>
-                <li><strong>ציוד חובה:</strong> נעלי הרים טובות (לעיתים ממש בתוך מים רדודים). לא מתאים לפחד גבהים חזק.</li>
-                <li><strong>עלויות:</strong> כניסה לשמורה בתשלום סמלי בקופות בכניסה.</li>
+                <li><strong>מה עושים בפועל:</strong> הליכה בתוך קניון עם מים זורמים, סולמות מתכת ומפלים.</li>
+                <li><strong>חד סטרי:</strong> עלייה בלבד בקניון, חזרה בשביל יער נוח.</li>
+                <li><strong>עומס:</strong> המפלים הראשונים עמוסים בשעות מאוחרות.</li>
+                <li><strong>ציוד חובה:</strong> נעלי הליכה טובות, לעיתים הליכה במים רדודים.</li>
+                <li><strong>כניסה:</strong> בתשלום סמלי בשמורה.</li>
             </ul>
         </div>
 
@@ -491,28 +476,28 @@ h2 {
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Dobšinská Ice Cave</div>
-                <div class="title-sub">מערת קרח טבעית (אתר מורשת UNESCO)</div>
+                <div class="title-sub">מערת קרח טבעית UNESCO</div>
             </div>
 
-           <div class="col">
-    <a href="https://maps.google.com/?q=48.8837,20.3014"
-       class="btn-base btn-inline btn-nav-google"
-       target="_blank">
+            <div class="col">
+                <a href="https://maps.google.com/?q=48.8837,20.3014"
+                   class="btn-base btn-nav"
+                   target="_blank">
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-             alt="Google Maps"
-             class="nav-google-img">
-
-        <span class="nav-google-text">ניווט</span>
-    </a>
-</div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
+                </a>
+            </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=weather+Dobsinska+Ice+Cave"
                    class="btn-base btn-weather"
                    target="_blank">
-                <span class="weather-icon">🌦️</span>
-                <span class="weather-text">תחזית</span></a>
+
+                    <span class="weather-icon">🌦️</span>
+                    <span class="weather-text">תחזית</span>
+                </a>
             </div>
 
             <div class="col">
@@ -522,10 +507,11 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li><strong>מה עושים בפועל:</strong> סיור מודרך בתוך מערת קרח טבעית עם נטיפי קרח וקירות קפואים עצומים.</li>
-                <li><strong>טיפ חשוב:</strong> החניון למטה והכניסה למעלה – יש עלייה רגלית של כ־15–25 דקות בתוך יער.</li>
-                <li><strong>לבוש חובה:</strong> בפנים קר מאוד (מינוס מעלות גם בקיץ) – חובה מעיל ונעליים סגורות.</li>
-                <li><strong>צילום:</strong> לעיתים נדרש אישור ותשלום נוסף לצילום בתוך המערה.</li>
+                <li><strong>מה עושים:</strong> סיור במערת קרח עם נטיפים וקירות קפואים.</li>
+                <li><strong>עלייה:</strong> 15–25 דקות הליכה מהחניון לכניסה.</li>
+                <li><strong>טמפ׳:</strong> קר מאוד גם בקיץ (מינוס מעלות).</li>
+                <li><strong>ציוד חובה:</strong> מעיל ונעליים סגורות.</li>
+                <li><strong>צילום:</strong> לעיתים בתשלום נוסף.</li>
             </ul>
         </div>
 
@@ -536,25 +522,24 @@ h2 {
                 <div class="title-sub">תצפית שקיעה מעל קניון הורנאד</div>
             </div>
 
-           <div class="col">
-    <a href="https://maps.google.com/?q=48.9443,20.4633"
-       class="btn-base btn-inline btn-nav-google"
-       target="_blank">
+            <div class="col">
+                <a href="https://maps.google.com/?q=48.9443,20.4633"
+                   class="btn-base btn-nav"
+                   target="_blank">
 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-             alt="Google Maps"
-             class="nav-google-img">
-
-        <span class="nav-google-text">ניווט</span>
-    </a>
-</div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
+                </a>
+            </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=weather+Spisska+Nova+Ves"
                    class="btn-base btn-weather"
                    target="_blank">
-                <span class="weather-icon">🌦️</span>
-                <span class="weather-text">תחזית</span>
+
+                    <span class="weather-icon">🌦️</span>
+                    <span class="weather-text">תחזית</span>
                 </a>
             </div>
 
@@ -565,10 +550,10 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li><strong>מה עושים בפועל:</strong> מסלול הליכה קל ביער (כ-30–40 דק׳ לכל כיוון) עד מרפסת סלע ענקית מעל הנהר.</li>
-                <li><strong>דגש בטיחות:</strong> הצוק פתוח לחלוטין ללא מעקות – יש להיזהר במיוחד בקצה.</li>
-                <li><strong>מתי להגיע:</strong> הכי יפה בשעות אחה״צ ושקיעה (שעת זהב).</li>
-                <li><strong>אופציה טובה:</strong> אפשר גם לעצור כאן בסוף היום לפיקניק קצר מול הנוף.</li>
+                <li><strong>מה עושים:</strong> הליכה קלה ביער עד תצפית מעל נהר עמוק.</li>
+                <li><strong>אופי:</strong> מסלול נוח יחסית.</li>
+                <li><strong>בטיחות:</strong> צוק פתוח ללא מעקה.</li>
+                <li><strong>זמן מומלץ:</strong> שקיעה / אחה״צ מאוחר.</li>
             </ul>
         </div>
 
@@ -582,7 +567,8 @@ h2 {
 
     <div class="weather-tag yellow">
         🌦 RS: 3 | מזג אוויר:
-        <a href="https://www.google.com/search?q=weather+Tatranska+Lomnica" target="_blank">בדיקה</a>
+        <a href="https://www.google.com/search?q=weather+Tatranska+Lomnica"
+           target="_blank">בדיקה</a>
     </div>
 
     <div class="weather-note">
@@ -591,6 +577,7 @@ h2 {
 
     <!-- לוז -->
     <div class="mini-info-bar clean-style">
+
         <div class="mini-wrapper">
             <button class="mini-btn" onclick="toggleMini(this)">⏱ לוז מומלץ ▼</button>
             <div class="mini-popup">
@@ -609,13 +596,14 @@ h2 {
         <div class="mini-wrapper">
             <button class="mini-btn" onclick="toggleMini(this)">🚗 זמני נסיעה ▼</button>
             <div class="mini-popup">
-    <ul>
-        <li>לינה → Tatranská Lomnica: 30–50 דק׳</li>
-        <li>Tatranská Lomnica → Stary Smokovec: 15–20 דק׳</li>
-        <li>Stary Smokovec → לינה: 30–50 דק׳</li>
-    </ul>
-</div>
+                <ul>
+                    <li>לינה → Tatranská Lomnica: 30–50 דק׳</li>
+                    <li>Tatranská Lomnica → Stary Smokovec: 15–20 דק׳</li>
+                    <li>Stary Smokovec → לינה: 30–50 דק׳</li>
+                </ul>
+            </div>
         </div>
+
     </div>
 
     <div class="table-like">
@@ -623,22 +611,13 @@ h2 {
         <!-- Lomnické Sedlo -->
         <div class="row">
             <div class="col">
-                <div class="title-main">🔥 Lomnické Sedlo</div> 
-                <a href="https://www.gopass.travel/EN/homepage"
-                   class="btn-base btn-small btn-purchase"
-                   target="_blank">
-        
-                <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png"
-                     class="purchase-icon-img">
-        
-                <span class="purchase-text">רכישה</span>
-                </a>
+                <div class="title-main">🔥 Lomnické Sedlo</div>
                 <div class="title-sub">תצפית הרים גבוהה על רכס הטטרה</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-                   class="btn-base btn-inline btn-nav-google"
+                   class="btn-base btn-nav"
                    target="_blank">
 
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
@@ -646,17 +625,6 @@ h2 {
                     <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
-
-      <!--    <div class="col">
-                <a href="https://www.gopass.travel/EN/homepage"
-                   class="btn-base btn-small btn-purchase"
-                   target="_blank">
-
-                    <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png"
-                         class="purchase-icon-img">
-                    <span class="purchase-text">רכישה</span>
-                </a>
-            </div>-->
 
             <div class="col">
                 <a href="https://www.yr.no/en/forecast/daily-table/2-703347/Slovakia/Prešov/Tatranská%20Lomnica"
@@ -675,11 +643,11 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li>⏰ פתיחה: 08:30–16:00</li>
+                <li><strong>⏰ פתיחה:</strong> 08:30–16:00</li>
                 <li><strong>זמן ביקור:</strong> 1–1.5 שעות</li>
-                <li><strong>מה זה:</strong> מעבר הרים עם נוף דרמטי על כל רכס הטטרה</li>
-                <li><strong>למה לא פסגה:</strong> עומסים, תורים ועננות גבוהה</li>
-                <li><strong>גובה:</strong> אזור קריר גם בקיץ (3–10°)</li>
+                <li><strong>מה זה:</strong> מעבר הרים עם נוף פתוח על כל רכס הטטרה</li>
+                <li><strong>למה לא פסגה:</strong> עומסים, תורים ועננות</li>
+                <li><strong>טמפ׳:</strong> 3–10° גם בקיץ</li>
                 <li><strong>עלות:</strong> ~39–45€</li>
             </ul>
         </div>
@@ -688,12 +656,12 @@ h2 {
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Mountain Carts</div>
-                <div class="title-sub">ירידה מהנה במסלול הררי</div>
+                <div class="title-sub">ירידה מהירה במסלול הררי</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Tatranska+Lomnica+Parking"
-                   class="btn-base btn-inline btn-nav-google"
+                   class="btn-base btn-nav"
                    target="_blank">
 
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
@@ -719,12 +687,12 @@ h2 {
 
         <div class="more-content">
             <ul>
-                <li>⏰ פתיחה: 09:00–17:00 (תלוי מזג אוויר)</li>
+                <li><strong>⏰ פתיחה:</strong> 09:00–17:00 (תלוי מזג אוויר)</li>
                 <li><strong>משך:</strong> 10–15 דקות</li>
                 <li><strong>מחיר:</strong> 20–25€</li>
-                <li><strong>חוויה:</strong> ירידה מהירה ומהנה במסלול הררי</li>
+                <li><strong>חוויה:</strong> ירידה מהירה במסלול הררי</li>
                 <li><strong>בטיחות:</strong> קסדה חובה</li>
-                <li><strong>אם סגור:</strong> להמשיך ישירות ל-Hrebienok (אופציה מצוינת)</li>
+                <li><strong>אם סגור:</strong> לעבור ישירות ל-Hrebienok</li>
             </ul>
         </div>
 
@@ -732,12 +700,12 @@ h2 {
         <div class="row">
             <div class="col">
                 <div class="title-main">🔥 Hrebienok + מפלים</div>
-                <div class="title-sub">פוניקולר + מסלול מפלים</div>
+                <div class="title-sub">פוניקולר + מסלול טבע קליל</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=Stary+Smokovec+Hrebienok"
-                   class="btn-base btn-inline btn-nav-google"
+                   class="btn-base btn-nav"
                    target="_blank">
 
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
@@ -766,7 +734,7 @@ h2 {
                 <li><strong>זמן:</strong> 1–1.5 שעות</li>
                 <li><strong>פוניקולר:</strong> כלול בכרטיס GoPass</li>
                 <li><strong>מסלול:</strong> שביל מסודר עם מפלים ובקתות</li>
-                <li><strong>אופי:</strong> קליל, מתאים לכל הרמות</li>
+                <li><strong>אופי:</strong> מתאים לכל הרמות</li>
                 <li><strong>אחד היפים באזור</strong></li>
             </ul>
         </div>
