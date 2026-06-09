@@ -442,8 +442,7 @@ a { text-decoration: none; }
 
     </ul>
 </div>
-
-<!-- יום 2 – גרסה חדשה: סוחה בלה → אופציות לפי זמן → תצפית שקיעה -->
+<!-- יום 2 – Suchá Belá → אופציות לפי זמן → Tomášovský Výhľad -->
 
 <div class="card">
     <h2>יום 2 | 22/06 – Suchá Belá → אופציות לפי זמן → Tomášovský Výhľad</h2>
@@ -455,14 +454,14 @@ a { text-decoration: none; }
     </div>
 
     <div class="weather-note">
-        🔥 חובה: Suchá Belá + תצפית שקיעה  
-        ⭐ באמצע: בוחרים לפי זמן שנשאר עד השקיעה
+        🔥 חובה: מסלול Suchá Belá + תצפית שקיעה  
+        ⭐ באמצע: בוחרים אטרקציות לפי הזמן שנשאר והכוח
     </div>
 
     <!-- פתיחה: סוחה בלה -->
     <div class="table-like">
 
-        <div class="row">
+        <div class="row" id="attraction-sucha">
             <div class="col">
                 <div class="title-main">🔥 Suchá Belá</div>
                 <div class="title-sub">מסלול קניון עם סולמות ומפלים</div>
@@ -490,24 +489,70 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li>משך: 3–4 שעות</li>
-                <li>חד סטרי: עלייה בקניון, חזרה בשביל יער</li>
-                <li>ציוד חובה: נעלי הליכה, מים, לפעמים הליכה במים</li>
-                <li>כניסה: בתשלום סמלי</li>
+                <li>משך: 3–4 שעות.</li>
+                <li>חד סטרי: עלייה בקניון, ירידה בשביל יער.</li>
+                <li>ציוד חובה: נעלי הליכה, מים, לפעמים הליכה במים.</li>
+                <li>כניסה: בתשלום סמלי.</li>
             </ul>
         </div>
 
     </div>
 
-    <!-- אופציות לפי זמן שנשאר עד שקיעה -->
-    <h3 style="margin-top:25px;">⭐ אופציות בין סוחה בלה לתצפית – לפי זמן שנשאר עד שקיעה</h3>
+    <!-- אופציות לפי זמן שנשאר – כפתורים מתקפלים -->
+    <h3 style="margin-top:25px;">⭐ אופציות בין סוחה בלה לתצפית – לפי זמן שנשאר</h3>
 
     <!-- 4–5 שעות -->
-    <h4>⏳ אם נשארו 4–5 שעות</h4>
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 4–5 שעות ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>⭐ <a href="#attraction-ice">מערת הקרח – Dobšinská Ice Cave</a></li>
+                <li>⭐ <a href="#attraction-dedinky">אגם Dedinky</a></li>
+                <li>⭐ <a href="#attraction-spiss">Spišské Podhradie</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <!-- מערת הקרח -->
+    <!-- 3 שעות -->
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 3 שעות ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>⭐ <a href="#attraction-ice">מערת הקרח</a></li>
+                <li>⭐ <a href="#attraction-spiss">Spišské Podhradie</a></li>
+                <li>⭐ <a href="#attraction-gokart">Go-Karts Štart – Hrebienok</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2 שעות -->
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 2 שעות ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>⭐ <a href="#attraction-gokart">Go-Karts Štart – Hrebienok</a></li>
+                <li>⭐ <a href="#attraction-spiss">Spišské Podhradie</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- שעה -->
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארה שעה–שעה וחצי ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>⭐ <a href="#attraction-gokart">Go-Karts Štart – Hrebienok</a> (היחיד שנכנס בזמן)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- כרטיסי האטרקציות – פעם אחת בלבד -->
+    <h3 style="margin-top:25px;">⭐ כל האטרקציות האפשריות ליום זה</h3>
+
     <div class="table-like">
-        <div class="row">
+
+        <!-- מערת הקרח -->
+        <div class="row" id="attraction-ice">
             <div class="col">
                 <div class="title-main">⭐ Dobšinská Ice Cave</div>
                 <div class="title-sub">מערת קרח טבעית UNESCO</div>
@@ -535,16 +580,15 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל:</strong> 40 דק׳ נסיעה + 45 דק׳ פעילות + 50 דק׳ לתצפית = כ־2:15 שעות</li>
-                <li><strong>יתרונות:</strong> קריר, קצר, מתאים אחרי מאמץ</li>
-                <li><strong>חסרונות:</strong> עלייה רגלית לכניסה</li>
-                <li><strong>מתאים למזג אוויר:</strong> חם / מעונן</li>
-                <li><strong>מתאים כשנשארו:</strong> 4–5 שעות</li>
+                <li><strong>⏱ זמן כולל:</strong> ~40 דק׳ מסוחה בלה + 45 דק׳ פעילות + 50 דק׳ לתצפית.</li>
+                <li><strong>יתרונות:</strong> קריר, קצר, מתאים לעייפות.</li>
+                <li><strong>חסרונות:</strong> עלייה רגלית לכניסה.</li>
+                <li><strong>שעות פתיחה:</strong> לרוב 09:00–16:00.</li>
             </ul>
         </div>
 
         <!-- Dedinky -->
-        <div class="row">
+        <div class="row" id="attraction-dedinky">
             <div class="col">
                 <div class="title-main">⭐ אגם Dedinky</div>
                 <div class="title-sub">אגם פסטורלי בדרום גן העדן הסלובקי</div>
@@ -572,16 +616,14 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל:</strong> 50 דק׳ נסיעה + 1 שעה פעילות + 55 דק׳ לתצפית = כ־2:45 שעות</li>
-                <li><strong>יתרונות:</strong> רגוע, נעים, נוף יפה</li>
-                <li><strong>חסרונות:</strong> רחוק יותר</li>
-                <li><strong>מתאים למזג אוויר:</strong> שמשי / נעים</li>
-                <li><strong>מתאים כשנשארו:</strong> 4–5 שעות</li>
+                <li><strong>⏱ זמן כולל:</strong> ~50 דק׳ מסוחה בלה + 1 שעה פעילות + 55 דק׳ לתצפית.</li>
+                <li><strong>יתרונות:</strong> רגוע, נעים, נוף יפה.</li>
+                <li><strong>חסרונות:</strong> רחוק יחסית.</li>
             </ul>
         </div>
 
-        <!-- Spisske Podhradie -->
-        <div class="row">
+        <!-- Spišské Podhradie -->
+        <div class="row" id="attraction-spiss">
             <div class="col">
                 <div class="title-main">⭐ Spišské Podhradie</div>
                 <div class="title-sub">עיירה ציורית + טירת ספיש</div>
@@ -609,58 +651,14 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל:</strong> 45 דק׳ נסיעה + 1–1.5 שעות פעילות + 25 דק׳ לתצפית = כ־2:15–2:45 שעות</li>
-                <li><strong>יתרונות:</strong> קליל, תרבותי, מתאים לעייפות</li>
-                <li><strong>חסרונות:</strong> פחות “אקשן”</li>
-                <li><strong>מתאים למזג אוויר:</strong> כל מזג אוויר</li>
-                <li><strong>מתאים כשנשארו:</strong> 4–5 שעות</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- 3 שעות -->
-    <h4>⏳ אם נשארו 3 שעות</h4>
-
-    <div class="table-like">
-
-        <!-- מערת הקרח שוב -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">⭐ Dobšinská Ice Cave</div>
-                <div class="title-sub">קצרה ומתאימה גם ל־3 שעות</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=48.8837,20.3014"
-                   class="btn-base btn-nav" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="https://www.google.com/search?q=Dobsinska+Ice+Cave"
-                   class="btn-base btn-weather" target="_blank">
-                    🌦️ תחזית
-                </a>
-            </div>
-
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
-        </div>
-
-        <div class="more-content">
-            <ul>
-                <li><strong>⏱ זמן כולל:</strong> כ־2:15 שעות</li>
-                <li><strong>יתרונות:</strong> קצר, קריר, מתאים לעייפות</li>
-                <li><strong>מתאים כשנשארו:</strong> 3 שעות</li>
+                <li><strong>⏱ זמן כולל:</strong> ~45 דק׳ מסוחה בלה + 30–60 דק׳ פעילות + 25 דק׳ לתצפית.</li>
+                <li><strong>יתרונות:</strong> קליל, מתאים לעייפות.</li>
+                <li><strong>חסרונות:</strong> פחות “אקשן”.</li>
             </ul>
         </div>
 
         <!-- Go-Karts Štart -->
-        <div class="row">
+        <div class="row" id="attraction-gokart">
             <div class="col">
                 <div class="title-main">⭐ Go-Karts Štart – Hrebienok</div>
                 <div class="title-sub">קארט הרים קצר וכיפי</div>
@@ -688,139 +686,20 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל:</strong> 35 דק׳ נסיעה + 30 דק׳ פעילות + 45 דק׳ לתצפית = כ־1:50 שעות</li>
-                <li><strong>יתרונות:</strong> קצר, כיפי, לא מאמץ</li>
-                <li><strong>חסרונות:</strong> תלוי שעות פתיחה</li>
-                <li><strong>מתאים כשנשארו:</strong> 3 שעות</li>
+                <li><strong>⏱ זמן כולל:</strong> ~35 דק׳ מסוחה בלה + 30 דק׳ פעילות + 45 דק׳ לתצפית.</li>
+                <li><strong>יתרונות:</strong> קצר, כיפי, מתאים לעייפות.</li>
+                <li><strong>חסרונות:</strong> תלוי שעות פתיחה.</li>
             </ul>
         </div>
 
     </div>
 
-    <!-- 2 שעות -->
-    <h4>⏳ אם נשארו 2 שעות</h4>
-
-    <div class="table-like">
-
-        <!-- Go-Karts Štart -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">⭐ Go-Karts Štart – Hrebienok</div>
-                <div class="title-sub">הכי קצרה ומתאימה ל־2 שעות</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=49.1408,20.2181"
-                   class="btn-base btn-nav" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="https://www.google.com/search?q=Hrebienok+weather"
-                   class="btn-base btn-weather" target="_blank">
-                    🌦️ תחזית
-                </a>
-            </div>
-
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
-        </div>
-
-        <div class="more-content">
-            <ul>
-                <li><strong>⏱ זמן כולל:</strong> כ־1:50 שעות</li>
-                <li><strong>יתרונות:</strong> קצר, כיף, מתאים לעייפות</li>
-                <li><strong>מתאים כשנשארו:</strong> 2 שעות</li>
-            </ul>
-        </div>
-
-        <!-- Spišské Podhradie -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">⭐ Spišské Podhradie</div>
-                <div class="title-sub">עיירה קלילה – מתאים ל־2 שעות</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=49.0000,20.7540"
-                   class="btn-base btn-nav" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="https://www.google.com/search?q=weather+Spisske+Podhradie"
-                   class="btn-base btn-weather" target="_blank">
-                    🌦️ תחזית
-                </a>
-            </div>
-
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
-        </div>
-
-        <div class="more-content">
-            <ul>
-                <li><strong>⏱ זמן כולל:</strong> 45 דק׳ נסיעה + 30–45 דק׳ פעילות + 25 דק׳ לתצפית = כ־1:45–2:00 שעות</li>
-                <li><strong>יתרונות:</strong> קליל, לא מאמץ</li>
-                <li><strong>מתאים כשנשארו:</strong> 2 שעות</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- שעה -->
-    <h4>⏳ אם נשארה שעה</h4>
-
-    <div class="table-like">
-
-        <!-- Go-Karts Štart -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">⭐ Go-Karts Štart – Hrebienok</div>
-                <div class="title-sub">האופציה היחידה שעדיין אפשרית</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=49.1408,20.2181"
-                   class="btn-base btn-nav" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="https://www.google.com/search?q=Hrebienok+weather"
-                   class="btn-base btn-weather" target="_blank">
-                    🌦️ תחזית
-                </a>
-            </div>
-
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
-        </div>
-
-        <div class="more-content">
-            <ul>
-                <li><strong>⏱ זמן כולל:</strong> כ־1:00–1:10 שעות</li>
-                <li><strong>יתרונות:</strong> קצר, מהיר, כיף</li>
-                <li><strong>מתאים כשנשארה:</strong> שעה</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- סיום: תצפית -->
+    <!-- סיום חובה: תצפית -->
     <h3 style="margin-top:25px;">🔥 Tomášovský Výhľad – תצפית שקיעה</h3>
 
     <div class="table-like">
-        <div class="row">
+
+        <div class="row" id="attraction-tomas">
             <div class="col">
                 <div class="title-main">🔥 Tomášovský Výhľad</div>
                 <div class="title-sub">תצפית מרהיבה מעל קניון הורנאד</div>
@@ -828,71 +707,66 @@ a { text-decoration: none; }
 
             <div class="col">
                 <a href="https://maps.google.com/?q=48.9443,20.4633"
-                   class="btn-base btn-nav" target
-<!-- יום אופציונלי – נקיק דיירי + אטרקציות באזור ליפטוב -->
+                   class="btn-base btn-nav" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img"> ניווט
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="https://www.google.com/search?q=weather+Spisska+Nova+Ves"
+                   class="btn-base btn-weather" target="_blank">
+                    🌦️ תחזית
+                </a>
+            </div>
+
+            <div class="col">
+                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+            </div>
+        </div>
+
+        <div class="more-content">
+            <ul>
+                <li>משך: 45–60 דק׳ הליכה הלוך־חזור.</li>
+                <li>אופי: מסלול קל יחסית.</li>
+                <li>טיפ: להגיע כשעה לפני שקיעה.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+    
+<!-- יום נקיק דיירי – פתיחה חובה → אופציות לפי זמן → כרטיסי אטרקציות → סיום חובה -->
 
 <div class="card">
-    <h2>יום אופציונלי | נקיק דיירי + אטרקציות באיזור ליפטוב</h2>
+    <h2>יום אופציונלי | Jánošíkove Diery → אופציות לפי זמן → מעיין + אגם</h2>
 
     <div class="weather-tag green">
         🌤 RS: 2 | מזג אוויר:
-        <a href="https://www.google.com/search?q=weather+Janosikove+Diery"
+        <a href="https://www.google.com/search?q=weather+Terchova"
            target="_blank">בדיקה</a>
     </div>
 
     <div class="weather-note">
-        יום גמיש – בוחרים לפי כוח, חשק ומזג אוויר.  
-        🔥 = חובה | ⭐ = אופציה
+        🔥 חובה: נקיק דיירי + מעיין Kaďa + אגם Vrbické  
+        ⭐ באמצע: בוחרים אטרקציות לפי הזמן שנשאר והכוח
     </div>
 
-    <!-- לוז מוצע -->
-    <div class="mini-info-bar clean-style">
-
-        <div class="mini-wrapper">
-            <button class="mini-btn" onclick="toggleMini(this)">⏱ לוז מוצע ▼</button>
-            <div class="mini-popup">
-                <ul>
-                    <li>08:00 יציאה מהלינה</li>
-                    <li>09:00–12:00 🔥 נקיק דיירי</li>
-                    <li>12:00–13:00 ארוחת צהריים באזור Terchová</li>
-                    <li>13:00–14:00 נסיעה לליפטוב</li>
-                    <li>14:00–18:00 בחירה בין האטרקציות ⭐</li>
-                    <li>18:00–19:00 מעיין Kaďa (חינם)</li>
-                    <li>19:00–20:00 אגם Vrbické Pleso (רגוע)</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="mini-wrapper">
-            <button class="mini-btn" onclick="toggleMini(this)">🚗 זמני נסיעה ▼</button>
-            <div class="mini-popup">
-                <ul>
-                    <li>לינה בפופראד → נקיק דיירי: 1:25–1:35</li>
-                    <li>נקיק דיירי → MaraFun: 45–55 דק׳</li>
-                    <li>MaraFun → קארטינג Monaco: 10–15 דק׳</li>
-                    <li>Monaco → Kaďa: 12–18 דק׳</li>
-                    <li>Kaďa → Vrbické Pleso: 10–12 דק׳</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
+    <!-- פתיחה: נקיק דיירי -->
     <div class="table-like">
 
-        <!-- 🔥 נקיק דיירי -->
-        <div class="row">
+        <div class="row" id="attraction-janosikove">
             <div class="col">
                 <div class="title-main">🔥 Jánošíkove Diery – נקיק דיירי</div>
-                <div class="title-sub">מסלול סולמות, מפלים וגשרים – חובה!</div>
+                <div class="title-sub">מסלול סולמות, מפלים וגשרים</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=49.2667,19.0200"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
+                         class="nav-google-img"> ניווט
                 </a>
             </div>
 
@@ -910,27 +784,112 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>משך:</strong> 2–3 שעות (מסלול תחתון) / 4–5 שעות (עליון).</li>
-                <li><strong>אופי:</strong> סולמות, מפלים, גשרים – דומה ל-Suchá Belá אבל קל יותר.</li>
-                <li><strong>ציוד:</strong> נעלי הליכה, מים, מעיל קל.</li>
-                <li><strong>שעות פתיחה:</strong> פתוח תמיד.</li>
-                <li><strong>כניסה:</strong> חינם.</li>
+                <li>משך: 2–3 שעות (חלק תחתון) / 4–5 שעות (מסלול מלא).</li>
+                <li>אופי: סולמות, מפלים, גשרים – דומה ל-Suchá Belá אבל מעט קל יותר.</li>
+                <li>ציוד: נעלי הליכה, מים, מעיל קל.</li>
+                <li>כניסה: חינם.</li>
             </ul>
         </div>
 
-        <!-- ⭐ MaraFun -->
-        <div class="row">
+    </div>
+
+    <!-- אופציות לפי זמן שנשאר – כפתורים מתקפלים -->
+    <h3 style="margin-top:25px;">⭐ אופציות בין הנקיק לסיום – לפי זמן שנשאר</h3>
+
+    <!-- 4–5 שעות -->
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 4–5 שעות ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>
+                    ⭐ <a href="#attraction-marafun">MaraFun – Liptovská Mara</a>  
+                    – מים, אופנועי ים, חוף. ⏱ בערך 2–3 שעות כולל נסיעות.
+                </li>
+                <li>
+                    ⭐ <a href="#attraction-demanovska">Demänovská Cave of Liberty</a>  
+                    – מערת נטיפים מרהיבה. ⏱ בערך 2–2.5 שעות כולל נסיעות.
+                </li>
+                <li>
+                    ⭐ <a href="#attraction-monaco">Monaco Grand Prix Karting</a>  
+                    – קארטינג מקצועי. ⏱ בערך 2–2.5 שעות כולל נסיעות.
+                </li>
+                <li>
+                    ⭐ <a href="#attraction-ziarce">FUN PARK Žiarce – מזחלות</a>  
+                    – מגלשות הרים + נדנדה. ⏱ בערך 2–2.5 שעות כולל נסיעות.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3 שעות -->
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 3 שעות ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>
+                    ⭐ <a href="#attraction-marafun">MaraFun – Liptovská Mara</a>  
+                    – אם רוצים מים וכיף, בלי למהר. ⏱ עדיין נכנס יפה.
+                </li>
+                <li>
+                    ⭐ <a href="#attraction-monaco">Monaco Grand Prix Karting</a>  
+                    – אדרנלין, מתאים גם כשיש פחות זמן. ⏱ ~2 שעות נטו.
+                </li>
+                <li>
+                    ⭐ <a href="#attraction-demanovska">Demänovská Cave of Liberty</a>  
+                    – אם לא עייפים מדי מהנקיק. ⏱ גבולי אבל אפשרי.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2 שעות -->
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 2 שעות ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>
+                    ⭐ <a href="#attraction-monaco">Monaco Grand Prix Karting</a>  
+                    – קצר, ממוקד, מתאים לעייפות. ⏱ ~1.5–2 שעות כולל נסיעות.
+                </li>
+                <li>
+                    ⭐ <a href="#attraction-ziarce">FUN PARK Žiarce – מזחלות</a>  
+                    – אם פתוח עד 16:00 ואתם מספיקים. ⏱ ~1.5–2 שעות.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- שעה -->
+    <div class="mini-wrapper">
+        <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארה שעה–שעה וחצי ▼</button>
+        <div class="mini-popup">
+            <ul>
+                <li>
+                    ⭐ עדיף לוותר על אטרקציות נוספות ולנסוע בנחת לכיוון  
+                    <a href="#attraction-kada">מעיין Kaďa</a> ו־<a href="#attraction-vrbicke">Vrbické Pleso</a>.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- כרטיסי האטרקציות – פעם אחת בלבד -->
+
+    <h3 style="margin-top:25px;">⭐ כל האטרקציות האפשריות ליום זה</h3>
+
+    <div class="table-like">
+
+        <!-- MaraFun -->
+        <div class="row" id="attraction-marafun">
             <div class="col">
-                <div class="title-main">⭐ MaraFun – אופנועי ים / ספורט מים</div>
-                <div class="title-sub">Liptovská Mara – כיף מים אחה״צ</div>
+                <div class="title-main">⭐ MaraFun – Liptovská Mara</div>
+                <div class="title-sub">אופנועי ים, סאפ, חוף ומים</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=49.1045,19.5567"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
+                         class="nav-google-img"> ניווט
                 </a>
             </div>
 
@@ -948,15 +907,16 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>שעות פתיחה:</strong> 10:00–18:00 (21–25 ביוני).</li>
-                <li><strong>הערה:</strong> אחרי 17:00 אין תשלום כניסה לחוף.</li>
-                <li><strong>ציוד:</strong> בגדי ים חובה.</li>
-                <li><strong>מה עושים:</strong> אופנועי ים, סאפ, קיאקים, חוף.</li>
+                <li><strong>⏱ זמן כולל (הערכה):</strong> ~55 דק׳ נסיעה מהנקיק + 1–1.5 שעות פעילות + 15 דק׳ למעיין/אגם.</li>
+                <li><strong>יתרונות:</strong> מים, כיף, מתאים לחום, אווירה קיצית.</li>
+                <li><strong>חסרונות:</strong> דורש בגדי ים, תלוי מזג אוויר.</li>
+                <li><strong>שעות פתיחה:</strong> לרוב 10:00–18:00 ביוני (לבדוק באתר לפני).</li>
+                <li><strong>טיפ:</strong> בשעות אחה״צ מאוחרות לעיתים אין תשלום כניסה לחוף.</li>
             </ul>
         </div>
 
-        <!-- ⭐ קארטינג Monaco -->
-        <div class="row">
+        <!-- Monaco Karting -->
+        <div class="row" id="attraction-monaco">
             <div class="col">
                 <div class="title-main">⭐ Monaco Grand Prix Karting</div>
                 <div class="title-sub">מסלול קארטינג מקצועי</div>
@@ -966,15 +926,14 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=49.0375,19.6170"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
+                         class="nav-google-img"> ניווט
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=Monaco+Grand+Prix+Karting+Zavažná+Poruba"
                    class="btn-base btn-weather" target="_blank">
-                    🏎️ אתר
+                    🏎️ מידע
                 </a>
             </div>
 
@@ -985,61 +944,25 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>שעות פתיחה:</strong> 10:00–20:00 (יוני).</li>
-                <li><strong>מה עושים:</strong> קארטינג מהיר, מסלול איכותי.</li>
-                <li><strong>מתאים ל:</strong> אדרנלין אחרי MaraFun.</li>
+                <li><strong>⏱ זמן כולל (הערכה):</strong> ~1 שעה נסיעה מהנקיק + 30–45 דק׳ פעילות + 15–20 דק׳ למעיין.</li>
+                <li><strong>יתרונות:</strong> אדרנלין, קצר, לא דורש מאמץ פיזי.</li>
+                <li><strong>חסרונות:</strong> רועש, פחות “טבע”.</li>
+                <li><strong>שעות פתיחה:</strong> לרוב 10:00–20:00 ביוני (לבדוק לפני).</li>
             </ul>
         </div>
 
-        <!-- ⭐ מעיין Kaďa -->
-        <div class="row">
+        <!-- FUN PARK Žiarce -->
+        <div class="row" id="attraction-ziarce">
             <div class="col">
-                <div class="title-main">⭐ Thermal Springs Kaďa</div>
-                <div class="title-sub">מעיין חם טבעי + בריכת שכשוך</div>
-            </div>
-
-            <div class="col">
-                <a href="https://maps.google.com/?q=49.0334,19.5808"
-                   class="btn-base btn-nav" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="https://www.google.com/search?q=Kada+thermal+springs"
-                   class="btn-base btn-weather" target="_blank">
-                    ♨️ מידע
-                </a>
-            </div>
-
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
-        </div>
-
-        <div class="more-content">
-            <ul>
-                <li><strong>שעות פתיחה:</strong> פתוח תמיד.</li>
-                <li><strong>מחיר:</strong> חינם.</li>
-                <li><strong>מה עושים:</strong> טבילה במים חמים טבעיים.</li>
-            </ul>
-        </div>
-
-        <!-- ⭐ מגלשות Pavčina Lehota -->
-        <div class="row">
-            <div class="col">
-                <div class="title-main">⭐ FUN PARK Žiarce – מזחלות קיץ</div>
-                <div class="title-sub">מגלשות הרים + נדנדה אקסטרים</div>
+                <div class="title-main">⭐ FUN PARK Žiarce – Pavčina Lehota</div>
+                <div class="title-sub">מזחלות קיץ + נדנדה אקסטרים</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=49.0285,19.5860"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
+                         class="nav-google-img"> ניווט
                 </a>
             </div>
 
@@ -1057,13 +980,15 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>שעות פתיחה:</strong> 09:00–16:00.</li>
-                <li><strong>מה עושים:</strong> מגלשות הרים, נדנדה ענקית.</li>
+                <li><strong>⏱ זמן כולל (הערכה):</strong> ~1 שעה נסיעה מהנקיק + 45–60 דק׳ פעילות + 15–20 דק׳ למעיין.</li>
+                <li><strong>יתרונות:</strong> כיף, מתאים גם לילדים, אקשן קצר.</li>
+                <li><strong>חסרונות:</strong> פתוח עד 16:00 – צריך לתזמן.</li>
+                <li><strong>שעות פתיחה:</strong> לרוב 09:00–16:00 ביוני.</li>
             </ul>
         </div>
 
-        <!-- ⭐ מערת החופש -->
-        <div class="row">
+        <!-- Demänovská Cave of Liberty -->
+        <div class="row" id="attraction-demanovska">
             <div class="col">
                 <div class="title-main">⭐ Demänovská Cave of Liberty</div>
                 <div class="title-sub">מערת נטיפים מרהיבה</div>
@@ -1073,8 +998,7 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=48.9990,19.5800"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
+                         class="nav-google-img"> ניווט
                 </a>
             </div>
 
@@ -1092,25 +1016,25 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>שעות פתיחה:</strong> 09:00–16:00.</li>
-                <li><strong>סיורים:</strong> כל שעה.</li>
-                <li><strong>אופי:</strong> נטיפים, אולמות ענק, נהר תת־קרקעי.</li>
+                <li><strong>⏱ זמן כולל (הערכה):</strong> ~1 שעה נסיעה מהנקיק + 60–90 דק׳ סיור + 15–20 דק׳ למעיין.</li>
+                <li><strong>יתרונות:</strong> יפה, קריר, מתאים לחום.</li>
+                <li><strong>חסרונות:</strong> עוד הליכה, יכול להיות עמוס.</li>
+                <li><strong>שעות פתיחה:</strong> לרוב 09:00–16:00, סיורים כל שעה.</li>
             </ul>
         </div>
 
-        <!-- ⭐ גו קארט Jasná -->
-        <div class="row">
+        <!-- Go-Kart Jasná (אופציונלי נוסף) -->
+        <div class="row" id="attraction-jasna-kart">
             <div class="col">
                 <div class="title-main">⭐ Go-Kart Jasná Low Tatras</div>
-                <div class="title-sub">קארטינג נוסף באזור</div>
+                <div class="title-sub">קארטינג נוסף באזור Jasná</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=49.0190,19.5800"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
+                         class="nav-google-img"> ניווט
                 </a>
             </div>
 
@@ -1128,24 +1052,64 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>שעות פתיחה:</strong> 10:00–18:00.</li>
-                <li><strong>מה עושים:</strong> קארטינג קליל יותר מה-Monaco.</li>
+                <li><strong>⏱ זמן כולל (הערכה):</strong> דומה ל-Monaco – ~1.5–2 שעות כולל נסיעות.</li>
+                <li><strong>יתרונות:</strong> אופציה נוספת אם Monaco מלא/סגור.</li>
             </ul>
         </div>
 
-        <!-- ⭐ אגם Vrbické Pleso -->
-        <div class="row">
+    </div>
+
+    <!-- סיום חובה: מעיין + אגם -->
+    <h3 style="margin-top:25px;">🔥 סיום היום – מעיין חם + אגם רגוע</h3>
+
+    <div class="table-like">
+
+        <!-- Kaďa -->
+        <div class="row" id="attraction-kada">
             <div class="col">
-                <div class="title-main">⭐ Vrbické Pleso</div>
-                <div class="title-sub">אגם קטן וקסום – שעה רגועה</div>
+                <div class="title-main">🔥 Thermal Springs Kaďa</div>
+                <div class="title-sub">מעיין חם טבעי + בריכת שכשוך</div>
+            </div>
+
+            <div class="col">
+                <a href="https://maps.google.com/?q=49.0334,19.5808"
+                   class="btn-base btn-nav" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img"> ניווט
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="https://www.google.com/search?q=Kada+thermal+springs"
+                   class="btn-base btn-weather" target="_blank">
+                    ♨️ מידע
+                </a>
+            </div>
+
+            <div class="col">
+                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+            </div>
+        </div>
+
+        <div class="more-content">
+            <ul>
+                <li>פתוח תמיד, חינם.</li>
+                <li>טבילה קצרה במים חמים – מושלם אחרי יום מלא.</li>
+            </ul>
+        </div>
+
+        <!-- Vrbické Pleso -->
+        <div class="row" id="attraction-vrbicke">
+            <div class="col">
+                <div class="title-main">🔥 Vrbické Pleso</div>
+                <div class="title-sub">אגם קטן וקסום – סיום רגוע</div>
             </div>
 
             <div class="col">
                 <a href="https://maps.google.com/?q=48.9710,19.5860"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img">
-                    ניווט
+                         class="nav-google-img"> ניווט
                 </a>
             </div>
 
@@ -1163,14 +1127,14 @@ a { text-decoration: none; }
 
         <div class="more-content">
             <ul>
-                <li><strong>משך:</strong> 45–60 דק׳.</li>
-                <li><strong>אופי:</strong> הליכה קלה סביב אגם קטן.</li>
-                <li><strong>מתאים ל:</strong> סיום רגוע של היום.</li>
+                <li>משך: 45–60 דק׳ הליכה רגועה סביב האגם.</li>
+                <li>אופי: שקט, טבעי, מושלם לסיום היום.</li>
             </ul>
         </div>
 
     </div>
 </div>
+
 
   <!-- יום 3 -->
 
