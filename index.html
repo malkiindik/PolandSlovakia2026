@@ -6,7 +6,7 @@
     <title>סלובקיה ופולין 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
 /* ====================================================
    1) משתני צבעים
@@ -25,6 +25,11 @@
     --more-btn: #c7c7c7;
 
     --radius: 16px;
+
+    /* NEW — optional attractions button colors */
+    --optional-btn-bg: #4f6d7a;
+    --optional-btn-bg-hover: #6b8a9b;
+    --optional-btn-text: #ffffff;
 }
 
 /* ====================================================
@@ -48,7 +53,8 @@ body {
     margin: auto;
     padding: 0.8rem;
 }
-      /* צמצום רווח בין header לכרטיס הראשון */
+
+/* צמצום רווח בין header לכרטיס הראשון */
 .main-header {
     margin-bottom: 12px; /* היה 25px */
 }
@@ -56,15 +62,16 @@ body {
 .card:first-of-type {
     margin-top: 0;
 }
+
 /* ----------------------------------------------------
    3) Header – ורוד אלגנטי
 ---------------------------------------------------- */
 .main-header {
     background: linear-gradient(
         135deg,
-        #f3e6ec,   /* ורוד ניודי בהיר מאוד */
-        #d4a1b8,   /* ורוד מעושן מודרני */
-        #8e2a4d    /* ורוד עמוק יוקרתי */
+        #f3e6ec,
+        #d4a1b8,
+        #8e2a4d
     );
     color: white;
     text-align: center;
@@ -73,7 +80,6 @@ body {
     margin-bottom: 25px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
-
 
 .main-header h1 {
     margin: 0;
@@ -275,16 +281,48 @@ body {
 .more-content.open {
     display: block;
 }
+
 .optional-content {
     display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
 }
 
 .optional-content.open {
     display: block;
+    opacity: 1;
 }
 
 /* ====================================================
-   10) RS / weather tag (צבעים חוזרים לעבוד)
+   NEW — Optional Attractions Button Styling
+==================================================== */
+
+.expand-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.optional-btn {
+    background: var(--optional-btn-bg);
+    color: var(--optional-btn-text);
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.optional-btn:hover {
+    background: var(--optional-btn-bg-hover);
+    transform: translateY(-2px);
+}
+
+/* ====================================================
+   10) RS / weather tag
 ==================================================== */
 .weather-tag {
     display: inline-flex;
@@ -320,7 +358,8 @@ body {
     }
 
     .btn-base,
-    .show-more-btn {
+    .show-more-btn,
+    .optional-btn {
         width: 100%;
         height: 42px;
         font-size: 14px;
@@ -353,13 +392,20 @@ body {
         right: 10px;
         left: 10px;
     }
+
+    /* NEW — mobile spacing for optional section */
+    .expand-wrapper {
+        margin: 18px 0;
+    }
 }
 
 /* ====================================================
    12) ניקוי גלובלי קטן
 ==================================================== */
 a { text-decoration: none; }
+
 </style>
+
 
 </head>
 
