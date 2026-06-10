@@ -337,30 +337,37 @@ body {
 .weather-tag.red { background:#ffe5e5; color:#8a1f1f; }
 
 /* ====================================================
-   11) מובייל – מערכת אחת בלבד
+   11) מובייל
 ==================================================== */
 @media (max-width: 600px) {
 
     .row {
         display: flex;
         flex-wrap: wrap;
+        gap: 8px; /* רווחים נקיים בין הכפתורים */
     }
 
+    /* עמודה ראשונה – כותרת */
     .row .col:nth-child(1) {
         flex: 1 0 100%;
         text-align: center;
         margin-bottom: 6px;
     }
 
+    /* שלושת הכפתורים – פריסה נקייה */
     .row .col:nth-child(n+2) {
-        flex: 1;
-        text-align: center;
+        flex: 1 0 33%;
+        max-width: 33%;
+        display: flex;
+        justify-content: center;
     }
 
+    /* הכפתורים עצמם – לא 100% רוחב */
     .btn-base,
     .show-more-btn,
     .optional-btn {
-        width: 100%;
+        width: auto;
+        min-width: 70px;
         height: 42px;
         font-size: 14px;
     }
@@ -393,11 +400,12 @@ body {
         left: 10px;
     }
 
-    /* NEW — mobile spacing for optional section */
+    /* מרווח לאזור האופציונלי */
     .expand-wrapper {
         margin: 18px 0;
     }
 }
+
 
 /* ====================================================
    12) ניקוי גלובלי קטן
