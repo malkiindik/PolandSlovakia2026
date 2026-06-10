@@ -525,182 +525,150 @@ a { text-decoration: none; }
 
     </div>
 
-    <!-- ⭐⭐⭐ גרסה א — פתיחה מלאה בתוך הדף ⭐⭐⭐ -->
-    <div class="expand-wrapper" style="margin-top:25px;">
-        <button class="mini-btn" onclick="toggleMini(this)">⭐ כל האטרקציות האפשריות ביום זה (גרסה א) ▼</button>
+  <!-- ⭐⭐⭐ כל האטרקציות האפשריות ביום זה — פתיחה חלקה כמו שאר האטרקציות ⭐⭐⭐ -->
 
-        <div class="mini-popup">
+<div class="expand-wrapper" style="margin-top:25px;">
+    <button class="show-more-btn" onclick="toggleMore(this)">⭐ כל האטרקציות האפשריות ביום זה ▼</button>
 
-            <!-- אופציות לפי זמן -->
-            <h4>⏳ בחירת אטרקציות לפי זמן סיום סוחה בלה</h4>
-            <ul>
-                <li><strong>סיימתם עד 13:00 ←</strong> מערת הקרח דובשינסקה / אגם דדינקי / ספישקה פודהראדיה</li>
-                <li><strong>סיימתם עד 15:00 ←</strong> מערת הקרח דובשינסקה / ספישקה פודהראדיה / קארטינג הרביאנוק</li>
-                <li><strong>סיימתם עד 17:00 ←</strong> ספישקה פודהראדיה / קארטינג הרביאנוק</li>
-                <li><strong>סיימתם אחרי 18:00 ←</strong> קארטינג (אם פתוח) או ישר לתצפית</li>
-            </ul>
+    <div class="more-content">
 
-            <!-- כרטיסי האטרקציות -->
-            <div class="table-like">
+        <!-- אופציות לפי זמן -->
+        <h4>⏳ בחירת אטרקציות לפי זמן סיום סוחה בלה</h4>
+        <ul>
+            <li><strong>סיימתם עד 13:00 ←</strong> מערת הקרח דובשינסקה / אגם דדינקי / ספישקה פודהראדיה</li>
+            <li><strong>סיימתם עד 15:00 ←</strong> מערת הקרח דובשינסקה / ספישקה פודהראדיה / קארטינג הרביאנוק</li>
+            <li><strong>סיימתם עד 17:00 ←</strong> ספישקה פודהראדיה / קארטינג הרביאנוק</li>
+            <li><strong>סיימתם אחרי 18:00 ←</strong> קארטינג (אם פתוח) או ישר לתצפית</li>
+        </ul>
 
-                <!-- מערת הקרח -->
-                <div class="row">
-                    <div class="col">
-                        <div class="title-main">⭐ Dobšinská Ice Cave (מערת הקרח דובשינסקה)</div>
-                        <div class="title-sub">מערת קרח טבעית UNESCO</div>
-                    </div>
+        <!-- כרטיסי האטרקציות -->
+        <div class="table-like">
 
-                    <div class="col">
-                        <a href="https://maps.google.com/?q=48.8837,20.3014" class="btn-base btn-nav" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="https://www.google.com/search?q=Dobsinska+Ice+Cave" class="btn-base btn-weather" target="_blank">
-                            🌦️
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                    </div>
+            <!-- מערת הקרח -->
+            <div class="row">
+                <div class="col">
+                    <div class="title-main">⭐ Dobšinská Ice Cave (מערת הקרח דובשינסקה)</div>
+                    <div class="title-sub">מערת קרח טבעית UNESCO</div>
                 </div>
 
-                <div class="more-content">
-                    <ul>
-                        <li><strong>⏱ זמן כולל:</strong> 40 דק׳ נסיעה + 45 דק׳ סיור.</li>
-                        <li>• <strong>מחיר:</strong> 12€.</li>
-                        <li>• <strong>שעות פתיחה:</strong> 09:00–16:00.</li>
-                        <li>• <strong>התאמה לגשם:</strong> מצוין.</li>
-                    </ul>
+                <div class="col">
+                    <a href="https://maps.google.com/?q=48.8837,20.3014" class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    </a>
                 </div>
 
-                <!-- Dedinky -->
-                <div class="row">
-                    <div class="col">
-                        <div class="title-main">⭐ Dedinky (אגם דדינקי)</div>
-                        <div class="title-sub">אגם פסטורלי בדרום גן העדן הסלובקי</div>
-                    </div>
-
-                    <div class="col">
-                        <a href="https://maps.google.com/?q=48.8685,20.3370" class="btn-base btn-nav" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="https://www.google.com/search?q=weather+Dedinky" class="btn-base btn-weather" target="_blank">
-                            🌦️
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                    </div>
+                <div class="col">
+                    <a href="https://www.google.com/search?q=Dobsinska+Ice+Cave" class="btn-base btn-weather" target="_blank">🌦️</a>
                 </div>
 
-                <div class="more-content">
-                    <ul>
-                        <li><strong>⏱ זמן כולל:</strong> 50 דק׳ נסיעה + שעה פעילות.</li>
-                        <li>• <strong>מחיר:</strong> סירה 10€.</li>
-                        <li>• <strong>התאמה לגשם:</strong> לא מומלץ.</li>
-                    </ul>
+                <div class="col">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                </div>
+            </div>
+
+            <div class="more-content">
+                <ul>
+                    <li><strong>⏱ זמן כולל:</strong> 40 דק׳ נסיעה + 45 דק׳ סיור.</li>
+                    <li>• <strong>מחיר:</strong> 12€.</li>
+                    <li>• <strong>שעות פתיחה:</strong> 09:00–16:00.</li>
+                    <li>• <strong>התאמה לגשם:</strong> מצוין.</li>
+                </ul>
+            </div>
+
+            <!-- Dedinky -->
+            <div class="row">
+                <div class="col">
+                    <div class="title-main">⭐ Dedinky (אגם דדינקי)</div>
+                    <div class="title-sub">אגם פסטורלי בדרום גן העדן הסלובקי</div>
                 </div>
 
-                <!-- ספיש -->
-                <div class="row">
-                    <div class="col">
-                        <div class="title-main">⭐ Spišské Podhradie (ספישקה פודהראדיה)</div>
-                        <div class="title-sub">עיירה ציורית + טירת ספיש</div>
-                    </div>
-
-                    <div class="col">
-                        <a href="https://maps.google.com/?q=49.0000,20.7540" class="btn-base btn-nav" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <a href="https://www.google.com/search?q=weather+Spisske+Podhradie" class="btn-base btn-weather" target="_blank">
-                            🌦️
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                    </div>
+                <div class="col">
+                    <a href="https://maps.google.com/?q=48.8685,20.3370" class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    </a>
                 </div>
 
-                <div class="more-content">
-                    <ul>
-                        <li><strong>⏱ זמן כולל:</strong> 45 דק׳ נסיעה + 30–60 דק׳.</li>
-                        <li>• <strong>מחיר:</strong> 8€.</li>
-                        <li>• <strong>התאמה לגשם:</strong> אפשרי בגשם קל.</li>
-                    </ul>
+                <div class="col">
+                    <a href="https://www.google.com/search?q=weather+Dedinky" class="btn-base btn-weather" target="_blank">🌦️</a>
                 </div>
 
-                <!-- קארטינג -->
-                <div class="row">
-                    <div class="col">
-                        <div class="title-main">⭐ Hrebienok Go-Karts (קארטינג הרביאנוק)</div>
-                        <div class="title-sub">קארט הרים קצר וכיפי</div>
-                    </div>
+                <div class="col">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                </div>
+            </div>
 
-                    <div class="col">
-                        <a href="https://maps.google.com/?q=49.1408,20.2181" class="btn-base btn-nav" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
-                        </a>
-                    </div>
+            <div class="more-content">
+                <ul>
+                    <li><strong>⏱ זמן כולל:</strong> 50 דק׳ נסיעה + שעה פעילות.</li>
+                    <li>• <strong>מחיר:</strong> סירה 10€.</li>
+                    <li>• <strong>התאמה לגשם:</strong> לא מומלץ.</li>
+                </ul>
+            </div>
 
-                    <div class="col">
-                        <a href="https://www.google.com/search?q=Hrebienok+weather" class="btn-base btn-weather" target="_blank">
-                            🌦️
-                        </a>
-                    </div>
-
-                    <div class="col">
-                        <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-                    </div>
+            <!-- ספיש -->
+            <div class="row">
+                <div class="col">
+                    <div class="title-main">⭐ Spišské Podhradie (ספישקה פודהראדיה)</div>
+                    <div class="title-sub">עיירה ציורית + טירת ספיש</div>
                 </div>
 
-                <div class="more-content">
-                    <ul>
-                        <li><strong>⏱ זמן כולל:</strong> 35 דק׳ נסיעה + 30 דק׳ פעילות.</li>
-                        <li>• <strong>מחיר:</strong> 12€.</li>
-                        <li>• <strong>התאמה לגשם:</strong> נסגר בגשם.</li>
-                    </ul>
+                <div class="col">
+                    <a href="https://maps.google.com/?q=49.0000,20.7540" class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    </a>
                 </div>
 
+                <div class="col">
+                    <a href="https://www.google.com/search?q=weather+Spisske+Podhradie" class="btn-base btn-weather" target="_blank">🌦️</a>
+                </div>
+
+                <div class="col">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                </div>
+            </div>
+
+            <div class="more-content">
+                <ul>
+                    <li><strong>⏱ זמן כולל:</strong> 45 דק׳ נסיעה + 30–60 דק׳.</li>
+                    <li>• <strong>מחיר:</strong> 8€.</li>
+                    <li>• <strong>התאמה לגשם:</strong> אפשרי בגשם קל.</li>
+                </ul>
+            </div>
+
+            <!-- קארטינג -->
+            <div class="row">
+                <div class="col">
+                    <div class="title-main">⭐ Hrebienok Go-Karts (קארטינג הרביאנוק)</div>
+                    <div class="title-sub">קארט הרים קצר וכיפי</div>
+                </div>
+
+                <div class="col">
+                    <a href="https://maps.google.com/?q=49.1408,20.2181" class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="https://www.google.com/search?q=Hrebienok+weather" class="btn-base btn-weather" target="_blank">🌦️</a>
+                </div>
+
+                <div class="col">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                </div>
+            </div>
+
+            <div class="more-content">
+                <ul>
+                    <li><strong>⏱ זמן כולל:</strong> 35 דק׳ נסיעה + 30 דק׳ פעילות.</li>
+                    <li>• <strong>מחיר:</strong> 12€.</li>
+                    <li>• <strong>התאמה לגשם:</strong> נסגר בגשם.</li>
+                </ul>
             </div>
 
         </div>
     </div>
+</div>
 
-    <!-- ⭐⭐⭐ גרסה ב — פתיחה חלקה כמו “הצג עוד” ⭐⭐⭐ -->
-    <div class="expand-wrapper" style="margin-top:25px;">
-        <button class="mini-btn" onclick="toggleMini(this)">⭐ כל האטרקציות האפשריות ביום זה (גרסה ב) ▼</button>
-
-        <div class="mini-popup">
-
-            <!-- אופציות לפי זמן -->
-            <h4>⏳ בחירת אטרקציות לפי זמן סיום סוחה בלה</h4>
-            <ul>
-                <li><strong>סיימתם עד 13:00 ←</strong> מערת הקרח דובשינסקה / אגם דדינקי / ספישקה פודהראדיה</li>
-                <li><strong>סיימתם עד 15:00 ←</strong> מערת הקרח דובשינסקה / ספישקה פודהראדיה / קארטינג הרביאנוק</li>
-                <li><strong>סיימתם עד 17:00 ←</strong> ספישקה פודהראדיה / קארטינג הרביאנוק</li>
-                <li><strong>סיימתם אחרי 18:00 ←</strong> קארטינג (אם פתוח) או ישר לתצפית</li>
-            </ul>
-
-            <!-- כרטיסי האטרקציות -->
-            <div class="table-like">
-
-                <!-- (אותם כרטיסים בדיוק כמו בגרסה א — לא משכפל כאן כדי לחסוך מקום) -->
-
-            </div>
-
-        </div>
-    </div>
 
     <!-- תצפית -->
     <div class="table-like">
