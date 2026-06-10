@@ -275,6 +275,13 @@ body {
 .more-content.open {
     display: block;
 }
+.optional-content {
+    display: none;
+}
+
+.optional-content.open {
+    display: block;
+}
 
 /* ====================================================
    10) RS / weather tag (צבעים חוזרים לעבוד)
@@ -525,12 +532,18 @@ a { text-decoration: none; }
 
     </div>
 
-  <!-- ⭐⭐⭐ כל האטרקציות האפשריות ביום זה — פתיחה חלקה כמו שאר האטרקציות ⭐⭐⭐ -->
+<!-- ⭐⭐⭐ כפתור + בלוק האטרקציות האפשריות ⭐⭐⭐ -->
 
 <div class="expand-wrapper" style="margin-top:25px;">
-    <button class="show-more-btn" onclick="toggleMore(this)">⭐ כל האטרקציות האפשריות ביום זה ▼</button>
 
-    <div class="more-content">
+    <!-- כפתור חדש שמציג/מסתיר את כל האטרקציות האפשריות -->
+    <button class="optional-btn"
+            onclick="toggleOptional('optional-attractions', this)">
+        ⭐ כל האטרקציות האפשריות ביום זה ▼
+    </button>
+
+    <!-- בלוק שמוסתר כברירת מחדל -->
+    <div id="optional-attractions" class="optional-content">
 
         <!-- אופציות לפי זמן -->
         <h4>⏳ בחירת אטרקציות לפי זמן סיום סוחה בלה</h4>
@@ -544,7 +557,7 @@ a { text-decoration: none; }
         <!-- כרטיסי האטרקציות -->
         <div class="table-like">
 
-            <!-- מערת הקרח -->
+            <!-- ⭐ מערת הקרח -->
             <div class="row">
                 <div class="col">
                     <div class="title-main">⭐ Dobšinská Ice Cave (מערת הקרח דובשינסקה)</div>
@@ -552,13 +565,16 @@ a { text-decoration: none; }
                 </div>
 
                 <div class="col">
-                    <a href="https://maps.google.com/?q=48.8837,20.3014" class="btn-base btn-nav" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    <a href="https://maps.google.com/?q=48.8837,20.3014"
+                       class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                             class="nav-google-img">
                     </a>
                 </div>
 
                 <div class="col">
-                    <a href="https://www.google.com/search?q=Dobsinska+Ice+Cave" class="btn-base btn-weather" target="_blank">🌦️</a>
+                    <a href="https://www.google.com/search?q=Dobsinska+Ice+Cave"
+                       class="btn-base btn-weather" target="_blank">🌦️</a>
                 </div>
 
                 <div class="col">
@@ -575,7 +591,7 @@ a { text-decoration: none; }
                 </ul>
             </div>
 
-            <!-- Dedinky -->
+            <!-- ⭐ Dedinky -->
             <div class="row">
                 <div class="col">
                     <div class="title-main">⭐ Dedinky (אגם דדינקי)</div>
@@ -583,13 +599,16 @@ a { text-decoration: none; }
                 </div>
 
                 <div class="col">
-                    <a href="https://maps.google.com/?q=48.8685,20.3370" class="btn-base btn-nav" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    <a href="https://maps.google.com/?q=48.8685,20.3370"
+                       class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                             class="nav-google-img">
                     </a>
                 </div>
 
                 <div class="col">
-                    <a href="https://www.google.com/search?q=weather+Dedinky" class="btn-base btn-weather" target="_blank">🌦️</a>
+                    <a href="https://www.google.com/search?q=weather+Dedinky"
+                       class="btn-base btn-weather" target="_blank">🌦️</a>
                 </div>
 
                 <div class="col">
@@ -605,7 +624,7 @@ a { text-decoration: none; }
                 </ul>
             </div>
 
-            <!-- ספיש -->
+            <!-- ⭐ ספיש -->
             <div class="row">
                 <div class="col">
                     <div class="title-main">⭐ Spišské Podhradie (ספישקה פודהראדיה)</div>
@@ -613,13 +632,16 @@ a { text-decoration: none; }
                 </div>
 
                 <div class="col">
-                    <a href="https://maps.google.com/?q=49.0000,20.7540" class="btn-base btn-nav" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    <a href="https://maps.google.com/?q=49.0000,20.7540"
+                       class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                             class="nav-google-img">
                     </a>
                 </div>
 
                 <div class="col">
-                    <a href="https://www.google.com/search?q=weather+Spisske+Podhradie" class="btn-base btn-weather" target="_blank">🌦️</a>
+                    <a href="https://www.google.com/search?q=weather+Spisske+Podhradie"
+                       class="btn-base btn-weather" target="_blank">🌦️</a>
                 </div>
 
                 <div class="col">
@@ -635,7 +657,7 @@ a { text-decoration: none; }
                 </ul>
             </div>
 
-            <!-- קארטינג -->
+            <!-- ⭐ קארטינג -->
             <div class="row">
                 <div class="col">
                     <div class="title-main">⭐ Hrebienok Go-Karts (קארטינג הרביאנוק)</div>
@@ -643,13 +665,16 @@ a { text-decoration: none; }
                 </div>
 
                 <div class="col">
-                    <a href="https://maps.google.com/?q=49.1408,20.2181" class="btn-base btn-nav" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="nav-google-img">
+                    <a href="https://maps.google.com/?q=49.1408,20.2181"
+                       class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                             class="nav-google-img">
                     </a>
                 </div>
 
                 <div class="col">
-                    <a href="https://www.google.com/search?q=Hrebienok+weather" class="btn-base btn-weather" target="_blank">🌦️</a>
+                    <a href="https://www.google.com/search?q=Hrebienok+weather"
+                       class="btn-base btn-weather" target="_blank">🌦️</a>
                 </div>
 
                 <div class="col">
@@ -668,6 +693,7 @@ a { text-decoration: none; }
         </div>
     </div>
 </div>
+
 
 
     <!-- תצפית -->
@@ -1733,6 +1759,20 @@ function toggleMini(btn) {
         btn.textContent = 'הצג עוד';
     }
 }
+    function toggleOptional(id, btn) {
+    const content = document.getElementById(id);
+    if (!content) return;
+
+    content.classList.toggle('open');
+
+    // שינוי טקסט הכפתור
+    if (content.classList.contains('open')) {
+        btn.textContent = 'הסתר אטרקציות אפשריות ▲';
+    } else {
+        btn.textContent = '⭐ כל האטרקציות האפשריות ביום זה ▼';
+    }
+}
+
 </script>
 
 
