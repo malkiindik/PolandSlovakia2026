@@ -406,19 +406,22 @@ margin: 0;    }
     }
 
     /* לוז */
+    .mini-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
     .mini-popup {
-        position: fixed !important;
-        top: 80px; /* מרחק מהכפתורים */
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
+        position: absolute;
+        top: 100%; /* נפתח ישר מתחת לכפתור */
+        left: 0;
+        width: 100%;
         background: #fff;
         padding: 16px;
         box-sizing: border-box;
-        z-index: 9999;
-        border-radius: 0;
+        z-index: 999;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 8px;
     }
 
     .expand-wrapper {
