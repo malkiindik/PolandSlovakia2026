@@ -179,7 +179,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 6px 10px;
+    padding: 6px 14px; /* אליפסה רחבה בדסקטופ */
     border-radius: var(--radius);
     font-size: 0.75rem;
     text-decoration: none;
@@ -189,7 +189,14 @@ body {
     white-space: nowrap;
 }
 
-/* וריאציות */
+/* אייקונים בתוך הכפתורים */
+.btn-base img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* וריאציות צבע */
 .btn-nav {
     background: var(--nav-btn);
 }
@@ -202,10 +209,11 @@ body {
     background: var(--weather-btn);
 }
 
+/* כפתור הצג עוד */
 .show-more-btn {
     background: var(--more-btn);
     color: #333;
-    padding: 6px 10px;
+    padding: 6px 14px;
     border-radius: var(--radius);
     font-size: 0.75rem;
     border: none;
