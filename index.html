@@ -447,7 +447,24 @@ margin: 0;    }
         margin: 18px 0;
     }
 }
+.day-1 ul li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
 
+    .day-1 ul li span,
+    .day-1 ul li strong,
+    .day-1 ul li {
+        flex: 1;
+    }
+
+    .day-1 ul li .btn-base {
+        flex-shrink: 0;
+    }
+}
 
 /* ====================================================
    12) ניקוי גלובלי קטן
@@ -494,7 +511,7 @@ a { text-decoration: none; }
 </div>
 
 
-<div class="card">
+<div class="card day-1">
     <h2>יום 1 | 21/06 – נחיתה + Štrbské Pleso</h2>
 
     <div class="flight-info">
