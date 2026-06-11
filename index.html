@@ -221,12 +221,18 @@ body {
     height: 15px;
     object-fit: contain;
 }
+.weather-icon-img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
 
 .purchase-text,
 .nav-google-text,
 .weather-text {
     display: inline;
 }
+    
 
 /* ====================================================
    8) לוז
@@ -335,6 +341,7 @@ body {
 .weather-tag.green { background:#e5f7ea; color:#176b3f; }
 .weather-tag.yellow { background:#fff7e0; color:#8a5b00; }
 .weather-tag.red { background:#ffe5e5; color:#8a1f1f; }
+    
 
 /* ====================================================
    11) מובייל
@@ -381,8 +388,7 @@ body {
     .weather-icon-img {
         width: 22px;
         height: 22px;
-            object-fit: contain;
-    }
+margin: 0;    }
 
     /* הסתרת טקסט */
     .nav-google-text,
@@ -401,9 +407,12 @@ body {
 
     /* לוז */
     .mini-popup {
-        width: calc(100% - 20px);
-        right: 10px;
-        left: 10px;
+        position: relative;
+        width: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        box-sizing: border-box;
+        padding: 12px 16px;
     }
 
     .expand-wrapper {
