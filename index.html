@@ -405,29 +405,25 @@ margin: 0;    }
         line-height: 1;
     }
 
-    /* לוז */
-   {
-
-    /* העמודה לא תגביל את הפופאפ */
+    /* לוז */  
     .mini-wrapper {
         position: static !important;
     }
 
     .mini-popup {
         position: absolute;
-        top: 100%; /* מתחת לכפתור */
-        left: 0;
-        right: 0;
-        width: 100vw; /* רוחב מסך אמיתי */
-        margin-left: calc(-50vw + 50%); /* טריק שמוציא מהעמודה */
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        max-width: 100vw;
         background: #fff;
         padding: 16px;
         box-sizing: border-box;
-        z-index: 999;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 9999;
         border-radius: 8px;
-    
-
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
     .expand-wrapper {
         margin: 18px 0;
     }
