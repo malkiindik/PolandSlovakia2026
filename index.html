@@ -2172,7 +2172,7 @@ function toggleMini(btn) {
 }
 
  function toggleMore(btn) {
-    // שומר את הטקסט המקורי של הכפתור
+    // שמירת טקסט מקורי
     const originalText = btn.dataset.original || btn.textContent;
     if (!btn.dataset.original) btn.dataset.original = btn.textContent;
 
@@ -2180,10 +2180,18 @@ function toggleMini(btn) {
     let parent = btn.closest('.task-item') || btn.closest('.row');
     if (!parent) return;
 
-    // מחפש את ה-more-content הקרוב ביותר אחרי ה-li/row
+    // מחפש את ה-more-content הקרוב ביותר אחרי parent
     let content = parent.nextElementSibling;
+
+    // מחפש קדימה עד שמוצא more-content
     while (content && !content.classList.contains('more-content')) {
         content = content.nextElementSibling;
+    }
+
+    // אם לא מצא — מחפש גם מחוץ ל־ul (למקרה של יום 1)
+    if (!content) {
+        const all = parent.parentElement.querySelectorAll('.more-content');
+        content = all.length ? all[0] : null;
     }
 
     if (!content) return;
@@ -2191,13 +2199,12 @@ function toggleMini(btn) {
     // פתיחה/סגירה
     content.classList.toggle('open');
 
-    // שינוי טקסט הכפתור
-    if (content.classList.contains('open')) {
-        btn.textContent = 'הסתר ▲';
-    } else {
-        btn.textContent = originalText;
-    }
+    // שינוי טקסט
+    btn.textContent = content.classList.contains('open')
+        ? 'הסתר ▲'
+        : originalText;
 }
+
 
 
 
