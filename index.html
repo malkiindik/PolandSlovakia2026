@@ -1169,15 +1169,25 @@ a { text-decoration: none; }
     </div>
 
 </div>
-<!-- יום נקיק דיירי – פתיחה חובה → אופציות לפי זמן → כרטיסי אטרקציות → סיום חובה -->
+<!-- יום אופציונלי – Jánošíkove Diery + אופציות + מעיין + אגם -->
 
-<div class="card">
-    <h2>יום אופציונלי | Jánošíkove Diery → אופציות לפי זמן → מעיין + אגם</h2>
+<div class="card-day">
 
+    <!-- כותרת ראשית -->
+    <div class="card-header">
+        <div class="day-label">יום אופציונלי</div>
+        <h2>Jánošíkove Diery → אופציות לפי זמן → מעיין + אגם</h2>
+    </div>
+
+    <!-- כותרת משנית -->
+    <div class="card-subtitle">
+        נקיק דיירי חובה → באמצע בוחרים אטרקציות לפי זמן → סיום במעיין Kaďa ואגם Vrbické
+    </div>
+
+    <!-- מזג אוויר -->
     <div class="weather-tag green">
         🌤 RS: 2 | מזג אוויר:
-        <a href="https://www.google.com/search?q=weather+Terchova"
-           target="_blank">בדיקה</a>
+        <a href="https://www.google.com/search?q=weather+Terchova" target="_blank">בדיקה</a>
     </div>
 
     <div class="weather-note">
@@ -1186,6 +1196,8 @@ a { text-decoration: none; }
     </div>
 
     <!-- פתיחה: נקיק דיירי -->
+    <div class="expand-wrapper">⭐ פתיחה חובה – Jánošíkove Diery</div>
+
     <div class="table-like">
 
         <div class="row" id="attraction-janosikove">
@@ -1198,7 +1210,8 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=49.2667,19.0200"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
@@ -1209,15 +1222,13 @@ a { text-decoration: none; }
                 </a>
             </div>
 
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
             <ul>
                 <li>משך: 2–3 שעות (חלק תחתון) / 4–5 שעות (מסלול מלא).</li>
-                <li>אופי: סולמות, מפלים, גשרים – דומה ל-Suchá Belá אבל מעט קל יותר.</li>
+                <li>אופי: סולמות, מפלים, גשרים – דומה ל‑Suchá Belá אבל מעט קל יותר.</li>
                 <li>ציוד: נעלי הליכה, מים, מעיל קל.</li>
                 <li>כניסה: חינם.</li>
             </ul>
@@ -1225,30 +1236,18 @@ a { text-decoration: none; }
 
     </div>
 
-    <!-- אופציות לפי זמן שנשאר – כפתורים מתקפלים -->
-    <h3 style="margin-top:25px;">⭐ אופציות בין הנקיק לסיום – לפי זמן שנשאר</h3>
+    <!-- אופציות לפי זמן -->
+    <h3 class="section-title">⭐ אופציות בין הנקיק לסיום – לפי זמן שנשאר</h3>
 
     <!-- 4–5 שעות -->
     <div class="mini-wrapper">
         <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 4–5 שעות ▼</button>
         <div class="mini-popup">
             <ul>
-                <li>
-                    ⭐ <a href="#attraction-marafun">MaraFun – Liptovská Mara</a>  
-                    – מים, אופנועי ים, חוף. ⏱ בערך 2–3 שעות כולל נסיעות.
-                </li>
-                <li>
-                    ⭐ <a href="#attraction-demanovska">Demänovská Cave of Liberty</a>  
-                    – מערת נטיפים מרהיבה. ⏱ בערך 2–2.5 שעות כולל נסיעות.
-                </li>
-                <li>
-                    ⭐ <a href="#attraction-monaco">Monaco Grand Prix Karting</a>  
-                    – קארטינג מקצועי. ⏱ בערך 2–2.5 שעות כולל נסיעות.
-                </li>
-                <li>
-                    ⭐ <a href="#attraction-ziarce">FUN PARK Žiarce – מזחלות</a>  
-                    – מגלשות הרים + נדנדה. ⏱ בערך 2–2.5 שעות כולל נסיעות.
-                </li>
+                <li>⭐ <a href="#attraction-marafun">MaraFun – Liptovská Mara</a> – מים, אופנועי ים, חוף. ⏱ 2–3 שעות כולל נסיעות.</li>
+                <li>⭐ <a href="#attraction-demanovska">Demänovská Cave of Liberty</a> – מערת נטיפים. ⏱ 2–2.5 שעות.</li>
+                <li>⭐ <a href="#attraction-monaco">Monaco Grand Prix Karting</a> – קארטינג מקצועי. ⏱ 2–2.5 שעות.</li>
+                <li>⭐ <a href="#attraction-ziarce">FUN PARK Žiarce</a> – מזחלות + נדנדה. ⏱ 2–2.5 שעות.</li>
             </ul>
         </div>
     </div>
@@ -1258,18 +1257,9 @@ a { text-decoration: none; }
         <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 3 שעות ▼</button>
         <div class="mini-popup">
             <ul>
-                <li>
-                    ⭐ <a href="#attraction-marafun">MaraFun – Liptovská Mara</a>  
-                    – אם רוצים מים וכיף, בלי למהר. ⏱ עדיין נכנס יפה.
-                </li>
-                <li>
-                    ⭐ <a href="#attraction-monaco">Monaco Grand Prix Karting</a>  
-                    – אדרנלין, מתאים גם כשיש פחות זמן. ⏱ ~2 שעות נטו.
-                </li>
-                <li>
-                    ⭐ <a href="#attraction-demanovska">Demänovská Cave of Liberty</a>  
-                    – אם לא עייפים מדי מהנקיק. ⏱ גבולי אבל אפשרי.
-                </li>
+                <li>⭐ <a href="#attraction-marafun">MaraFun</a> – מים וכיף בלי למהר.</li>
+                <li>⭐ <a href="#attraction-monaco">Monaco Karting</a> – אדרנלין קצר. ⏱ ~2 שעות.</li>
+                <li>⭐ <a href="#attraction-demanovska">Demänovská Cave</a> – גבולי אבל אפשרי.</li>
             </ul>
         </div>
     </div>
@@ -1279,14 +1269,8 @@ a { text-decoration: none; }
         <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארו 2 שעות ▼</button>
         <div class="mini-popup">
             <ul>
-                <li>
-                    ⭐ <a href="#attraction-monaco">Monaco Grand Prix Karting</a>  
-                    – קצר, ממוקד, מתאים לעייפות. ⏱ ~1.5–2 שעות כולל נסיעות.
-                </li>
-                <li>
-                    ⭐ <a href="#attraction-ziarce">FUN PARK Žiarce – מזחלות</a>  
-                    – אם פתוח עד 16:00 ואתם מספיקים. ⏱ ~1.5–2 שעות.
-                </li>
+                <li>⭐ <a href="#attraction-monaco">Monaco Karting</a> – קצר וממוקד.</li>
+                <li>⭐ <a href="#attraction-ziarce">Žiarce</a> – אם פתוח עד 16:00.</li>
             </ul>
         </div>
     </div>
@@ -1296,17 +1280,13 @@ a { text-decoration: none; }
         <button class="mini-btn" onclick="toggleMini(this)">⏳ אם נשארה שעה–שעה וחצי ▼</button>
         <div class="mini-popup">
             <ul>
-                <li>
-                    ⭐ עדיף לוותר על אטרקציות נוספות ולנסוע בנחת לכיוון  
-                    <a href="#attraction-kada">מעיין Kaďa</a> ו־<a href="#attraction-vrbicke">Vrbické Pleso</a>.
-                </li>
+                <li>⭐ סעו בנחת ל־<a href="#attraction-kada">Kaďa</a> ו־<a href="#attraction-vrbicke">Vrbické Pleso</a>.</li>
             </ul>
         </div>
     </div>
 
-    <!-- כרטיסי האטרקציות – פעם אחת בלבד -->
-
-    <h3 style="margin-top:25px;">⭐ כל האטרקציות האפשריות ליום זה</h3>
+    <!-- כל האטרקציות -->
+    <h3 class="section-title">⭐ כל האטרקציות האפשריות ליום זה</h3>
 
     <div class="table-like">
 
@@ -1321,29 +1301,26 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=49.1045,19.5567"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://funcenter.sk/liptovska-mara/vodny-skuter/"
-                   class="btn-base btn-weather" target="_blank">
-                    🌊 אתר רשמי
-                </a>
+                   class="btn-base btn-weather" target="_blank">🌊 אתר</a>
             </div>
 
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל (הערכה):</strong> ~55 דק׳ נסיעה מהנקיק + 1–1.5 שעות פעילות + 15 דק׳ למעיין/אגם.</li>
-                <li><strong>יתרונות:</strong> מים, כיף, מתאים לחום, אווירה קיצית.</li>
-                <li><strong>חסרונות:</strong> דורש בגדי ים, תלוי מזג אוויר.</li>
-                <li><strong>שעות פתיחה:</strong> לרוב 10:00–18:00 ביוני (לבדוק באתר לפני).</li>
-                <li><strong>טיפ:</strong> בשעות אחה״צ מאוחרות לעיתים אין תשלום כניסה לחוף.</li>
+                <li><strong>⏱ זמן כולל:</strong> ~55 דק׳ נסיעה + 1–1.5 שעות פעילות.</li>
+                <li><strong>יתרונות:</strong> מים, כיף, מתאים לחום.</li>
+                <li><strong>חסרונות:</strong> דורש בגדי ים.</li>
+                <li><strong>שעות פתיחה:</strong> לרוב 10:00–18:00.</li>
+                <li><strong>טיפ:</strong> אחה״צ לעיתים אין תשלום כניסה.</li>
             </ul>
         </div>
 
@@ -1358,28 +1335,24 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=49.0375,19.6170"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=Monaco+Grand+Prix+Karting+Zavažná+Poruba"
-                   class="btn-base btn-weather" target="_blank">
-                    🏎️ מידע
-                </a>
+                   class="btn-base btn-weather" target="_blank">🏎️ מידע</a>
             </div>
 
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל (הערכה):</strong> ~1 שעה נסיעה מהנקיק + 30–45 דק׳ פעילות + 15–20 דק׳ למעיין.</li>
-                <li><strong>יתרונות:</strong> אדרנלין, קצר, לא דורש מאמץ פיזי.</li>
-                <li><strong>חסרונות:</strong> רועש, פחות “טבע”.</li>
-                <li><strong>שעות פתיחה:</strong> לרוב 10:00–20:00 ביוני (לבדוק לפני).</li>
+                <li><strong>⏱ זמן כולל:</strong> ~1 שעה נסיעה + 30–45 דק׳ פעילות.</li>
+                <li><strong>יתרונות:</strong> אדרנלין, קצר.</li>
+                <li><strong>חסרונות:</strong> פחות טבע.</li>
             </ul>
         </div>
 
@@ -1394,32 +1367,28 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=49.0285,19.5860"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=FUN+PARK+Ziarce"
-                   class="btn-base btn-weather" target="_blank">
-                    🎢 אתר
-                </a>
+                   class="btn-base btn-weather" target="_blank">🎢 אתר</a>
             </div>
 
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל (הערכה):</strong> ~1 שעה נסיעה מהנקיק + 45–60 דק׳ פעילות + 15–20 דק׳ למעיין.</li>
-                <li><strong>יתרונות:</strong> כיף, מתאים גם לילדים, אקשן קצר.</li>
-                <li><strong>חסרונות:</strong> פתוח עד 16:00 – צריך לתזמן.</li>
-                <li><strong>שעות פתיחה:</strong> לרוב 09:00–16:00 ביוני.</li>
+                <li><strong>⏱ זמן כולל:</strong> ~1 שעה נסיעה + 45–60 דק׳ פעילות.</li>
+                <li><strong>יתרונות:</strong> כיף, מתאים לילדים.</li>
+                <li><strong>חסרונות:</strong> פתוח עד 16:00.</li>
             </ul>
         </div>
 
-        <!-- Demänovská Cave of Liberty -->
+        <!-- Demänovská Cave -->
         <div class="row" id="attraction-demanovska">
             <div class="col">
                 <div class="title-main">⭐ Demänovská Cave of Liberty</div>
@@ -1430,32 +1399,29 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=48.9990,19.5800"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=Demänovská+Cave+of+Liberty"
-                   class="btn-base btn-weather" target="_blank">
-                    🕳️ אתר
-                </a>
+                   class="btn-base btn-weather" target="_blank">🕳️ אתר</a>
             </div>
 
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל (הערכה):</strong> ~1 שעה נסיעה מהנקיק + 60–90 דק׳ סיור + 15–20 דק׳ למעיין.</li>
-                <li><strong>יתרונות:</strong> יפה, קריר, מתאים לחום.</li>
-                <li><strong>חסרונות:</strong> עוד הליכה, יכול להיות עמוס.</li>
-                <li><strong>שעות פתיחה:</strong> לרוב 09:00–16:00, סיורים כל שעה.</li>
+                <li><strong>⏱ זמן כולל:</strong> ~1 שעה נסיעה + 60–90 דק׳ סיור.</li>
+                <li><strong>יתרונות:</strong> קריר, יפה.</li>
+                <li><strong>חסרונות:</strong> עמוס.</li>
+                <li><strong>שעות פתיחה:</strong> 09:00–16:00.</li>
             </ul>
         </div>
 
-        <!-- Go-Kart Jasná (אופציונלי נוסף) -->
+        <!-- Go-Kart Jasná -->
         <div class="row" id="attraction-jasna-kart">
             <div class="col">
                 <div class="title-main">⭐ Go-Kart Jasná Low Tatras</div>
@@ -1466,33 +1432,30 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=49.0190,19.5800"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=Go+Kart+Jasna"
-                   class="btn-base btn-weather" target="_blank">
-                    🏁 מידע
-                </a>
+                   class="btn-base btn-weather" target="_blank">🏁 מידע</a>
             </div>
 
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
             <ul>
-                <li><strong>⏱ זמן כולל (הערכה):</strong> דומה ל-Monaco – ~1.5–2 שעות כולל נסיעות.</li>
-                <li><strong>יתרונות:</strong> אופציה נוספת אם Monaco מלא/סגור.</li>
+                <li><strong>⏱ זמן כולל:</strong> ~1.5–2 שעות.</li>
+                <li><strong>יתרונות:</strong> אופציה אם Monaco מלא.</li>
             </ul>
         </div>
 
     </div>
 
-    <!-- סיום חובה: מעיין + אגם -->
-    <h3 style="margin-top:25px;">🔥 סיום היום – מעיין חם + אגם רגוע</h3>
+    <!-- סיום -->
+    <h3 class="section-title">🔥 סיום היום – מעיין חם + אגם רגוע</h3>
 
     <div class="table-like">
 
@@ -1507,20 +1470,78 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=49.0334,19.5808"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=Kada+thermal+springs"
-                   class="btn-base btn-weather" target="_blank">
-                    ♨️ מידע
+                   class="btn-base btn-weather" target="_blank">♨️ מידע</a>
+            </div>
+
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
+        </div>
+
+        <div class="more-content">
+            <ul>
+                <li>פתוח תמיד, חינם.</li>
+                <li>טבילה קצרה במים חמים – מושלם אחרי יום מלא.</li>
+            </ul>
+        </div>
+
+       <!-- Vrbické Pleso -->
+<div class="row" id="attraction-vrbicke">
+    <div class="col">
+        <div class="title-main">🔥 Vrbické Pleso</div>
+        <div class="title-sub">אגם קטן וקסום – סיום רגוע</div>
+    </div>
+
+    <div class="col">
+        <a href="https://maps.google.com/?q=48.9710,19.5860"
+           class="btn-base btn-nav" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                 class="nav-google-img">
+            <span class="nav-google-text">ניווט</span>
+        </a>
+    </div>
+
+    <div class="col">
+        <a href="https://www.google.com/search?q=weather+Jasna"
+           class="btn-base btn-weather" target="_blank">🌤️ תחזית</a>
+    </div>
+
+    <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
+</div>
+
+<div class="more-content">
+    <ul>
+        <li>משך: 45–60 דק׳ הליכה רגועה סביב האגם.</li>
+        <li>אופי: שקט, טבעי, מושלם לסיום היום.</li>
+    </ul>
+</div>
+        <!-- Kaďa -->
+        <div class="row" id="attraction-kada">
+            <div class="col">
+                <div class="title-main">🔥 Thermal Springs Kaďa</div>
+                <div class="title-sub">מעיין חם טבעי + בריכת שכשוך</div>
+            </div>
+
+            <div class="col">
+                <a href="https://maps.google.com/?q=49.0334,19.5808"
+                   class="btn-base btn-nav" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                <a href="https://www.google.com/search?q=Kada+thermal+springs"
+                   class="btn-base btn-weather" target="_blank">♨️ מידע</a>
             </div>
+
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
@@ -1541,20 +1562,17 @@ a { text-decoration: none; }
                 <a href="https://maps.google.com/?q=48.9710,19.5860"
                    class="btn-base btn-nav" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                         class="nav-google-img"> ניווט
+                         class="nav-google-img">
+                    <span class="nav-google-text">ניווט</span>
                 </a>
             </div>
 
             <div class="col">
                 <a href="https://www.google.com/search?q=weather+Jasna"
-                   class="btn-base btn-weather" target="_blank">
-                    🌤️ תחזית
-                </a>
+                   class="btn-base btn-weather" target="_blank">🌤️ תחזית</a>
             </div>
 
-            <div class="col">
-                <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
-            </div>
+            <div class="col"><button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button></div>
         </div>
 
         <div class="more-content">
@@ -1564,10 +1582,8 @@ a { text-decoration: none; }
             </ul>
         </div>
 
-    </div>
-</div>
-
-
+    </div> <!-- סוף table-like -->
+</div> <!-- סוף card-day -->
  <!-- יום 3 -->
 
 <div class="card-day">
