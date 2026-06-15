@@ -883,7 +883,7 @@ a { text-decoration: none; }
 
     <!-- סוחה בלה -->
     <div class="table-like">
-
+<ul class="task-list">
         <div class="row" id="attraction-sucha">
             <div class="col">
                 <div class="title-main">🔥 Suchá Belá (סוחה בלה)</div>
@@ -2171,8 +2171,8 @@ function toggleMini(btn) {
     }
 }
 
- function toggleMore(btn) {
-    // שמירת טקסט מקורי
+function toggleMore(btn) {
+    // שומר טקסט מקורי
     const originalText = btn.dataset.original || btn.textContent;
     if (!btn.dataset.original) btn.dataset.original = btn.textContent;
 
@@ -2180,18 +2180,22 @@ function toggleMini(btn) {
     let parent = btn.closest('.task-item') || btn.closest('.row');
     if (!parent) return;
 
-    // מחפש את ה-more-content הקרוב ביותר אחרי parent
+    // ניסיון 1: מחפש more-content אחרי ה-li/row
     let content = parent.nextElementSibling;
-
-    // מחפש קדימה עד שמוצא more-content
     while (content && !content.classList.contains('more-content')) {
         content = content.nextElementSibling;
     }
 
-    // אם לא מצא — מחפש גם מחוץ ל־ul (למקרה של יום 1)
+    // ניסיון 2: מקרה מיוחד של יום 1 — more-content אחרי כל ה-ul
     if (!content) {
-        const all = parent.parentElement.querySelectorAll('.more-content');
-        content = all.length ? all[0] : null;
+        const list = parent.closest('.task-list');
+        if (list) {
+            let sib = list.nextElementSibling;
+            while (sib && !sib.classList.contains('more-content')) {
+                sib = sib.nextElementSibling;
+            }
+            content = sib;
+        }
     }
 
     if (!content) return;
@@ -2199,14 +2203,11 @@ function toggleMini(btn) {
     // פתיחה/סגירה
     content.classList.toggle('open');
 
-    // שינוי טקסט
+    // טקסט כפתור
     btn.textContent = content.classList.contains('open')
         ? 'הסתר ▲'
         : originalText;
 }
-
-
-
 
     function toggleOptional(id, btn) {
     const content = document.getElementById(id);
