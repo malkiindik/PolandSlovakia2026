@@ -521,55 +521,108 @@ a { text-decoration: none; }
 
 
 <div class="card day-1">
-    <h2>יום 1 | 21/06 – נחיתה + Štrbské Pleso</h2>
-
-    <div class="flight-info">
-        ✈️ <strong>טיסה W6 2098:</strong> המראה 11:05 | נחיתה 13:50
+ 
+    <!-- כותרת -->
+    <div class="card-title">
+        <div class="day-badge">יום 1 · 21/06</div>
+        <h2>נחיתה &amp; Štrbské Pleso (שטרבסקה פלסו)</h2>
+    </div>
+ 
+    <!-- פס טיסה -->
+    <div class="flight-bar">
+        <span><span class="flight-num">W6 2098</span></span>
+        <div class="flight-times">
+            <span>המראה 11:05</span>
+            <span>נחיתה 13:50</span>
+        </div>
+    </div>
+ 
+    <!-- משימות -->
+    <ul class="task-list">
+ 
+        <li class="task-item">
+            <div class="task-text">
+                <strong>איסוף רכב</strong>
+                <span class="sub">שדה התעופה + הצטיידות בסופר</span>
+            </div>
+            <a href="https://maps.google.com" class="btn-pill nav" target="_blank">ניווט</a>
+        </li>
+ 
+        <li class="task-item">
+            <div class="task-text">
+                <strong>מדבקת כבישים סלובקיה</strong>
+                <span class="sub">חובה לפני נסיעה בכבישים מהירים</span>
+            </div>
+            <a href="https://eznamka.sk/en" class="btn-pill buy" target="_blank">רכישה</a>
+        </li>
+ 
+        <li class="task-item">
+            <div class="task-text">
+                <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
+                <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
+            </div>
+            <a href="https://maps.google.com" class="btn-pill nav" target="_blank">ניווט</a>
+            <!-- מפל סקוק — אופציונלי -->
+<div class="optional-section">
+    <div class="expand-wrapper">
+        <button class="optional-btn" onclick="toggleOptional('optional-skok', this)">
+            ⭐ אופציה: מסלול למפל Skok ▼
+        </button>
     </div>
 
-    <ul>
+    <div id="optional-skok" class="optional-content">
+        <div class="table-like">
+            <div class="row">
+                <div class="col">
+                    <div class="title-main">🌊 Vodopád Skok (מפל סקוק)</div>
+                    <div class="title-sub">מפל 30 מ׳ — מסלול פופולרי ויפהפה מהאגם</div>
+                </div>
+                <div class="col">
+                    <a href="https://maps.google.com/?q=49.1185,20.0601"
+                       class="btn-base btn-nav" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
+                             class="nav-google-img">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.google.com/search?q=weather+Strbske+Pleso"
+                       class="btn-base btn-weather" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Google_Weather_Icon.svg"
+                             class="weather-icon-img" alt="מזג אוויר">
+                    </a>
+                </div>
+                <div class="col">
+                    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
+                </div>
+            </div>
 
-        <li class="check-item">
-            איסוף רכב והצטיידות בסופר
-            <a href="https://maps.google.com"
-               class="btn-base btn-nav"
-               target="_blank">
-
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                     class="nav-google-img">
-                <span class="nav-google-text">ניווט</span>
-            </a>
+            <div class="more-content">
+                <ul>
+                    <li><strong>⏱ זמן כולל:</strong> ~3 שעות הלוך וחזור</li>
+                    <li><strong>מסלול:</strong> סימון צהוב מהאגם — עלייה הדרגתית דרך יער וסלעים</li>
+                    <li><strong>כניסה:</strong> חינם</li>
+                    <li><strong>התאמה לגשם:</strong> לא מומלץ — מסלול סלעי ומחליק</li>
+                    <li><strong>⚠️ ביום נחיתה:</strong> אפשרי רק אם מגיעים לאגם עד 16:30 לכל המאוחר</li>
+                    <li><strong>טיפ:</strong> מעל המפל יש שרשראות לטיפוס לאגם קטן — שווה מאוד אם יש כח</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
         </li>
-
-        <li class="check-item">
-            <strong>רכישת מדבקת כבישים סלובקיה</strong>
-            <a href="https://eznamka.sk/en"
-               class="btn-base btn-purchase"
-               target="_blank">
-
-                <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png"
-                     class="purchase-icon-img">
-                <span class="purchase-text">רכישה</span>
-            </a>
-        </li>
-
-        <li class="check-item">
-            <strong>עצירה ב-Štrbské Pleso</strong> – אגם יפהפה ומסלול קל
-            <a href="https://maps.google.com"
-               class="btn-base btn-nav"
-               target="_blank">
-
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg"
-                     class="nav-google-img">
-                <span class="nav-google-text">ניווט</span>
-            </a>
-        </li>
-
-        <li class="check-item">
-            הגעה למקום הלינה
-        </li>
-
+ 
     </ul>
+ 
+    <!-- לינה -->
+    <div class="lodging-item">
+        <div class="lodging-label">🏠 לינה</div>
+        <div class="lodging-content">
+            <!-- כשתסגרי מקום, החליפי את הטקסט כאן וכתובת ה-href -->
+            <div class="lodging-address placeholder">כתובת תתווסף לאחר הזמנה</div>
+            <a href="https://maps.google.com/?q=YOUR_ADDRESS_HERE" class="btn-pill nav" target="_blank">ניווט</a>
+        </div>
+    </div>
+ 
 </div>
 <div class="card">
     <div class="card-header">
