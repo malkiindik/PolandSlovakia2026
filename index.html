@@ -122,6 +122,26 @@ body {
     box-shadow: 0 3px 5px rgba(0,0,0,0.05);
     border-right: 5px solid var(--primary);
 }
+    .card-header {
+    background: linear-gradient(135deg, #f3e6ec, #e8c4d4);
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0b8cc;
+}
+
+.card-header .day-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #8e2a4d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-header h2 {
+    margin: 2px 0 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #5a1a32;
+}
 
 /* ====================================================
    4) טבלה
@@ -670,11 +690,10 @@ a { text-decoration: none; }
 </div>
 
 
-<div class="card day-1">
-
-    <!-- כותרת + badge -->
-    <div class="day-badge" style="padding: 6px 14px 0;">יום 1 · 21/06</div>
-
+<div class="card-header">
+    <div class="day-label">יום 1 · 21/06</div>
+    <h2>נחיתה & Štrbské Pleso אגם שטרבסקה פלסו</h2>
+</div>
     <!-- פס טיסה -->
     <div class="flight-bar">
         <span><span class="flight-num">W6 2098</span></span>
@@ -685,9 +704,9 @@ a { text-decoration: none; }
     </div>
 
     <!-- כותרת -->
-    <div class="card-title">
+<!--    <div class="card-title">
         <h2>נחיתה &amp; Štrbské Pleso (שטרבסקה פלסו)</h2>
-    </div>
+    </div>-->
 
     <!-- משימות -->
     <ul class="task-list">
@@ -696,16 +715,19 @@ a { text-decoration: none; }
     <div class="task-text">
         <strong>איסוף רכב — One Rent</strong>
         <span class="sub">מס׳ הזמנה: 95076</span>
-        <span class="sub" style="margin-top: 6px; display:block; background:#f7f0f3; border-radius:6px; padding:6px 8px; color:#444; line-height:1.6;">
-            🧍 נציג ימתין בטרמינל הגעות עם שלט One Rent<br>
-            📞 תמיכה: <a href="tel:+48723606060" style="color:#b03a63;">+48 723 60 60 60</a><br>
-            🚨 חירום: <a href="tel:+48780500950" style="color:#b03a63;">+48 780 500 950</a><br>
-            <span style="font-size:0.75rem; color:#888;">לאנגלית הקישו 0</span>
-        </span>
     </div>
+    <button class="show-more-btn" onclick="toggleMore(this)">הצג עוד</button>
     <a href="https://drive.google.com/file/d/1YuwBykzM-E1UX3w_n53Wt5m6daBh1I0n/view?usp=sharing"
        class="btn-pill" style="background:#4f6d7a;" target="_blank">📄 הזמנה</a>
 </li>
+<div class="more-content">
+    <ul>
+        <li>🧍 נציג ימתין בטרמינל הגעות עם שלט One Rent</li>
+        <li>📞 תמיכה: <a href="tel:+48723606060" style="color:#b03a63;">+48 723 60 60 60</a></li>
+        <li>🚨 חירום: <a href="tel:+48780500950" style="color:#b03a63;">+48 780 500 950</a></li>
+        <li style="color:#888; font-size:0.78rem;">לאנגלית הקישו 0</li>
+    </ul>
+</div>
 
 <li class="task-item">
     <div class="task-text">
