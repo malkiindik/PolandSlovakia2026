@@ -26,7 +26,6 @@
 
     --radius: 16px;
 
-    /* NEW — optional attractions button colors */
     --optional-btn-bg: #4f6d7a;
     --optional-btn-bg-hover: #6b8a9b;
     --optional-btn-text: #ffffff;
@@ -59,9 +58,9 @@ body {
     margin-top: 0;
 }
 
-/* ----------------------------------------------------
-   Header – ורוד אלגנטי (גרסה משופרת)
----------------------------------------------------- */
+/* ====================================================
+   Header
+==================================================== */
 .main-header {
     background: linear-gradient(135deg, #f3e6ec, #d4a1b8, #8e2a4d);
     color: white;
@@ -72,7 +71,6 @@ body {
     max-width: 700px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
-
 
 .main-header h1 {
     font-size: 2rem;
@@ -112,8 +110,6 @@ body {
     max-width: 650px;
     margin: auto;
 }
-
-
 
 /* ====================================================
    3) כרטיס
@@ -166,14 +162,14 @@ body {
 }
 
 /* ====================================================
-   6) מערכת כפתורים אחידה
+   6) כפתורים
 ==================================================== */
 .btn-base {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 6px 14px; /* אליפסה רחבה בדסקטופ */
+    padding: 6px 14px;
     border-radius: var(--radius);
     font-size: 0.75rem;
     text-decoration: none;
@@ -183,27 +179,16 @@ body {
     white-space: nowrap;
 }
 
-/* אייקונים בתוך הכפתורים */
 .btn-base img {
     width: 18px;
     height: 18px;
     object-fit: contain;
 }
 
-/* וריאציות צבע */
-.btn-nav {
-    background: var(--nav-btn);
-}
+.btn-nav      { background: var(--nav-btn); }
+.btn-purchase { background: var(--purchase-btn); }
+.btn-weather  { background: var(--weather-btn); }
 
-.btn-purchase {
-    background: var(--purchase-btn);
-}
-
-.btn-weather {
-    background: var(--weather-btn);
-}
-
-/* כפתור הצג עוד */
 .show-more-btn {
     background: var(--more-btn);
     color: #333;
@@ -223,6 +208,7 @@ body {
     height: 15px;
     object-fit: contain;
 }
+
 .weather-icon-img {
     width: 22px;
     height: 22px;
@@ -234,7 +220,6 @@ body {
 .weather-text {
     display: inline;
 }
-    
 
 /* ====================================================
    8) לוז
@@ -255,6 +240,8 @@ body {
     font-weight: 600;
     color: #4f6d7a;
     cursor: pointer;
+    font-family: 'Assistant', sans-serif;
+    font-size: 0.95rem;
 }
 
 .mini-popup {
@@ -302,9 +289,8 @@ body {
 }
 
 /* ====================================================
-   NEW — Optional Attractions Button Styling
+   10) כפתור אטרקציות אופציונליות
 ==================================================== */
-
 .expand-wrapper {
     display: flex;
     justify-content: center;
@@ -320,6 +306,7 @@ body {
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: 600;
+    font-family: 'Assistant', sans-serif;
     box-shadow: 0 3px 6px rgba(0,0,0,0.15);
     transition: background 0.25s ease, transform 0.2s ease;
 }
@@ -330,7 +317,16 @@ body {
 }
 
 /* ====================================================
-   10) RS / weather tag
+   10b) קו הפרדה בין אטרקציות לתצפית
+==================================================== */
+.optional-section {
+    border-top: 1px solid #e8e8e8;
+    margin-top: 20px;
+    padding-top: 4px;
+}
+
+/* ====================================================
+   11) weather tag
 ==================================================== */
 .weather-tag {
     display: inline-flex;
@@ -340,13 +336,133 @@ body {
     font-size: 0.85rem;
 }
 
-.weather-tag.green { background:#e5f7ea; color:#176b3f; }
-.weather-tag.yellow { background:#fff7e0; color:#8a5b00; }
-.weather-tag.red { background:#ffe5e5; color:#8a1f1f; }
-    
+.weather-tag.green  { background: #e5f7ea; color: #176b3f; }
+.weather-tag.yellow { background: #fff7e0; color: #8a5b00; }
+.weather-tag.red    { background: #ffe5e5; color: #8a1f1f; }
 
 /* ====================================================
-   11) מובייל
+   12) יום 1 — סגנון כרטיס משימות
+==================================================== */
+.flight-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f7f0f3;
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #eedde6;
+    gap: 8px;
+    margin: -1rem -1rem 0;
+}
+
+.flight-num {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.flight-times {
+    display: flex;
+    gap: 12px;
+    color: #555;
+}
+
+.task-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 0.88rem;
+    line-height: 1.3;
+    min-width: 0;
+}
+
+.task-text strong {
+    font-weight: 700;
+}
+
+.task-text .sub {
+    display: block;
+    color: #777;
+    font-size: 0.78rem;
+    margin-top: 1px;
+}
+
+.btn-pill {
+    flex-shrink: 0;
+    padding: 5px 11px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-family: 'Assistant', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-pill img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+
+.btn-pill.nav { background: #4a6b3f; }
+.btn-pill.buy { background: #b03a63; }
+
+.lodging-item {
+    padding: 9px 0 2px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 4px;
+}
+
+.lodging-label {
+    font-size: 0.72rem;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+}
+
+.lodging-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.lodging-address {
+    font-size: 0.85rem;
+    color: #444;
+    flex: 1;
+}
+
+.lodging-address.placeholder {
+    color: #bbb;
+    font-style: italic;
+}
+
+/* ====================================================
+   13) מובייל
 ==================================================== */
 @media (max-width: 600px) {
 
@@ -370,10 +486,13 @@ body {
         display: flex;
         justify-content: center;
     }
-.card h2 {
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
+
+    /* כותרת כרטיס יום */
+    .card h2 {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
     /* כפתורים עגולים קטנים */
     .btn-base,
     .show-more-btn {
@@ -381,7 +500,7 @@ body {
         height: 48px;
         padding: 0;
         border-radius: 50%;
-        font-size: 0; /* מסתיר טקסט */
+        font-size: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -393,7 +512,8 @@ body {
     .weather-icon-img {
         width: 22px;
         height: 22px;
-margin: 0;    }
+        margin: 0;
+    }
 
     /* הסתרת טקסט */
     .nav-google-text,
@@ -410,12 +530,13 @@ margin: 0;    }
         line-height: 1;
     }
 
-    /* לוז */  
+    /* לוז */
     .mini-wrapper {
         position: static !important;
     }
 
- .main-header {
+    /* header ראשי */
+    .main-header {
         padding: 0.9rem 0.8rem;
         border-radius: 14px;
     }
@@ -432,6 +553,8 @@ margin: 0;    }
     .main-header p {
         font-size: 0.8rem;
     }
+
+    /* פופאפ לוז */
     .mini-popup {
         position: fixed !important;
         left: 0;
@@ -446,17 +569,22 @@ margin: 0;    }
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    /* כדי שהפופאפ יופיע מתחת לכפתור */
     .mini-popup.open {
         top: var(--popup-top, 120px);
     }
-
 
     .expand-wrapper {
         margin: 18px 0;
     }
 
-.day-1 ul li {
+    /* btn-pill במובייל — נשאר כפתור טקסט, לא עיגול */
+    .btn-pill {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    /* יום 1 — שורות ישנות (אם עדיין קיימות) */
+    .day-1 ul li {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -476,12 +604,11 @@ margin: 0;    }
 }
 
 /* ====================================================
-   12) ניקוי גלובלי קטן
+   14) ניקוי גלובלי
 ==================================================== */
 a { text-decoration: none; }
 
 </style>
-
 
 </head>
 
