@@ -2172,7 +2172,7 @@ function toggleMini(btn) {
 }
 
 function toggleMore(btn) {
-    // שומר טקסט מקורי
+    // שמירת טקסט מקורי
     const originalText = btn.dataset.original || btn.textContent;
     if (!btn.dataset.original) btn.dataset.original = btn.textContent;
 
@@ -2180,13 +2180,13 @@ function toggleMore(btn) {
     let parent = btn.closest('.task-item') || btn.closest('.row');
     if (!parent) return;
 
-    // ניסיון 1: מחפש more-content אחרי ה-li/row
+    // ניסיון 1: מחפש more-content אחרי ה-li/row (יום 2)
     let content = parent.nextElementSibling;
     while (content && !content.classList.contains('more-content')) {
         content = content.nextElementSibling;
     }
 
-    // ניסיון 2: מקרה מיוחד של יום 1 — more-content אחרי כל ה-ul
+    // ניסיון 2: יום 1 — more-content אחרי ה-UL
     if (!content) {
         const list = parent.closest('.task-list');
         if (list) {
@@ -2208,6 +2208,7 @@ function toggleMore(btn) {
         ? 'הסתר ▲'
         : originalText;
 }
+
 
     function toggleOptional(id, btn) {
     const content = document.getElementById(id);
