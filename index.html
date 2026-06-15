@@ -127,6 +127,8 @@ body {
     margin: -1rem -1rem 0;
     padding: 12px 16px;
     border-bottom: 1px solid #e0b8cc;
+        border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .card-header .day-label {
@@ -413,6 +415,7 @@ body {
     border-bottom: 1px solid #eedde6;
     gap: 8px;
     margin: 0 -1rem 0;
+        border-top: 2px solid #e0b8cc; /* פס ורדרד עדין */
 }
 
 .flight-num {
@@ -824,15 +827,14 @@ a { text-decoration: none; }
     </div>
 </div>
 <div class="card day-1">
-    <div class="card-header">
-        <div class="day-label">יום 2 · 22/06</div>
-        <h2> Suchá Belá · אופציות לפי זמן · Tomášovský Výhľad</h2>
-        <div class="sub-header">
-        <div class="sub-title">            
-            <span>קניון סוחה בלה · אטרקציות לפי שעת סיום · תצפית שקיעה טומאשובסקי ויהלאד</span>
-        </div>
-    </div>
-    </div>
+   <div class="card-header">
+    <div class="day-label">יום 2 · 22/06</div>
+    <h2>Suchá Belá · אופציות לפי זמן · Tomášovský Výhľad</h2>
+</div>
+
+<div class="sub-header">
+    <span>קניון סוחה בלה · אטרקציות לפי שעת סיום · תצפית שקיעה טומאשובסקי ויהלאד</span>
+</div>
 
     <!-- לוז + זמני נסיעה -->
     <div class="mini-info-bar clean-style">
@@ -2161,19 +2163,20 @@ function toggleMini(btn) {
 }
 
    function toggleMore(btn) {
-    // מחפש more-content — קודם אח של ה-li, אחר כך אח של הכפתור
-    let content = btn.closest('li')
-        ? btn.closest('li').nextElementSibling
-        : btn.nextElementSibling;
+    // מחפש את האלמנט הבא שהוא more-content
+    let content = btn.parentElement.nextElementSibling;
 
-    if (!content || !content.classList.contains('more-content')) {
-        content = btn.nextElementSibling;
+    // אם זה לא more-content, מחפש עוד אחד קדימה
+    while (content && !content.classList.contains('more-content')) {
+        content = content.nextElementSibling;
     }
-    if (!content || !content.classList.contains('more-content')) return;
+
+    if (!content) return;
 
     content.classList.toggle('open');
     btn.textContent = content.classList.contains('open') ? 'הסתר ' : 'פרטים ';
 }
+
     function toggleOptional(id, btn) {
     const content = document.getElementById(id);
     if (!content) return;
