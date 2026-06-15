@@ -670,11 +670,11 @@ a { text-decoration: none; }
 
 
 <div class="card day-1">
- 
-    <!-- כותרת -->
-    <div class="card-title">
-        <div class="day-badge">יום 1 · 21/06</div>
-         <!-- פס טיסה -->
+
+    <!-- כותרת + badge -->
+    <div class="day-badge" style="padding: 6px 14px 0;">יום 1 · 21/06</div>
+
+    <!-- פס טיסה -->
     <div class="flight-bar">
         <span><span class="flight-num">W6 2098</span></span>
         <div class="flight-times">
@@ -682,22 +682,25 @@ a { text-decoration: none; }
             <span>נחיתה 13:50</span>
         </div>
     </div>
+
+    <!-- כותרת -->
+    <div class="card-title">
         <h2>נחיתה &amp; Štrbské Pleso (שטרבסקה פלסו)</h2>
     </div>
- 
-   
- 
+
     <!-- משימות -->
     <ul class="task-list">
- 
+
         <li class="task-item">
             <div class="task-text">
                 <strong>איסוף רכב</strong>
                 <span class="sub">שדה התעופה + הצטיידות בסופר</span>
             </div>
-            <a href="https://maps.google.com" class="btn-pill nav" target="_blank">ניווט</a>
+            <a href="https://maps.google.com" class="btn-pill nav" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
+            </a>
         </li>
- 
+
         <li class="task-item">
             <div class="task-text">
                 <strong>מדבקת כבישים סלובקיה</strong>
@@ -705,25 +708,27 @@ a { text-decoration: none; }
             </div>
             <a href="https://eznamka.sk/en" class="btn-pill buy" target="_blank">רכישה</a>
         </li>
- 
-      <li class="task-item">
-    <div class="task-text">
-        <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
-        <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
-    </div>
-    <a href="https://maps.google.com/?q=49.1197,20.0607" class="btn-pill nav" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
-    </a>
-    <button class="btn-pill" 
-            style="background:#4f6d7a;"
-            onclick="toggleOptional('optional-skok', this)">⭐  סקוק מפל Skok ▼</button>
-</li>
 
-<div id="optional-skok" class="optional-content" style="padding: 0 0 8px;">
+        <li class="task-item">
+            <div class="task-text">
+                <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
+                <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
+            </div>
+            <a href="https://maps.google.com/?q=49.1197,20.0607" class="btn-pill nav" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
+            </a>
+            <button class="btn-pill" style="background:#4f6d7a;"
+                    onclick="toggleOptional('optional-skok', this)">⭐ מפל Skok ▼</button>
+        </li>
+
+    </ul>
+
+    <!-- Skok optional — מחוץ ל-ul -->
+    <div id="optional-skok" class="optional-content" style="padding: 0 0 8px;">
         <div class="table-like">
             <div class="row">
                 <div class="col">
-                    <div class="title-main">🌊 Vodopád Skok (מפל סקוק)</div>
+                    <div class="title-main">Vodopád Skok (מפל סקוק)</div>
                     <div class="title-sub">מפל 30 מ׳ — מסלול פופולרי ויפהפה מהאגם</div>
                 </div>
                 <div class="col">
@@ -736,7 +741,7 @@ a { text-decoration: none; }
                 <div class="col">
                     <a href="https://www.google.com/search?q=weather+Strbske+Pleso"
                        class="btn-base btn-weather" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Google_Weather_Icon.svg"
+                        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                              class="weather-icon-img" alt="מזג אוויר">
                     </a>
                 </div>
@@ -745,7 +750,7 @@ a { text-decoration: none; }
                 </div>
             </div>
 
-            <div class="more-content">
+            <div class="more-content" style="text-align: right;">
                 <ul>
                     <li><strong>⏱ זמן כולל:</strong> ~3 שעות הלוך וחזור</li>
                     <li><strong>מסלול:</strong> סימון צהוב מהאגם — עלייה הדרגתית דרך יער וסלעים</li>
@@ -757,21 +762,18 @@ a { text-decoration: none; }
             </div>
         </div>
     </div>
-</div>
-        </li>
- 
-    </ul>
- 
-    <!-- לינה -->
+
+    <!-- לינה — בתוך הכרטיס, אחרי ul -->
     <div class="lodging-item">
         <div class="lodging-label">🏠 לינה</div>
         <div class="lodging-content">
-            <!-- כשתסגרי מקום, החליפי את הטקסט כאן וכתובת ה-href -->
             <div class="lodging-address placeholder">כתובת תתווסף לאחר הזמנה</div>
-            <a href="https://maps.google.com/?q=YOUR_ADDRESS_HERE" class="btn-pill nav" target="_blank">ניווט</a>
+            <a href="https://maps.google.com/?q=YOUR_ADDRESS_HERE" class="btn-pill nav" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
+            </a>
         </div>
     </div>
- 
+
 </div>
 <div class="card">
     <div class="card-header">
