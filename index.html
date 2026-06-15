@@ -722,15 +722,7 @@ a { text-decoration: none; }
             <a href="https://drive.google.com/file/d/1YuwBykzM-E1UX3w_n53Wt5m6daBh1I0n/view?usp=sharing"
                class="btn-pill" style="background:#4f6d7a;" target="_blank">📄 הזמנה</a>
         </li>
-        <!-- ✅ more-content מחוץ ל-li -->
-        <div class="more-content">
-            <ul>
-                <li>🧍 נציג ימתין בטרמינל הגעות עם שלט One Rent</li>
-                <li>📞 תמיכה: <a href="tel:+48723606060" style="color:#b03a63;">+48 723 60 60 60</a></li>
-                <li>🚨 חירום: <a href="tel:+48780500950" style="color:#b03a63;">+48 780 500 950</a></li>
-                <li style="color:#888; font-size:0.78rem;">לאנגלית הקישו 0</li>
-            </ul>
-        </div>
+        
 
         <li class="task-item">
             <div class="task-text">
@@ -763,7 +755,15 @@ a { text-decoration: none; }
         </li>
 
     </ul>
-
+<!-- ✅ more-content מחוץ ל-li -->
+        <div class="more-content">
+            <ul>
+                <li>🧍 נציג ימתין בטרמינל הגעות עם שלט One Rent</li>
+                <li>📞 תמיכה: <a href="tel:+48723606060" style="color:#b03a63;">+48 723 60 60 60</a></li>
+                <li>🚨 חירום: <a href="tel:+48780500950" style="color:#b03a63;">+48 780 500 950</a></li>
+                <li style="color:#888; font-size:0.78rem;">לאנגלית הקישו 0</li>
+            </ul>
+        </div>
     <!-- Skok optional -->
     <div id="optional-skok" class="optional-content" style="padding: 0 0 8px;">
         <div class="table-like">
@@ -802,18 +802,6 @@ a { text-decoration: none; }
             </div>
         </div>
     </div>
-
-    <!-- לינה -->
-    <div class="lodging-item">
-        <div class="lodging-label">🏠 לינה</div>
-        <div class="lodging-content">
-            <div class="lodging-address placeholder">כתובת תתווסף לאחר הזמנה</div>
-            <a href="https://maps.google.com/?q=YOUR_ADDRESS_HERE" class="btn-pill nav" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
-            </a>
-        </div>
-    </div>
-
 </div>
 <div class="card">
     <div class="card-header">
@@ -2149,18 +2137,19 @@ function toggleMini(btn) {
     }
 }
 
-    function toggleMore(btn) {
-    const content = btn.closest('.row').nextElementSibling;
+   function toggleMore(btn) {
+    // מחפש more-content — קודם אח של ה-li, אחר כך אח של הכפתור
+    let content = btn.closest('li')
+        ? btn.closest('li').nextElementSibling
+        : btn.nextElementSibling;
 
-    // פתיחה / סגירה
-    content.classList.toggle('open');
-
-    // שינוי טקסט הכפתור
-    if (content.classList.contains('open')) {
-        btn.textContent = 'הסתר';
-    } else {
-        btn.textContent = 'הצג עוד';
+    if (!content || !content.classList.contains('more-content')) {
+        content = btn.nextElementSibling;
     }
+    if (!content || !content.classList.contains('more-content')) return;
+
+    content.classList.toggle('open');
+    btn.textContent = content.classList.contains('open') ? 'הסתר ' : 'פרטים ';
 }
     function toggleOptional(id, btn) {
     const content = document.getElementById(id);
