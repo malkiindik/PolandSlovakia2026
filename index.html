@@ -320,7 +320,7 @@ body {
    10b) קו הפרדה בין אטרקציות לתצפית
 ==================================================== */
 .optional-section {
-    border-top: 1px solid #e8e8e8;
+  /*  border-top: 1px solid #e8e8e8;*/
     margin-top: 20px;
     padding-top: 4px;
 }
@@ -691,20 +691,25 @@ a { text-decoration: none; }
         </li>
  
         <li class="task-item">
-            <div class="task-text">
-                <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
-                <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
-            </div>
-            <a href="https://maps.google.com" class="btn-pill nav" target="_blank">ניווט</a>
-            <!-- מפל סקוק — אופציונלי -->
-<div class="optional-section">
-    <div class="expand-wrapper">
-        <button class="optional-btn" onclick="toggleOptional('optional-skok', this)">
-            ⭐ אופציה: מסלול למפל Skok ▼
-        </button>
+    <div class="task-text">
+        <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
+        <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
     </div>
+    <a href="https://maps.google.com/?q=49.1197,20.0607" class="btn-pill nav" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
+    </a>
+</li>
 
-    <div id="optional-skok" class="optional-content">
+<li class="task-item">
+    <div class="task-text">
+        <span class="sub">⭐ אופציה אם יש כח — מסלול למפל Skok (~3 שעות)</span>
+    </div>
+    <button class="btn-pill" 
+            style="background:#4f6d7a; color:white;"
+            onclick="toggleOptional('optional-skok', this)">פרטים ▼</button>
+</li>
+
+<div id="optional-skok" class="optional-content" style="padding: 0 0 8px;">
         <div class="table-like">
             <div class="row">
                 <div class="col">
@@ -2108,14 +2113,16 @@ function toggleMini(btn) {
     function toggleOptional(id, btn) {
     const content = document.getElementById(id);
     if (!content) return;
-
+    
+    const originalText = btn.dataset.original || btn.textContent;
+    if (!btn.dataset.original) btn.dataset.original = btn.textContent;
+    
     content.classList.toggle('open');
-
-    // שינוי טקסט הכפתור
+    
     if (content.classList.contains('open')) {
-        btn.textContent = 'הסתר אטרקציות אפשריות ▲';
+        btn.textContent = 'הסתר ▲';
     } else {
-        btn.textContent = '⭐ כל האטרקציות האפשריות ביום זה ▼';
+        btn.textContent = originalText;
     }
 }
 
