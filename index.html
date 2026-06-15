@@ -278,14 +278,24 @@ body {
 /* ====================================================
    8) לוז
 ==================================================== */
+
+/* השורה שמכילה את שני הכפתורים — שכבה 3 של הכותרת */
 .mini-info-bar.clean-style {
     display: flex;
-    gap: 1rem;
+    gap: 6px;
+    align-items: center;
+    background: #faf0f5;
+    border-bottom: 1px solid #f0e0e8;
+    padding: 5px 16px;
+    margin: 0 -1rem;        /* מקצה לקצה כמו card-header */
     position: relative;
-    border-top: 1px solid #e6e6e6;
-    border-bottom: 1px solid #e6e6e6;
-    padding: 15px 0;
-    margin: 20px 0;
+}
+
+/* נקודת הפרדה בין הכפתורים */
+.mini-info-bar.clean-style .divider {
+    color: #d4a0b8;
+    font-size: 0.85rem;
+    margin: 0 2px;
 }
 
 .mini-wrapper {
@@ -296,10 +306,12 @@ body {
     background: none;
     border: none;
     font-weight: 600;
-    color: #4f6d7a;
+    color: #7a3050;
     cursor: pointer;
     font-family: 'Assistant', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
+    padding: 0;
+    white-space: nowrap;
 }
 
 .mini-popup {
@@ -862,6 +874,7 @@ a { text-decoration: none; }
     <div class="mini-info-bar clean-style">
 
         <!-- לוז מומלץ -->
+        <span class="divider">·</span>
         <div class="mini-wrapper">
             <button class="mini-btn" onclick="toggleMini(this)">⏱ לוז מומלץ ▼</button>
             <div class="mini-popup">
@@ -878,6 +891,7 @@ a { text-decoration: none; }
         </div>
 
         <!-- זמני נסיעה -->
+        <span class="divider">·</span>
         <div class="mini-wrapper">
             <button class="mini-btn" onclick="toggleMini(this)">🚗 זמני נסיעה ▼</button>
             <div class="mini-popup">
@@ -1612,7 +1626,7 @@ a { text-decoration: none; }
 
     <!-- לוז + זמני נסיעה (אחיד ליום 2) -->
     <div class="mini-info-bar clean-style">
-
+<span class="divider">·</span>
         <div class="mini-wrapper">
             <button class="mini-btn" onclick="toggleMini(this)">⏱ לוז מומלץ ▼</button>
             <div class="mini-popup">
@@ -1627,7 +1641,7 @@ a { text-decoration: none; }
                 </ul>
             </div>
         </div>
-
+<span class="divider">·</span>
         <div class="mini-wrapper">
             <button class="mini-btn" onclick="toggleMini(this)">🚗 זמני נסיעה ▼</button>
             <div class="mini-popup">
