@@ -714,7 +714,7 @@ a { text-decoration: none; }
 </div>
 
 
-<div class="card day-1">
+<div class="card-day">
 
     <!-- כותרת A — רקע צבעוני, מקצה לקצה -->
     <div class="card-header">
@@ -826,7 +826,7 @@ a { text-decoration: none; }
         </div>
     </div>
 </div>
-<div class="card day-1">
+<div class="card-day">
    <div class="card-header">
     <div class="day-label">יום 2 · 22/06</div>
     <h2>Suchá Belá · אופציות לפי זמן · Tomášovský Výhľad</h2>
@@ -2162,11 +2162,13 @@ function toggleMini(btn) {
     }
 }
 
-   function toggleMore(btn) {
-    // מחפש את האלמנט הבא שהוא more-content
-    let content = btn.parentElement.nextElementSibling;
+  function toggleMore(btn) {
+    let parent = btn.closest('.task-item');
+    if (!parent) return;
 
-    // אם זה לא more-content, מחפש עוד אחד קדימה
+    // מחפש את ה-more-content הקרוב ביותר אחרי ה-li
+    let content = parent.nextElementSibling;
+
     while (content && !content.classList.contains('more-content')) {
         content = content.nextElementSibling;
     }
@@ -2174,8 +2176,9 @@ function toggleMini(btn) {
     if (!content) return;
 
     content.classList.toggle('open');
-    btn.textContent = content.classList.contains('open') ? 'הסתר ' : 'פרטים ';
+    btn.textContent = content.classList.contains('open') ? 'הסתר ▲' : 'פרטים ▼';
 }
+
 
     function toggleOptional(id, btn) {
     const content = document.getElementById(id);
