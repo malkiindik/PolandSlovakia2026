@@ -2162,22 +2162,34 @@ function toggleMini(btn) {
     }
 }
 
-  function toggleMore(btn) {
-    let parent = btn.closest('.task-item');
+ function toggleMore(btn) {
+    // שומר את הטקסט המקורי של הכפתור
+    const originalText = btn.dataset.original || btn.textContent;
+    if (!btn.dataset.original) btn.dataset.original = btn.textContent;
+
+    // מוצא את ה-li או ה-row שבו נמצא הכפתור
+    let parent = btn.closest('.task-item') || btn.closest('.row');
     if (!parent) return;
 
-    // מחפש את ה-more-content הקרוב ביותר אחרי ה-li
+    // מחפש את ה-more-content הקרוב ביותר אחרי ה-li/row
     let content = parent.nextElementSibling;
-
     while (content && !content.classList.contains('more-content')) {
         content = content.nextElementSibling;
     }
 
     if (!content) return;
 
+    // פתיחה/סגירה
     content.classList.toggle('open');
-    btn.textContent = content.classList.contains('open') ? 'הסתר ▲' : 'פרטים ▼';
+
+    // שינוי טקסט הכפתור
+    if (content.classList.contains('open')) {
+        btn.textContent = 'הסתר ▲';
+    } else {
+        btn.textContent = originalText;
+    }
 }
+
 
 
     function toggleOptional(id, btn) {
