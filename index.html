@@ -343,6 +343,14 @@ body {
 /* ====================================================
    12) יום 1 — סגנון כרטיס משימות
 ==================================================== */
+    .day-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
 .flight-bar {
     display: flex;
     align-items: center;
@@ -626,8 +634,7 @@ a { text-decoration: none; }
 
 <!-- מידע שימושי -->
 <div class="card" style="border-right-color:#c7c7c7;">
-    <h2>מידע שימושי</h2>
-
+   <!-- <h2>מידע שימושי</h2>-->
     <div style="display:flex; gap:1rem; align-items:center; margin:0.3rem 0;">
         <a href="https://www.google.com/maps/d/u/0/edit?hl=iw&mid=17_dtJs1beYgL76j1s3YMMJu7HzxqOv8&ll=49.71314071057996%2C19.597912635041105&z=8"
            target="_blank"
@@ -643,19 +650,12 @@ a { text-decoration: none; }
     </div>
 
     <p style="font-size:0.8rem; margin:0;">* מזומן (אירו) חובה לחניונים ושמורות בסלובקיה.</p>
-    <p style="font-size:0.8rem; margin:0;">* להוסיף כאן את מקום הלינה.</p>
+    <p style="font-size:0.8rem; margin:0;"><BR>* להוסיף כאן את מקום הלינה.</p>
 </div>
 
 
 <div class="card day-1">
- 
-    <!-- כותרת -->
-    <div class="card-title">
-        <div class="day-badge">יום 1 · 21/06</div>
-        <h2>נחיתה &amp; Štrbské Pleso (שטרבסקה פלסו)</h2>
-    </div>
- 
-    <!-- פס טיסה -->
+  <!-- פס טיסה -->
     <div class="flight-bar">
         <span><span class="flight-num">W6 2098</span></span>
         <div class="flight-times">
@@ -663,6 +663,13 @@ a { text-decoration: none; }
             <span>נחיתה 13:50</span>
         </div>
     </div>
+    <!-- כותרת -->
+    <div class="card-title">
+        <div class="day-badge">יום 1 · 21/06</div>
+        <h2>נחיתה &amp; Štrbské Pleso (שטרבסקה פלסו)</h2>
+    </div>
+ 
+   
  
     <!-- משימות -->
     <ul class="task-list">
