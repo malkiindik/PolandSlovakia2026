@@ -403,7 +403,7 @@ body {
     margin-bottom: 6px;
     padding: 8px 14px 0;
 }
-.flight-bar {
+.sub-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -421,6 +421,11 @@ body {
 }
 
 .flight-times {
+    display: flex;
+    gap: 12px;
+    color: #555;
+}
+    .sub-title {
     display: flex;
     gap: 12px;
     color: #555;
@@ -715,7 +720,7 @@ a { text-decoration: none; }
     </div>
 
     <!-- פס טיסה -->
-    <div class="flight-bar">
+    <div class="sub-header">
         <span><span class="flight-num">W6 2098</span></span>
         <div class="flight-times">
             <span>המראה 11:05</span>
@@ -822,7 +827,11 @@ a { text-decoration: none; }
     <div class="card-header">
         <div class="day-label">יום 2 · 22/06</div>
         <h2> Suchá Belá · אופציות לפי זמן · Tomášovský Výhľad</h2>
-        <p class="card-subtitle">קניון סוחה בלה · אטרקציות לפי שעת סיום · תצפית שקיעה טומאשובסקי ויהלאד</p>
+        <div class="sub-header">
+        <div class="sub-title">            
+            <span>קניון סוחה בלה · אטרקציות לפי שעת סיום · תצפית שקיעה טומאשובסקי ויהלאד</span>
+        </div>
+    </div>
     </div>
    <!-- <h2>יום 2 | 22/06 ><br>Suchá Belá (סוחה בלה) <br>אופציות לפי זמן <br>Tomášovský Výhľad (תצפית טומאשובסקי ויהלאד)</h2>-->
 
