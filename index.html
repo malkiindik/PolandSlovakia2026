@@ -276,7 +276,22 @@ body {
 .more-content.open {
     display: block;
 }
+.more-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
+.more-content ul li {
+    padding: 5px 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #efefef;
+    line-height: 1.4;
+}
+
+.more-content ul li:last-child {
+    border-bottom: none;
+}
 .optional-content {
     display: none;
     opacity: 0;
@@ -655,7 +670,11 @@ a { text-decoration: none; }
 
 
 <div class="card day-1">
-  <!-- פס טיסה -->
+ 
+    <!-- כותרת -->
+    <div class="card-title">
+        <div class="day-badge">יום 1 · 21/06</div>
+         <!-- פס טיסה -->
     <div class="flight-bar">
         <span><span class="flight-num">W6 2098</span></span>
         <div class="flight-times">
@@ -663,9 +682,6 @@ a { text-decoration: none; }
             <span>נחיתה 13:50</span>
         </div>
     </div>
-    <!-- כותרת -->
-    <div class="card-title">
-        <div class="day-badge">יום 1 · 21/06</div>
         <h2>נחיתה &amp; Štrbské Pleso (שטרבסקה פלסו)</h2>
     </div>
  
@@ -690,7 +706,7 @@ a { text-decoration: none; }
             <a href="https://eznamka.sk/en" class="btn-pill buy" target="_blank">רכישה</a>
         </li>
  
-        <li class="task-item">
+      <li class="task-item">
     <div class="task-text">
         <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
         <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
@@ -698,15 +714,9 @@ a { text-decoration: none; }
     <a href="https://maps.google.com/?q=49.1197,20.0607" class="btn-pill nav" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
     </a>
-</li>
-
-<li class="task-item">
-    <div class="task-text">
-        <span class="sub">⭐ אופציה אם יש כח — מסלול למפל Skok (~3 שעות)</span>
-    </div>
     <button class="btn-pill" 
-            style="background:#4f6d7a; color:white;"
-            onclick="toggleOptional('optional-skok', this)">פרטים ▼</button>
+            style="background:#4f6d7a;"
+            onclick="toggleOptional('optional-skok', this)">⭐  סקוק מפל Skok ▼</button>
 </li>
 
 <div id="optional-skok" class="optional-content" style="padding: 0 0 8px;">
