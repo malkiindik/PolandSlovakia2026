@@ -517,6 +517,10 @@ margin: 10px 0 0 0;
     font-size: 0.78rem;
     margin-top: 1px;
 }
+.task-item-wide {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
 .btn-pill {
     flex-shrink: 0;
@@ -799,7 +803,7 @@ a { text-decoration: none; }
     <!-- משימות -->
     <ul class="task-list">
 
-        <li class="task-item">
+<li class="task-item task-item-wide">
             <div class="task-text">
                 <strong>איסוף רכב — One Rent</strong>
                 <span class="sub">מס׳ הזמנה: 95076</span>
@@ -809,7 +813,7 @@ a { text-decoration: none; }
                     onclick="toggleMore(this)">פרטים ▼</button>
             <a href="https://drive.google.com/file/d/1YuwBykzM-E1UX3w_n53Wt5m6daBh1I0n/view?usp=sharing"
                class="btn-pill" style="background:#4f6d7a;" target="_blank">📄 הזמנה</a>
-       
+ </li>
         <div class="more-content">
             <ul>
                 <li>🧍 נציג ימתין בטרמינל הגעות עם שלט One Rent</li>
@@ -818,7 +822,6 @@ a { text-decoration: none; }
                 <li style="color:#888; font-size:0.78rem;">לאנגלית הקישו 0</li>
             </ul>
         </div>
- </li>
         <li class="task-item">
             <div class="task-text">
                 <strong>הצטיידות בסופר</strong>
