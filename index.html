@@ -762,7 +762,7 @@ a { text-decoration: none; }
     <p style="font-size:0.8rem; margin:0;">* מזומן (אירו) חובה לחניונים ושמורות בסלובקיה.</p>
     <p style="font-size:0.8rem; margin:0;">* להוסיף את מקום הלינה.</p>
   
-<div class="row sub-header" style="margin-top:6px; cursor:pointer;" onclick="toggleMore(this)">
+<div class="row sub-header" style="margin-top:6px; cursor:pointer;" onclick="toggleDocs(this)">
     <span style="color:#b03a63; font-weight:600;">📄 מסמכים חשובים ▼</span>
 </div>
 
@@ -2544,6 +2544,17 @@ function toggleMore(btn) {
         btn.textContent = 'הסתר ▲';
     } else {
         btn.textContent = originalText;
+    }
+}
+    function toggleDocs(btn) {
+    const content = btn.nextElementSibling;
+    if (!content || !content.classList.contains('more-content')) return;
+    content.classList.toggle('open');
+    const span = btn.querySelector('span');
+    if (span) {
+        span.textContent = content.classList.contains('open')
+            ? '📄 מסמכים חשובים ▲'
+            : '📄 מסמכים חשובים ▼';
     }
 }
 
