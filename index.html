@@ -499,7 +499,9 @@ margin: 10px 0 0 0;
 .task-item:last-child {
     border-bottom: none;
 }
-
+.task-item-wrap {
+    border-bottom: 1px solid #f3f3f3;
+}
 .task-text {
     flex: 1;
     font-size: 0.88rem;
@@ -796,9 +798,7 @@ a { text-decoration: none; }
         </div>
     </div>
 
-    <!-- משימות -->
-    <ul class="task-list">
-
+   <!-- משימות -->
 <div class="task-item-wrap">
     <div class="task-item">
         <div class="task-text">
@@ -819,37 +819,38 @@ a { text-decoration: none; }
         </ul>
     </div>
 </div>
-        <li class="task-item">
-            <div class="task-text">
-                <strong>הצטיידות בסופר</strong>
-                <span class="sub">Kaufland — 8 דק׳ מהשדה, פתוח עד 21:00</span>
-            </div>
-            <a href="https://maps.google.com/?q=49.058815,20.289787" class="btn-pill nav" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
-            </a>
-        </li>
 
-        <li class="task-item">
-            <div class="task-text">
-                <strong>מדבקת כבישים סלובקיה</strong>
-                <span class="sub">חובה לפני נסיעה בכבישים מהירים, לכאורה אין צורך בטיול שלנו !</span>
-            </div>
-            <a href="https://eznamka.sk/en" class="btn-pill buy" target="_blank">רכישה</a>
-        </li>
+<ul class="task-list">
+    <li class="task-item">
+        <div class="task-text">
+            <strong>הצטיידות בסופר</strong>
+            <span class="sub">Kaufland — 8 דק׳ מהשדה, פתוח עד 21:00</span>
+        </div>
+        <a href="https://maps.google.com/?q=49.058815,20.289787" class="btn-pill nav" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
+        </a>
+    </li>
 
-        <li class="task-item">
-            <div class="task-text">
-                <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
-                <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
-            </div>
-            <a href="https://maps.google.com/?q=49.1197,20.0607" class="btn-pill nav" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
-            </a>
-            <button class="btn-pill" style="background:#4f6d7a;"
-                    onclick="toggleOptional('optional-skok', this)">⭐ מפל Skok ▼</button>
-        </li>
+    <li class="task-item">
+        <div class="task-text">
+            <strong>מדבקת כבישים סלובקיה</strong>
+            <span class="sub">חובה לפני נסיעה בכבישים מהירים, לכאורה אין צורך בטיול שלנו!</span>
+        </div>
+        <a href="https://eznamka.sk/en" class="btn-pill buy" target="_blank">רכישה</a>
+    </li>
 
-    </ul>
+    <li class="task-item">
+        <div class="task-text">
+            <strong>Štrbské Pleso (שטרבסקה פלסו)</strong>
+            <span class="sub">אגם יפהפה + מסלול קל להתאקלמות</span>
+        </div>
+        <a href="https://maps.google.com/?q=49.1197,20.0607" class="btn-pill nav" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg">ניווט
+        </a>
+        <button class="btn-pill" style="background:#4f6d7a;"
+                onclick="toggleOptional('optional-skok', this)">⭐ מפל Skok ▼</button>
+    </li>
+</ul>
 
     <!-- Skok optional -->
     <div id="optional-skok" class="optional-content" style="padding: 0 0 8px;">
