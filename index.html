@@ -489,8 +489,8 @@ margin: 10px 0 0 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 6px;
     padding: 9px 0;
     border-bottom: 1px solid #f3f3f3;
 }
@@ -516,10 +516,6 @@ margin: 10px 0 0 0;
     color: #777;
     font-size: 0.78rem;
     margin-top: 1px;
-}
-.task-item-wide {
-    flex-wrap: wrap;
-    justify-content: flex-start;
 }
 
 .btn-pill {
@@ -782,7 +778,7 @@ a { text-decoration: none; }
 
 
 </div>
-
+ <!-- יום 1 -->
 <div class="card-day">
 
     <!-- כותרת A — רקע צבעוני, מקצה לקצה -->
@@ -803,17 +799,16 @@ a { text-decoration: none; }
     <!-- משימות -->
     <ul class="task-list">
 
-<li class="task-item task-item-wide">
-            <div class="task-text">
-                <strong>איסוף רכב — One Rent</strong>
-                <span class="sub">מס׳ הזמנה: 95076</span>
-            </div>
-            <!-- ✅ כפתור באותו סגנון כמו השאר -->
-            <button class="btn-pill" style="background:#c7c7c7; color:#333;"
-                    onclick="toggleMore(this)">פרטים ▼</button>
-            <a href="https://drive.google.com/file/d/1YuwBykzM-E1UX3w_n53Wt5m6daBh1I0n/view?usp=sharing"
-               class="btn-pill" style="background:#4f6d7a;" target="_blank">📄 הזמנה</a>
- </li>
+<li class="task-item">
+    <div class="task-text">
+        <strong>איסוף רכב — One Rent</strong>
+        <span class="sub">מס׳ הזמנה: 95076</span>
+    </div>
+    <button class="btn-pill" style="background:#c7c7c7; color:#333;"
+            onclick="toggleMore(this)">פרטים ▼</button>
+    <a href="https://drive.google.com/file/d/1YuwBykzM-E1UX3w_n53Wt5m6daBh1I0n/view?usp=sharing"
+       class="btn-pill" style="background:#4f6d7a;" target="_blank">📄 הזמנה</a>
+</li>
         <div class="more-content">
             <ul>
                 <li>🧍 נציג ימתין בטרמינל הגעות עם שלט One Rent</li>
