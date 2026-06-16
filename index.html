@@ -754,9 +754,7 @@ a { text-decoration: none; }
 
     <p style="font-size:0.8rem; margin:0;">* מזומן (אירו) חובה לחניונים ושמורות בסלובקיה.</p>
     <p style="font-size:0.8rem; margin:0;">* ,לבדוק אם בכלל צריך מדבקת כבישים מהירים, להוסיף את מקום הלינה.</p>
-  <div style="background:#f7e6ec; padding:4px 8px; margin-top:6px; border-radius:4px; font-size:0.85rem; font-weight:600; color:#b03a63;">
-📄 מסמכים חשובים
-</div>
+  
 <div class="sub-header" style="margin-top:6px; cursor:pointer;" onclick="toggleMore(this)">
     <span style="color:#b03a63; font-weight:600;">📄 מסמכים חשובים ▼</span>
 </div>
@@ -777,7 +775,6 @@ a { text-decoration: none; }
 
 
 </div>
-
 
 <div class="card-day">
 
@@ -897,7 +894,7 @@ a { text-decoration: none; }
     <h2>Suchá Belá · אופציות לפי זמן · Tomášovský Výhľad</h2>
 </div>
 
-<div class="sub-header">
+<div class="card-layer-2">
     <span>קניון סוחה בלה · אטרקציות לפי שעת סיום · תצפית שקיעה טומאשובסקי ויהלאד</span>
 </div>
 
@@ -1216,13 +1213,11 @@ a { text-decoration: none; }
 </div>
 <div class="card day-optional">
 
-    <!-- שכבה 1 — כותרת ראשית -->
     <div class="card-header">
         <div class="day-label">יום אופציונלי</div>
         <h2>Jánošíkove Diery · אופציות לפי זמן · מעיין + אגם</h2>
     </div>
 
-    <!-- שכבה 2 — תת כותרת -->
     <div class="card-layer-2">
         נקיק דיירי חובה · אטרקציות לפי זמן · סיום במעיין Kaďa ואגם Vrbické Pleso
     </div>
@@ -1290,7 +1285,6 @@ a { text-decoration: none; }
         </div>
     </div>
 
-    <!-- אטרקציות אפשריות — נפתח בלחיצה כמו יום 2 -->
     <div class="optional-section">
         <div class="expand-wrapper">
             <button class="optional-btn" onclick="toggleOptional('optional-day-extra', this)">
@@ -1531,8 +1525,9 @@ a { text-decoration: none; }
     </div>
 
     <!-- כותרת משנית -->
-    <div class="card-subtitle">
-        מזג אוויר, לוז מומלץ, זמני נסיעה, ואטרקציות באזור Tatranská Lomnica + Smokovec
+    <div class="card-layer-2">
+        אטרקציות באזור Tatranská Lomnica + Smokovec
+        <BR>אם גשום ← לוותר על הקארט ולעשות Hrebienok + מפלים בלבד.</BR>
     </div>
 
     <!-- תג מזג אוויר -->
@@ -1576,12 +1571,7 @@ a { text-decoration: none; }
         </div>
 
     </div>
-
-    <!-- קו מפריד כמו ביום 2 -->
-    <div class="expand-wrapper">
-        ⭐ כל האטרקציות ליום זה נמצאות למטה
-    </div>
-
+ 
     <!-- אטרקציות -->
     <div class="table-like">
 
@@ -1841,7 +1831,6 @@ a { text-decoration: none; }
             <ul>
                 <li><strong>🚴‍♂️ אופניים/קורקינטים בירידה:</strong> השכרה ב‑Jasná – ירידה של 2–3 ק״מ.</li>
                 <li><strong>🌊 אגם Liptovská Mara:</strong> שייט, סאפ, קיאקים.</li>
-                <li><strong>🏊 Tatralandia:</strong> פארק מים ענק – מקורה חלקית.</li>
                 <li><strong>❄️ Demänovská Ice Cave:</strong> מערת קרח נוספת (אם תרצו עוד מערה).</li>
                 <li><strong>🌲 מסלול קצר:</strong> הליכה ב‑Demänovská Dolina – 30–60 דק׳.</li>
             </ul>
@@ -1862,7 +1851,7 @@ a { text-decoration: none; }
     </div>
 
     <!-- כותרת משנית -->
-    <div class="card-subtitle">
+    <div class="card-layer-2">
         אגם Czorsztyn, אקסטרים, טירה, שוק Zakopane, קרקוב וקבר הרמ״א
     </div>
 
@@ -1873,9 +1862,12 @@ a { text-decoration: none; }
     </div>
 
     <!-- הערת מזג אוויר -->
-    <div class="weather-note">
+    <div class="mini-info-bar clean-style">
+<span class="divider">·</span>
+        <div class="mini-wrapper">
         אם גשום ← לדלג על האגם ולעשות טירה + שוק Zakopane + קרקוב
     </div>
+         </div>
 
     <!-- קו מפריד  -->
     <div class="expand-wrapper">
