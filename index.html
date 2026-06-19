@@ -763,9 +763,12 @@ a { text-decoration: none; }
            📘 בוקינג
         </a>
         <span onclick="toggleDocs(this)" style="cursor:pointer; color:#8a6300; font-weight:600;">
-            <span>🚗 הוראות הגעה ▼</span>
+            <span>🚗 הוראות הגעה </span>
         </span>
-        <div class="more-content">
+        
+    </div>
+</div>
+    <div class="more-content">
             <ul style="list-style:none; padding:0; margin:4px 0 0 0; font-size:0.78rem; line-height:1.5; text-align:right;">
                 <li>אחרי הכניסה ל-Ždiar, ממשיכים כ-3 ק"מ עד לתחנת דלק.</li>
                 <li>פונים ימינה אחרי תחנת הדלק, ואז שמאלה לפני תחנת הכיבוי.</li>
@@ -775,8 +778,6 @@ a { text-decoration: none; }
                 <li><a href="tel:+421905033994" style="color:#4f6d7a; text-decoration:none;">+421 (0) 905 033 994</a></li>
             </ul>
         </div>
-    </div>
-</div>
 <p style="font-size:0.8rem; margin:0.3rem 0 0 0; text-align:center;">* מזומן (אירו) חובה לחניונים ושמורות בסלובקיה.</p>
 
 <div class="row sub-header" style="margin-top:6px; cursor:pointer;" onclick="toggleDocs(this)">
@@ -2577,15 +2578,16 @@ function toggleMore(btn) {
         btn.textContent = originalText;
     }
 }
-    function toggleDocs(btn) {
+ function toggleDocs(btn) {
     const content = btn.nextElementSibling;
     if (!content || !content.classList.contains('more-content')) return;
     content.classList.toggle('open');
     const span = btn.querySelector('span');
     if (span) {
+        const label = span.textContent.replace(/[▲▼]\s*$/, '').trim();
         span.textContent = content.classList.contains('open')
-            ? '📄 מסמכים חשובים ▲'
-            : '📄 מסמכים חשובים ▼';
+            ? `${label} ▲`
+            : `${label} ▼`;
     }
 }
 
